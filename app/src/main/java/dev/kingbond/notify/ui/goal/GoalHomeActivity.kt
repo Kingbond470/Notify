@@ -3,20 +3,59 @@ package dev.kingbond.notify.ui.goal
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.room.Room
 import dev.kingbond.notify.R
 import dev.kingbond.notify.databinding.ActivityGoalHomeBinding
+import dev.kingbond.notify.repository.RepositoryClass
+import dev.kingbond.notify.ui.goal.database.ClassDao
+import dev.kingbond.notify.ui.goal.database.RoomDataBaseClass
+import dev.kingbond.notify.ui.goal.model.GoalModel
+import dev.kingbond.notify.ui.goal.recyclerView.GoalAdapter
+import dev.kingbond.notify.viewmodel.ViewModelClass
+import dev.kingbond.notify.viewmodel.ViewModelFactory
 
 class GoalHomeActivity : AppCompatActivity() {
 
     private lateinit var binding : ActivityGoalHomeBinding
+
+    private lateinit var adapter: GoalAdapter
+    private lateinit var itemViewModel: ViewModelClass
+
+    private var list = arrayListOf<GoalModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityGoalHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val roomDatabase = RoomDataBaseClass.getDataBaseObject(this)
+        val dao = roomDatabase.getDao()
+        val repo = RepositoryClass(dao)
+        val viewModelFactory = ViewModelFactory(repo)
+        itemViewModel = ViewModelProviders.of(this,viewModelFactory).get(ViewModelClass::class.java)
+
+
+        itemViewModel.getDataFromGoal().observe(this, androidx.lifecycle.Observer {
+            list.clear()
+            list.addAll(it)
+            adapter.notifyDataSetChanged()
+        })
+
+        setRecyclerView()
         binding.addGoalHome.setOnClickListener {
             val intent = Intent(this,GoalActivity::class.java)
             startActivity(intent)
+        }
+    }
+
+    private fun setRecyclerView() {
+        adapter = GoalAdapter(list)
+        val linearLayoutManager = LinearLayoutManager(this)
+        binding.apply {
+            goalRecyclerView.adapter = adapter
+            goalRecyclerView.layoutManager = linearLayoutManager
         }
     }
 }

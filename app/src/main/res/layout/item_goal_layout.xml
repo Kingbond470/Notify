@@ -1,39 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="goal"
+            type="dev.kingbond.notify.ui.goal.model.GoalModel" />
+    </data>
 
     <androidx.cardview.widget.CardView
+        app:cardCornerRadius="15dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <RelativeLayout
+            android:background="@color/app_background"
+            android:padding="5dp"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/goalImage"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:src="@drawable/ic_launcher_background" />
 
             <TextView
                 android:id="@+id/goalName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="9dp"
-                android:layout_toEndOf="@id/goalImage"
-                android:text="Goal_Name"
-                android:textColor="@color/black"
+                android:text="@{goal.name}"
+                android:textColor="@color/white"
                 android:textSize="20sp" />
 
             <TextView
+                android:textColor="@color/navigation_color"
+                android:id="@+id/goalDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/goalName"
                 android:layout_marginLeft="9dp"
                 android:layout_marginTop="10dp"
-                android:layout_toEndOf="@id/goalImage"
                 android:maxLines="2"
-                android:text="Goal_Description"
+                android:text="@{goal.desc}"
                 android:textSize="17sp" />
 
             <ImageView
@@ -41,6 +47,38 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:src="@drawable/ic_baseline_add_24" />
+
+            <LinearLayout
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="15dp"
+                android:layout_below="@+id/goalDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="from: "
+                    android:textColor="@color/white" />
+                <TextView
+                    android:textColor="@color/white"
+                    android:text="@{goal.from_date}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+                <TextView
+                    android:text="    To  "
+                    android:textColor="@color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+                <TextView
+                    android:textColor="@color/white"
+                    android:text="@{goal.to_date}"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+            </LinearLayout>
 
         </RelativeLayout>
     </androidx.cardview.widget.CardView>

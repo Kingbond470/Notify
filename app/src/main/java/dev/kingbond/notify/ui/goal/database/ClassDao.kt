@@ -1,4 +1,4 @@
-package dev.kingbond.notify.ui.goal
+package dev.kingbond.notify.ui.goal.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.Dao

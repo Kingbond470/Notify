@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey
 import androidx.room.Query
 
 @Entity(tableName = "goal_table")
-class GoalModel(
+data class GoalModel(
     @ColumnInfo(name = "name")
     val name:String,
     @ColumnInfo(name = "description")
@@ -20,6 +20,6 @@ class GoalModel(
 ) {
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    val id:Int?=1
+    var id: Int ?= null
 
 }

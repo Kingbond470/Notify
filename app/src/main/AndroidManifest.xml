@@ -11,19 +11,25 @@
         android:theme="@style/Theme.Notify">
         <activity
             android:name=".ui.goal.GoalHomeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ui.goal.GoalActivity"
-            android:exported="true">
+            android:theme="@style/Theme.Goals"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+        </activity>
+        <activity
+            android:theme="@style/Theme.Goals"
+            android:name=".ui.goal.GoalActivity"
+            android:exported="true">
         </activity>
         <activity
             android:name=".ui.splash.SpalshActivity"
-            android:exported="true"></activity>
+            android:exported="true">
+
+        </activity>
         <activity
             android:name=".MainActivity"
             android:exported="true" />
