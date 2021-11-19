@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
+import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
 import com.google.android.material.navigation.NavigationView
@@ -38,6 +39,79 @@ class HomeActivity : AppCompatActivity() {
         toggle.syncState()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+
+
+        homeBinding.bottomNavigationView.setOnNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.homeFragment -> {
+                    // replaceFragment()
+                    Toast.makeText(applicationContext, "Home", Toast.LENGTH_SHORT).show()
+                }
+                R.id.calendarFragment -> {
+                    // replaceFragment()
+                    Toast.makeText(applicationContext, "Calendar", Toast.LENGTH_SHORT).show()
+                }
+                R.id.completedFragment -> {
+                    // replaceFragment()
+                    Toast.makeText(applicationContext, "Completerd", Toast.LENGTH_SHORT).show()
+                }
+                R.id.profileFragment -> {
+                    // replaceFragment()
+                    Toast.makeText(applicationContext, "Profile", Toast.LENGTH_SHORT).show()
+                }
+
+            }
+            true
+        }
+
+
+        //on click navigation item - menu drawer
+        homeBinding.navView.setNavigationItemSelectedListener(NavigationView.OnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.nav_task -> {
+//                    val intent =
+//                        Intent(this@HomeActivity, Task::class.java)
+//                    startActivity(intent)
+//                    drawableLayout.closeDrawer(GravityCompat.START)
+                    Toast.makeText(this, "Task", Toast.LENGTH_SHORT).show()
+                }
+
+
+                // to open a new fragment which is health files
+                R.id.nav_completed -> {
+//                    supportFragmentManager.beginTransaction().apply {
+//                        replace(R.id.fragmentContainer, CompletedFragment())
+//                            .commit()
+//                    }
+                    Toast.makeText(this, "Completed", Toast.LENGTH_SHORT).show()
+
+                }
+
+//                R.id.privacyPolicy -> {
+//                    Toast.makeText(
+//                        applicationContext,
+//                        "Privacy Policy | Work in Process",
+//                        Toast.LENGTH_SHORT
+//                    ).show()
+//                }
+
+                R.id.nav_settings -> {
+                    Toast.makeText(
+                        applicationContext,
+                        "Settings",
+                        Toast.LENGTH_SHORT
+                    ).show()
+//                    val intent =
+//                        Intent(this@MainActivity, EditProfile::class.java)
+//                    startActivity(intent)
+//                    drawableLayout.closeDrawer(GravityCompat.START)
+
+                }
+
+            }
+            true
+        })
 
 
         homeBinding.fbAddNotify.setOnClickListener {
