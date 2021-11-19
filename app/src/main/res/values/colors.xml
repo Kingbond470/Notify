@@ -19,4 +19,6 @@
     <color name="yellow">#FDBA36</color>
     <color name="green">#9BD000</color>
     <color name="button_fill_color">#4B47FF</color>
+    <color name="isSelected">#008080</color>
+    <color name="isNotSelected">#97CBCB</color>
 </resources>

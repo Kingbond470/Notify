@@ -17,6 +17,7 @@ import com.google.firebase.auth.GoogleAuthProvider
 import dev.kingbond.notify.MainActivity
 import dev.kingbond.notify.R
 import dev.kingbond.notify.databinding.ActivityLoginBinding
+import dev.kingbond.notify.ui.home.HomeActivity
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
@@ -96,7 +97,7 @@ class LoginActivity : AppCompatActivity() {
                     // Sign in success, update UI with the signed-in user's information
                     Log.d(TAG, "signInWithCredential:success")
                     val user = mAuth.currentUser
-                    val intent = Intent(this@LoginActivity, MainActivity::class.java)
+                    val intent = Intent(this@LoginActivity, HomeActivity::class.java)
                     startActivity(intent)
                 } else {
                     // If sign in fails, display a message to the user.

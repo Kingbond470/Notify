@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.OnFailureListener
 
 import com.google.android.gms.tasks.OnSuccessListener
 import com.google.firebase.auth.FirebaseAuth
+import dev.kingbond.notify.ui.home.HomeActivity
 import dev.kingbond.notify.ui.login.LoginActivity
 
 class SpalshActivity : AppCompatActivity() {
@@ -69,7 +70,7 @@ class SpalshActivity : AppCompatActivity() {
         val user = FirebaseAuth.getInstance().currentUser
         if (user != null) {
             // User is signed in
-            startActivity(Intent(this, MainActivity::class.java))
+            startActivity(Intent(this, HomeActivity::class.java))
             finish()
         } else {
             // User is signed out

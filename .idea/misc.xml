@@ -4,25 +4,23 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/app_logo_background.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/bottom_nav_item_bg_selector.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/bottom_nav_selector.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/button_bg.xml" value="0.2169230769230769" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_facebook_logo.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_home_add.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_home_calender.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_home_completed.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_home_icon.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_home_setting.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_menu_icon.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/login_logo_background.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/splash_logo.xml" value="0.2203125" />
-        <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_home.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_home.xml" value="0.25" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_spalsh.xml" value="0.19010416666666666" />
         <entry key="..\:/Android/Notify/app/src/main/res/menu/bottom_menu.xml" value="0.20416666666666666" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/drawable/ic_home_add.xml" value="0.24114583333333334" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/drawable/ic_home_calender.xml" value="0.24114583333333334" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/drawable/ic_home_completed.xml" value="0.24114583333333334" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/drawable/ic_home_icon.xml" value="0.24114583333333334" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/drawable/ic_home_setting.xml" value="0.24114583333333334" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/drawable/ic_transport_mode_bus.xml" value="0.24114583333333334" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/drawable/ic_transport_mode_car.xml" value="0.24114583333333334" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/drawable/ic_transport_mode_cycle.xml" value="0.24114583333333334" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/drawable/ic_transport_mode_train.xml" value="0.24114583333333334" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/drawable/ic_transport_mode_walk.xml" value="0.24114583333333334" />
       </map>
     </option>
   </component>
