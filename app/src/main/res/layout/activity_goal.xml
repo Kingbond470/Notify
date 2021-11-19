@@ -1,37 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="10dp"
         android:orientation="vertical"
         tools:context=".ui.goal.GoalActivity">
 
-        <TextView
-            android:text="Title"
-            android:textSize="20sp"
-            android:textColor="@color/black"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <com.google.android.material.textfield.TextInputEditText
-            android:hint="enter the title name"
-            android:id="@+id/goalTitle"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/goalTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="enter the title name" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="description"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/goalDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="enter the description" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="To"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/addToDateGoal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#B2E8EF"
+                android:padding="10dp"
+                android:paddingVertical="10dp"
+                android:text="2021-12-19"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="From"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/addFromDateGoal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#B2E8EF"
+                android:padding="10dp"
+                android:paddingVertical="10dp"
+                android:text="2021-12-19"
+                android:textColor="@color/black"
+                android:textSize="20dp" />
+        </LinearLayout>
+
+
         <TextView
-            android:text="description"
-            android:textColor="@color/black"
-            android:textSize="20sp"
-            android:layout_marginTop="10dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
-        <com.google.android.material.textfield.TextInputEditText
-            android:hint="enter the description"
-            android:id="@+id/goalDescription"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:background="#2671F6"
+            android:drawableEnd="@drawable/ic_baseline_add_24"
+            android:paddingHorizontal="10dp"
+            android:paddingVertical="5dp"
+            android:text="Add"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/idGoalTaskAdd"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
 
     </LinearLayout>

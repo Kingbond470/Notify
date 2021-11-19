@@ -6,7 +6,11 @@
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/splash_logo.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_spalsh.xml" value="0.19010416666666666" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Notify/app/src/main/res/drawable/ic_add_white.xml" value="0.2490740740740741" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Notify/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.25462962962962965" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Notify/app/src/main/res/layout/activity_goal.xml" value="0.2484375" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Notify/app/src/main/res/layout/activity_goal_home.xml" value="0.2484375" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Notify/app/src/main/res/layout/item_goal_layout.xml" value="0.2484375" />
       </map>
     </option>
   </component>
