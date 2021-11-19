@@ -17,6 +17,7 @@ import dev.kingbond.notify.R
 import dev.kingbond.notify.databinding.ActivityHomeBinding
 import dev.kingbond.notify.ui.about.AboutActivity
 import dev.kingbond.notify.ui.profile.EditProfileActivity
+import dev.kingbond.notify.ui.settings.SettingsActivity
 
 class HomeActivity : AppCompatActivity() {
 
@@ -118,10 +119,10 @@ class HomeActivity : AppCompatActivity() {
                         "Settings",
                         Toast.LENGTH_SHORT
                     ).show()
-//                    val intent =
-//                        Intent(this@MainActivity, EditProfile::class.java)
-//                    startActivity(intent)
-//                    drawableLayout.closeDrawer(GravityCompat.START)
+                    val intent =
+                        Intent(this@HomeActivity, SettingsActivity::class.java)
+                    startActivity(intent)
+                    homeBinding.drawerLayout.closeDrawer(GravityCompat.START)
 
                 }
 
