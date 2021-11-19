@@ -27,7 +27,7 @@
                 android:background="@color/app_background"
                 android:fitsSystemWindows="true"
                 android:minHeight="50dp"
-                app:contentScrim="@color/green"
+                app:contentScrim="@color/navigation_color"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
                 <!--    app:expandedTitleMarginEnd="64dp"-->
@@ -146,7 +146,7 @@
                             android:layout_below="@id/tvEditProfilePlaylist"
                             android:layout_centerHorizontal="true"
                             android:fontFamily="@font/roboto_light"
-                            android:text="Rides"
+                            android:text="Events"
                             android:textColor="@color/white"
                             android:textSize="12sp" />
 
@@ -175,7 +175,7 @@
                             android:layout_below="@id/tvEditProfileFollowers"
                             android:layout_centerHorizontal="true"
                             android:fontFamily="@font/roboto_light"
-                            android:text="Movers"
+                            android:text="Tasks"
                             android:textColor="@color/white"
                             android:textSize="12sp" />
 
@@ -204,7 +204,7 @@
                             android:layout_below="@id/tvEditProfileFollowing"
                             android:layout_centerHorizontal="true"
                             android:fontFamily="@font/roboto_light"
-                            android:text="Packers"
+                            android:text="Goals"
                             android:textColor="@color/white"
                             android:textSize="12sp" />
 
