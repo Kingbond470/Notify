@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Notify">
         <activity
+            android:name=".ui.profile.EditProfileActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.about.AboutActivity"
             android:exported="true" />
         <activity
@@ -30,7 +33,7 @@
             android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
 
         <meta-data
             android:name="preloaded_fonts"
