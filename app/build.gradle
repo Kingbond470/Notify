@@ -135,4 +135,7 @@ dependencies {
     //animation
     implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.22'
 
+    //about
+    implementation 'io.github.medyo:android-about-page:2.0.0'
+
 }

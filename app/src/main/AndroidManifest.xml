@@ -10,12 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Notify">
         <activity
+            android:name=".ui.about.AboutActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.home.HomeActivity"
             android:exported="true" />
         <activity
             android:name=".ui.splash.SpalshActivity"
-            android:theme="@style/Theme.Splash"
-            android:exported="true">
+            android:exported="true"
+            android:theme="@style/Theme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -27,14 +30,11 @@
             android:exported="true" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-            android:exported="true" />
     </application>
 
 </manifest>

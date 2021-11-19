@@ -15,6 +15,7 @@ import com.google.android.material.navigation.NavigationView
 import de.hdodenhof.circleimageview.CircleImageView
 import dev.kingbond.notify.R
 import dev.kingbond.notify.databinding.ActivityHomeBinding
+import dev.kingbond.notify.ui.about.AboutActivity
 
 class HomeActivity : AppCompatActivity() {
 
@@ -86,6 +87,11 @@ class HomeActivity : AppCompatActivity() {
 //                    }
                     Toast.makeText(this, "Completed", Toast.LENGTH_SHORT).show()
 
+                }
+
+                R.id.nav_about -> {
+                    val intent = Intent(this, AboutActivity::class.java)
+                    startActivity(intent)
                 }
 
 //                R.id.privacyPolicy -> {
