@@ -62,7 +62,7 @@
             android:id="@+id/bottomNavigationView"
             android:layout_width="match_parent"
             android:layout_height="56dp"
-            android:background="@color/white"
+            android:background="@color/navigation_color"
             app:itemBackground="@drawable/bottom_nav_item_bg_selector"
             app:itemIconTint="@drawable/bottom_nav_selector"
             app:labelVisibilityMode="unlabeled"
