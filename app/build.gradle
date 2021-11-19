@@ -128,4 +128,16 @@ dependencies {
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha02"
     kapt "androidx.hilt:hilt-compiler:1.0.0-alpha02"
 
+    //lottie
+    implementation 'com.airbnb.android:lottie:3.2.0'
+
+    // circular imageview
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    //animation
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.2.22'
+
+    //about
+    implementation 'io.github.medyo:android-about-page:2.0.0'
+
 }

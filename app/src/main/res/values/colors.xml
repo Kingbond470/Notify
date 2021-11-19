@@ -12,10 +12,25 @@
     <color name="app_background_black">#121212</color>
     <color name="button_bg_color">#4A484F</color>
     <color name="button_fill_bg_color">#4B47FF</color>
-    <color name="app_background">#0072B3
-    </color>
+    <color name="app_background">#0072B3</color>
     <color name="navigation_color">#2096F4</color>
     <color name="red">#FF4340</color>
     <color name="yellow">#FDBA36</color>
     <color name="green">#9BD000</color>
+    <color name="button_fill_color">#4B47FF</color>
+    <color name="isSelected">#FFFFFFFF</color>
+    <color name="isNotSelected">#0072B3</color>
+    <color name="transparent">#00000000</color>
+    <color name="blue_500">#1E54B7</color>
+    <color name="storageUsed">#2b78d0</color>
+    <color name="storageFree">#616161</color>
+    <color name="storageCache">#A7A7A7</color>
+    <color name="grey1">#595A5B</color>
+    <color name="grey">#1F1F1F</color>
+    <color name="light_grey">#A6A6A6</color>
+    <color name="dark_grey">#141414</color>
+    <color name="blue">#08478e</color>
+    <color name="light_pink">#ffe5ee</color>
+    <color name="very_light_pink">#fff5f6</color>
+    <color name="very_light_blue">#f2f9ff</color>
 </resources>

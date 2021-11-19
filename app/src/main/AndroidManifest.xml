@@ -41,7 +41,18 @@
             android:exported="true"
             android:label="@string/title_activity_maps" />
         <activity
+            android:name=".ui.profile.EditProfileActivity"
+            android:theme="@style/Theme.EditProfile"
+            android:exported="true" />
+        <activity
+            android:name=".ui.about.AboutActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.home.HomeActivity"
+            android:exported="true" />
+        <activity
             android:name=".ui.splash.SpalshActivity"
+            android:theme="@style/Theme.Splash">
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
