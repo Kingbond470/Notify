@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/app_logo_background.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/button_bg.xml" value="0.2169230769230769" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_facebook_logo.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/login_logo_background.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/splash_logo.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_login.xml" value="0.22" />

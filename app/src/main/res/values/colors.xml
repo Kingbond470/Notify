@@ -8,5 +8,14 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="app_background">#012D50</color>
+    <color name="app_background_navy_blue">#012D50</color>
+    <color name="app_background_black">#121212</color>
+    <color name="button_bg_color">#4A484F</color>
+    <color name="button_fill_bg_color">#4B47FF</color>
+    <color name="app_background">#0072B3
+    </color>
+    <color name="navigation_color">#2096F4</color>
+    <color name="red">#FF4340</color>
+    <color name="yellow">#FDBA36</color>
+    <color name="green">#9BD000</color>
 </resources>

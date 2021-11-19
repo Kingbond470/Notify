@@ -5,6 +5,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.view.LayoutInflater
 import androidx.fragment.app.Fragment
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -14,19 +15,24 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.GoogleAuthProvider
 import dev.kingbond.notify.MainActivity
 import dev.kingbond.notify.R
+import dev.kingbond.notify.databinding.ActivityLoginBinding
+import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
     companion object {
         private const val RC_SIGN_IN = 120
     }
 
+    private lateinit var binding: ActivityLoginBinding
+
     private lateinit var mAuth: FirebaseAuth
     private lateinit var googleSignInClient: GoogleSignInClient
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_login)
 
+        binding = ActivityLoginBinding.inflate(layoutInflater)
+        setContentView(binding.root)
         /*btnSignUpFree.setOnClickListener {
             val intent = Intent(this@LoginActivity, MainActivity::class.java)
             startActivity(intent)
@@ -40,6 +46,9 @@ class LoginActivity : AppCompatActivity() {
         googleSignInClient = GoogleSignIn.getClient(this, gso)
 
         mAuth = FirebaseAuth.getInstance()
+        binding.btnSignInWithGoogle.setOnClickListener {
+            signIn()
+        }
         /*btnSignUpGoogle.setOnClickListener {
             signIn()
         }*/

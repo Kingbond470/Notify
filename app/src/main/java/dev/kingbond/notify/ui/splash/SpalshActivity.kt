@@ -17,6 +17,7 @@ import androidx.annotation.NonNull
 import com.google.android.gms.tasks.OnFailureListener
 
 import com.google.android.gms.tasks.OnSuccessListener
+import dev.kingbond.notify.ui.login.LoginActivity
 
 class SpalshActivity : AppCompatActivity() {
 
@@ -64,7 +65,7 @@ class SpalshActivity : AppCompatActivity() {
 
     private fun jump() {
         if (isFinishing) return
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(Intent(this, LoginActivity::class.java))
         finish()
     }
 }
