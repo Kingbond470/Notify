@@ -2,4 +2,6 @@
     <string name="app_name">Notify</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
+    <string name="check_box_string">I hereby declare that I am lawfully authorised to\nprovide the above information on behalf of the owner\nof the information</string>
+
 </resources>

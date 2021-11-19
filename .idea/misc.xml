@@ -4,10 +4,19 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/app_logo_background.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/blood_group_not_selected.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/blood_group_selected.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/blood_group_selector.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/blood_group_text_color.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/bottom_nav_item_bg_selector.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/bottom_nav_selector.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/button_bg.xml" value="0.2169230769230769" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/edit_profile_bg.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/edit_profile_et_bg.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/gender_text_color.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_back_arrow.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_baseline_fact_check_24.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_bottom_arrow.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_email_about.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_facebook_logo.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_home_add.xml" value="0.2203125" />
@@ -21,10 +30,15 @@
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_menu_help.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_menu_icon.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_menu_logout.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_signup_india.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_tools.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_welcome.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/login_logo_background.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/rb_not_selected.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/rb_selected.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/rb_selector.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/splash_logo.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_edit_profile.xml" value="0.14" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_home.xml" value="0.2" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />

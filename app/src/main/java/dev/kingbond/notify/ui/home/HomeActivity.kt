@@ -16,6 +16,7 @@ import de.hdodenhof.circleimageview.CircleImageView
 import dev.kingbond.notify.R
 import dev.kingbond.notify.databinding.ActivityHomeBinding
 import dev.kingbond.notify.ui.about.AboutActivity
+import dev.kingbond.notify.ui.profile.EditProfileActivity
 
 class HomeActivity : AppCompatActivity() {
 
@@ -40,6 +41,15 @@ class HomeActivity : AppCompatActivity() {
         toggle.syncState()
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
+        // to access the view from header in Navigation View
+        val header: View = navView.getHeaderView(0)
+        val ibEdit: ImageButton = header.findViewById(R.id.ibEditProfile)
+        //val ivImage:CircleImageView=header.findViewById(R.id.ivProfileImageHeaderLayout)
+        ibEdit.setOnClickListener {
+            val intent = Intent(this, EditProfileActivity::class.java)
+            startActivity(intent)
+        }
 
 
 
