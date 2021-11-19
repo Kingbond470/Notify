@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "973853431169",
+    "project_id": "notify-eb91e",
+    "storage_bucket": "notify-eb91e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973853431169:android:91f8528ea88e5d9018c480",
+        "android_client_info": {
+          "package_name": "dev.kingbond.notify"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "973853431169-als05ufjnujtqdf1tktl0it917hd1fsv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDL4bA5SK_6pEk7S5-sTAsTt-y5_DcPZqs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "973853431169-als05ufjnujtqdf1tktl0it917hd1fsv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
