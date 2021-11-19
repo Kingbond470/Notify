@@ -14,51 +14,49 @@
             android:layout_height="match_parent">
 
 
+<!--            <androidx.appcompat.widget.Toolbar-->
+<!--                android:id="@+id/toolbar"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_alignParentTop="true"-->
+<!--                android:background="@color/navigation_color">-->
 
-            <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
-                android:background="@color/navigation_color">
+<!--                <LinearLayout-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content">-->
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+<!--                    <ImageView-->
+<!--                        android:id="@+id/ivMenu"-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_alignParentStart="true"-->
+<!--                        android:src="@drawable/ic_menu_icon" />-->
 
-                    <ImageView
-                        android:id="@+id/ivMenu"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:src="@drawable/ic_menu_icon" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginHorizontal="18dp"
-                        android:fontFamily="@font/roboto_medium"
-                        android:text="Notify"
-                        android:textColor="@color/white"
-                        android:textSize="18sp" />
+<!--                    <TextView-->
+<!--                        android:layout_width="wrap_content"-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginHorizontal="18dp"-->
+<!--                        android:fontFamily="@font/roboto_medium"-->
+<!--                        android:text="Notify"-->
+<!--                        android:textColor="@color/white"-->
+<!--                        android:textSize="18sp" />-->
 
 
-                    <!--            <ImageView-->
-                    <!--                android:id="@+id/tvSearch"-->
-                    <!--                android:layout_width="wrap_content"-->
-                    <!--                android:layout_height="wrap_content"-->
-                    <!--                android:layout_gravity="end"-->
-                    <!--                android:layout_marginHorizontal="30dp"-->
-                    <!--                android:src="@drawable/ic_home_search" />-->
+<!--                    &lt;!&ndash;            <ImageView&ndash;&gt;-->
+<!--                    &lt;!&ndash;                android:id="@+id/tvSearch"&ndash;&gt;-->
+<!--                    &lt;!&ndash;                android:layout_width="wrap_content"&ndash;&gt;-->
+<!--                    &lt;!&ndash;                android:layout_height="wrap_content"&ndash;&gt;-->
+<!--                    &lt;!&ndash;                android:layout_gravity="end"&ndash;&gt;-->
+<!--                    &lt;!&ndash;                android:layout_marginHorizontal="30dp"&ndash;&gt;-->
+<!--                    &lt;!&ndash;                android:src="@drawable/ic_home_search" />&ndash;&gt;-->
 
-                </LinearLayout>
-            </androidx.appcompat.widget.Toolbar>
+<!--                </LinearLayout>-->
+<!--            </androidx.appcompat.widget.Toolbar>-->
 
             <androidx.fragment.app.FragmentContainerView
                 android:id="@+id/fragmentContainer"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_below="@id/toolbar" />
+                android:layout_height="match_parent" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cvBottom"
