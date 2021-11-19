@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="dev.kingbond.notify" >
+    package="dev.kingbond.notify">
 
     <application
         android:allowBackup="true"
@@ -8,7 +8,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Notify" >
+        android:theme="@style/Theme.Notify">
+        <activity
+            android:name=".ui.settings.SettingsUserProfileActivity"
+            android:exported="true" />
         <activity
             android:name=".ui.settings.SettingsActivity"
             android:exported="true" />
@@ -25,7 +28,7 @@
         <activity
             android:name=".ui.splash.SpalshActivity"
             android:exported="true"
-            android:theme="@style/Theme.Splash" >
+            android:theme="@style/Theme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

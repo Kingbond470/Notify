@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_background"
+    tools:context=".ui.settings.SettingsUserProfileActivity">
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/app_background"
+            android:fitsSystemWindows="true"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:id="@+id/collapsing_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/app_background"
+                android:fitsSystemWindows="true"
+                android:minHeight="50dp"
+                app:contentScrim="@color/green"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <!--    app:expandedTitleMarginEnd="64dp"-->
+                <!--    app:expandedTitleMarginStart="48dp"-->
+
+                <RelativeLayout
+                    android:id="@+id/rlParallax"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    android:background="@color/app_background"
+                    app:layout_collapseMode="parallax"
+                    app:layout_scrollFlags="scroll|enterAlways|enterAlwaysCollapsed">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cdEditProfileImage"
+                        android:layout_width="130dp"
+                        android:layout_height="130dp"
+                        android:layout_centerInParent="true"
+                        app:cardCornerRadius="100dp">
+
+                        <ImageView
+                            android:id="@+id/ivEditProfileImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:minHeight="50dp"
+                            android:scaleType="fitXY"
+                            android:src="@drawable/man" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/tvEditProfileName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_above="@+id/cdEditProfile"
+                        android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/roboto"
+                        android:text="Mausam Singh"
+                        android:textColor="@color/white"
+                        android:textSize="22sp" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cdEditProfile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginVertical="10dp"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="30dp">
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="1dp"
+                            android:backgroundTint="@color/app_background"
+                            app:cardCornerRadius="30dp">
+
+                            <TextView
+                                android:id="@+id/tvEditLogout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginHorizontal="10dp"
+                                android:layout_marginVertical="5dp"
+                                android:background="@color/transparent"
+                                android:fontFamily="@font/roboto_light"
+                                android:text="Logout"
+                                android:textColor="@color/white"
+                                android:textSize="13sp" />
+
+                        </androidx.cardview.widget.CardView>
+
+                    </androidx.cardview.widget.CardView>
+
+
+                </RelativeLayout>
+
+
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/rlParallax"
+                android:background="@color/app_background">
+
+                <LinearLayout
+                    android:id="@+id/llProfileFollowers"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp"
+                    android:orientation="horizontal"
+                    android:weightSum="3">
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/tvEditProfilePlaylist"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginVertical="5dp"
+                            android:fontFamily="@font/roboto_light"
+                            android:text="5"
+                            android:textColor="@color/white"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvEditProfilePlaylist"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/roboto_light"
+                            android:text="Rides"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/tvEditProfileFollowers"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginVertical="5dp"
+                            android:fontFamily="@font/roboto_light"
+                            android:text="3"
+                            android:textColor="@color/white"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvEditProfileFollowers"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/roboto_light"
+                            android:text="Movers"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1">
+
+                        <TextView
+                            android:id="@+id/tvEditProfileFollowing"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginVertical="5dp"
+                            android:fontFamily="@font/roboto_light"
+                            android:text="1"
+                            android:textColor="@color/white"
+                            android:textSize="13sp"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tvEditProfileFollowing"
+                            android:layout_centerHorizontal="true"
+                            android:fontFamily="@font/roboto_light"
+                            android:text="Packers"
+                            android:textColor="@color/white"
+                            android:textSize="12sp" />
+
+                    </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_below="@+id/llProfileFollowers"
+                    android:src="@drawable/ic_edit_email"
+                    android:id="@+id/ivSettingsProfile"
+                    />
+
+                <TextView
+                    android:id="@+id/tvRecentActivityEditProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/ivSettingsProfile"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="550dp"
+                    android:text="No recent activity"
+                    android:textColor="@color/white"
+                    android:textSize="17sp"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:id="@+id/framelayout_settings"
+        android:background="@color/transparent">
+
+
+    </FrameLayout>
+
+
+</RelativeLayout>
