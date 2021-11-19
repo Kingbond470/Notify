@@ -9,4 +9,6 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="app_background">#012D50</color>
+    <color name="button_fill_color">#4B47FF</color>
+    <color name="app_background_black">#121212</color>
 </resources>
