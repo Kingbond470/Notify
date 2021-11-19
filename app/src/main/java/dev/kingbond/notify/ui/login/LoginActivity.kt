@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInClient
@@ -46,7 +47,8 @@ class LoginActivity : AppCompatActivity() {
         googleSignInClient = GoogleSignIn.getClient(this, gso)
 
         mAuth = FirebaseAuth.getInstance()
-        binding.btnSignInWithGoogle.setOnClickListener {
+        binding.btnSignUpWithGoogle.setOnClickListener {
+            //Toast.makeText(this, "clicked", Toast.LENGTH_SHORT).show()
             signIn()
         }
         /*btnSignUpGoogle.setOnClickListener {
