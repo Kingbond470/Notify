@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Notify</string>
+    <string-array name="event_types">
+        <item>Interview</item>
+        <item>Exam</item>
+        <item>Train</item>
+        <item>Flight</item>
+        <item>Marriage</item>
+    </string-array>
 </resources>

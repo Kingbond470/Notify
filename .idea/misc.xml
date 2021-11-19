@@ -21,6 +21,11 @@
         <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/drawable/ic_transport_mode_cycle.xml" value="0.24114583333333334" />
         <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/drawable/ic_transport_mode_train.xml" value="0.24114583333333334" />
         <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/drawable/ic_transport_mode_walk.xml" value="0.24114583333333334" />
+        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/layout/activity_event.xml" value="0.18" />
+        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/layout/activity_login.xml" value="0.1094224924012158" />
+        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/layout/activity_main.xml" value="0.1094224924012158" />
+        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/layout/activity_spalsh.xml" value="0.19157608695652173" />
+        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/layout/dropdown_item.xml" value="0.19157608695652173" />
       </map>
     </option>
   </component>

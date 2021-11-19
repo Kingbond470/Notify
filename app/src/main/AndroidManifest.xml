@@ -11,7 +11,7 @@
         android:theme="@style/Theme.Notify">
         <activity
             android:name=".ui.splash.SpalshActivity"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,10 +22,11 @@
             android:name=".ui.login.LoginActivity"
             android:exported="true" />
         <activity
+            android:name=".ui.task.EventActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
 
         <meta-data
             android:name="preloaded_fonts"
