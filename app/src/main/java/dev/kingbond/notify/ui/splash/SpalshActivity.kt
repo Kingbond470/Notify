@@ -17,6 +17,8 @@ import androidx.annotation.NonNull
 import com.google.android.gms.tasks.OnFailureListener
 
 import com.google.android.gms.tasks.OnSuccessListener
+import com.google.firebase.auth.FirebaseAuth
+import dev.kingbond.notify.ui.login.LoginActivity
 
 class SpalshActivity : AppCompatActivity() {
 
@@ -64,7 +66,16 @@ class SpalshActivity : AppCompatActivity() {
 
     private fun jump() {
         if (isFinishing) return
-        startActivity(Intent(this, MainActivity::class.java))
-        finish()
+        val user = FirebaseAuth.getInstance().currentUser
+        if (user != null) {
+            // User is signed in
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        } else {
+            // User is signed out
+            startActivity(Intent(this, LoginActivity::class.java))
+            finish()
+        }
+
     }
 }
