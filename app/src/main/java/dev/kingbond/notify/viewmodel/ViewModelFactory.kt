@@ -8,4 +8,5 @@ class ViewModelFactory(val repo:RepositoryClass):ViewModelProvider.Factory {
     override fun <T : ViewModel?> create(modelClass: Class<T>): T {
         return ViewModelClass(repo) as T
     }
+
 }

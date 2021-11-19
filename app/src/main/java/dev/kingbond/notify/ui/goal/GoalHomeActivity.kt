@@ -3,6 +3,7 @@ package dev.kingbond.notify.ui.goal
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Parcelable
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -10,14 +11,17 @@ import androidx.room.Room
 import dev.kingbond.notify.R
 import dev.kingbond.notify.databinding.ActivityGoalHomeBinding
 import dev.kingbond.notify.repository.RepositoryClass
-import dev.kingbond.notify.ui.goal.database.ClassDao
-import dev.kingbond.notify.ui.goal.database.RoomDataBaseClass
+import dev.kingbond.notify.data.database.ClassDao
+import dev.kingbond.notify.data.database.RoomDataBaseClass
 import dev.kingbond.notify.ui.goal.model.GoalModel
 import dev.kingbond.notify.ui.goal.recyclerView.GoalAdapter
+import dev.kingbond.notify.ui.goal.recyclerView.GoalClickListener
+import dev.kingbond.notify.ui.task.TaskGoalActivity
 import dev.kingbond.notify.viewmodel.ViewModelClass
 import dev.kingbond.notify.viewmodel.ViewModelFactory
+import java.io.Serializable
 
-class GoalHomeActivity : AppCompatActivity() {
+class GoalHomeActivity : AppCompatActivity(),GoalClickListener {
 
     private lateinit var binding : ActivityGoalHomeBinding
 
@@ -51,11 +55,23 @@ class GoalHomeActivity : AppCompatActivity() {
     }
 
     private fun setRecyclerView() {
-        adapter = GoalAdapter(list)
+        adapter = GoalAdapter(list,this)
         val linearLayoutManager = LinearLayoutManager(this)
         binding.apply {
             goalRecyclerView.adapter = adapter
             goalRecyclerView.layoutManager = linearLayoutManager
         }
+    }
+
+    override fun goalItemClicked(goalModel: GoalModel) {
+        val intent = Intent(this,GoalDetailsActivity::class.java)
+        intent.putExtra("goalModel", goalModel as Serializable)
+        startActivity(intent)
+    }
+
+    override fun goalItemAddClicked(goalModel: GoalModel) {
+        val intent = Intent(this,TaskGoalActivity::class.java)
+        intent.putExtra("goalName",goalModel.name)
+        startActivity(intent)
     }
 }

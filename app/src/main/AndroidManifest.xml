@@ -10,26 +10,37 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Notify">
         <activity
+            android:name=".ui.goal.GoalDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.task.TaskGoalActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Goals" />
+        <activity
+            android:name=".ui.task.TaskActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Goals" />
+        <activity
+            android:name=".ui.task.TaskHomeActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Goals"></activity>
+        <activity
             android:name=".ui.goal.GoalHomeActivity"
-            android:theme="@style/Theme.Goals"
-            android:exported="true" >
+            android:exported="true"
+            android:theme="@style/Theme.Goals">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
-            android:theme="@style/Theme.Goals"
             android:name=".ui.goal.GoalActivity"
-            android:exported="true">
-        </activity>
+            android:exported="true"
+            android:theme="@style/Theme.Goals" />
         <activity
             android:name=".ui.splash.SpalshActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true" />
         <activity
             android:name=".MainActivity"
             android:exported="true" />

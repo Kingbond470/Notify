@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModelProviders
 import dev.kingbond.notify.R
 import dev.kingbond.notify.databinding.ActivityGoalBinding
 import dev.kingbond.notify.repository.RepositoryClass
-import dev.kingbond.notify.ui.goal.database.RoomDataBaseClass
+import dev.kingbond.notify.data.database.RoomDataBaseClass
 import dev.kingbond.notify.ui.goal.model.GoalModel
 import dev.kingbond.notify.viewmodel.ViewModelClass
 import dev.kingbond.notify.viewmodel.ViewModelFactory
@@ -58,6 +58,10 @@ class GoalActivity : AppCompatActivity() {
     }
 
     private fun addDateFrom() {
+        val sdf = SimpleDateFormat("  yyyy-MM-dd")
+        val currentDate = sdf.format(Date())
+        binding.addFromDateGoal.text = currentDate
+
         binding.addFromDateGoal.setOnClickListener {
             val cal = Calendar.getInstance()
 
@@ -83,6 +87,10 @@ class GoalActivity : AppCompatActivity() {
     }
 
     private fun addDateTo() {
+        val sdf = SimpleDateFormat("  yyyy-MM-dd")
+        val currentDate = sdf.format(Date())
+        binding.addToDateGoal.text = currentDate
+
         binding.addToDateGoal.setOnClickListener {
             val cal = Calendar.getInstance()
 

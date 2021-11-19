@@ -14,6 +14,7 @@
         android:layout_height="wrap_content">
 
         <RelativeLayout
+            android:id="@+id/goalItem"
             android:background="@color/app_background"
             android:padding="5dp"
             android:layout_marginTop="10dp"
@@ -42,11 +43,17 @@
                 android:text="@{goal.desc}"
                 android:textSize="17sp" />
 
-            <ImageView
+            <TextView
+                android:text="Add Task"
+                android:gravity="center"
+                android:background="@drawable/bg_rectangle_stroke_white"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:id="@+id/addTaskByGoal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
-                android:src="@drawable/ic_baseline_add_24" />
+                android:drawableEnd="@drawable/ic_baseline_add_24" />
 
             <LinearLayout
                 android:layout_marginHorizontal="5dp"
