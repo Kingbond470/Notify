@@ -11,6 +11,7 @@
         android:theme="@style/Theme.Notify">
         <activity
             android:name=".ui.profile.EditProfileActivity"
+            android:theme="@style/Theme.EditProfile"
             android:exported="true" />
         <activity
             android:name=".ui.about.AboutActivity"
