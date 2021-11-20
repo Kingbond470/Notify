@@ -16,6 +16,7 @@ import de.hdodenhof.circleimageview.CircleImageView
 import dev.kingbond.notify.R
 import dev.kingbond.notify.databinding.ActivityHomeBinding
 import dev.kingbond.notify.ui.about.AboutActivity
+import dev.kingbond.notify.ui.calendar.CalendarFragment
 import dev.kingbond.notify.ui.event.EventActivity
 import dev.kingbond.notify.ui.goal.GoalHomeActivity
 import dev.kingbond.notify.ui.helpandsupport.HelpAndSupportActivity
@@ -67,6 +68,7 @@ class HomeActivity : AppCompatActivity() {
                 }
                 R.id.calendarFragment -> {
                     // replaceFragment()
+                    replaceFragment(CalendarFragment(),"Calendar")
                     Toast.makeText(applicationContext, "Calendar", Toast.LENGTH_SHORT).show()
                 }
                 R.id.completedFragment -> {
