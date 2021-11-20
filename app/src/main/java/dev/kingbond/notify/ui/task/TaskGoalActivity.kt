@@ -52,8 +52,9 @@ class TaskGoalActivity : AppCompatActivity() {
                 itemViewModel.insertDataInTaskTable(taskModel)
             }
 
-            val intent = Intent(this,GoalHomeActivity::class.java)
-            startActivity(intent)
+//            val intent = Intent(this,GoalHomeActivity::class.java)
+//            startActivity(intent)
+            finish()
         }
     }
 

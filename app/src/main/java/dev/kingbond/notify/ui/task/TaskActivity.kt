@@ -1,18 +1,23 @@
 package dev.kingbond.notify.ui.task
 
+import android.app.AlarmManager
 import android.app.DatePickerDialog
+import android.app.PendingIntent
 import android.app.TimePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProviders
 import dev.kingbond.notify.R
+import dev.kingbond.notify.alarmAndReminder.AlarmBrodcast
 import dev.kingbond.notify.data.database.RoomDataBaseClass
 import dev.kingbond.notify.databinding.ActivityTaskBinding
 import dev.kingbond.notify.repository.RepositoryClass
 import dev.kingbond.notify.ui.task.model.TaskModel
 import dev.kingbond.notify.viewmodel.ViewModelClass
 import dev.kingbond.notify.viewmodel.ViewModelFactory
+import java.text.DateFormat
+import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -20,6 +25,8 @@ class TaskActivity : AppCompatActivity() {
 
     private lateinit var binding:ActivityTaskBinding
     private lateinit var itemViewModel:ViewModelClass
+
+    private  var timeNotify = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -45,17 +52,39 @@ class TaskActivity : AppCompatActivity() {
                 val taskModel = TaskModel(
                     TaskName.text.toString(),
                     TaskDescription.text.toString(),
-                    addToDateTask.text.toString(),addTimeTask.text.toString(),
+                    addToDateTask.text.toString(),
+                    addTimeTask.text.toString(),
                     0,
                     "Normal")
 
                 itemViewModel.insertDataInTaskTable(taskModel)
+                setAlarm(TaskDescription.text.toString(),addToDateTask.text.toString().trim(),addTimeTask.text.toString())
             }
 
-            val intent = Intent(this,TaskHomeActivity::class.java)
-            startActivity(intent)
+//            val intent = Intent(this,TaskHomeActivity::class.java)
+//            startActivity(intent)
+            finish()
         }
     }
+
+    private fun setAlarm(text: String, date: String, time: String) {
+        val am = getSystemService(ALARM_SERVICE) as AlarmManager
+        val intent = Intent(applicationContext, AlarmBrodcast::class.java)
+        intent.putExtra("event", text)
+        intent.putExtra("date", date)
+        intent.putExtra("time", time)
+        val pendingIntent =
+            PendingIntent.getBroadcast(applicationContext, 0, intent, PendingIntent.FLAG_ONE_SHOT)
+        val dateandtime = "$date $time"
+        val formatter: DateFormat = SimpleDateFormat("yyyy-MM-dd hh-mm aaa")
+        try {
+            val date1 = formatter.parse(dateandtime)
+            am[AlarmManager.RTC_WAKEUP, date1.time] = pendingIntent
+        } catch (e: ParseException) {
+            e.printStackTrace()
+        }
+    }
+
 
     private fun setTime() {
         val sdf = SimpleDateFormat("hh-mm aaa")
@@ -70,6 +99,7 @@ class TaskActivity : AppCompatActivity() {
                     cal.set(Calendar.HOUR_OF_DAY, i)
                     cal.set(Calendar.MINUTE, i2)
 
+                    timeNotify = "$i:$i2"
                     val myFormat = "hh-mm aaa" // mention the format you need
                     val sdf = SimpleDateFormat(myFormat)
                     binding.addTimeTask.text = sdf.format(cal.time)
