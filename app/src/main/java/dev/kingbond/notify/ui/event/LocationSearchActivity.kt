@@ -1,6 +1,7 @@
 package dev.kingbond.notify.ui.event
 
 import android.Manifest
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.*
 import android.os.Build
@@ -23,6 +24,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
 import dev.kingbond.notify.R
+import kotlinx.android.synthetic.main.activity_location_search.*
 import java.io.IOException
 
 class LocationSearchActivity : AppCompatActivity(), OnMapReadyCallback, LocationListener,
@@ -34,9 +36,26 @@ class LocationSearchActivity : AppCompatActivity(), OnMapReadyCallback, Location
     internal var mGoogleApiClient: GoogleApiClient? = null
     internal lateinit var mLocationRequest: LocationRequest
 
+    internal lateinit var loc: String
+    internal lateinit var eventType: String
+    internal lateinit var eventDescription: String
+    internal lateinit var eventDate: String
+    internal lateinit var eventTime: String
+    internal lateinit var estart: String
+    internal lateinit var eventTransport: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_location_search)
+
+
+        loc = intent.getStringExtra("location").toString()
+        eventType = intent.getStringExtra("eventType").toString()
+        eventDescription = intent.getStringExtra("eventDescription").toString()
+        eventDate = intent.getStringExtra("eventDate").toString()
+        eventTime = intent.getStringExtra("eventTime").toString()
+        eventTransport = intent.getStringExtra("eventTransport").toString()
+        estart = intent.getStringExtra("start").toString()
 
         val mapFragment = supportFragmentManager.findFragmentById(R.id.myMap) as SupportMapFragment
         mapFragment.getMapAsync(this)
@@ -131,6 +150,19 @@ class LocationSearchActivity : AppCompatActivity(), OnMapReadyCallback, Location
             val latLng = LatLng(address.latitude, address.longitude)
             mMap!!.addMarker(MarkerOptions().position(latLng).title(location))
             mMap!!.animateCamera(CameraUpdateFactory.newLatLng(latLng))
+
+            btnAddLocation.setOnClickListener {
+                val intent = Intent(this@LocationSearchActivity, EventActivity::class.java)
+                intent.putExtra(loc, latLng.toString())
+                intent.putExtra("eventType", eventType)
+                intent.putExtra("eventDescription", eventDescription)
+                intent.putExtra("eventDate", eventDate)
+                intent.putExtra("eventTime", eventTime)
+                intent.putExtra("eventTransport", eventTransport)
+                intent.putExtra("estart", estart)
+                startActivity(intent)
+            }
+
         }
     }
 }

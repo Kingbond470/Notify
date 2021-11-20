@@ -1,11 +1,20 @@
 <resources>
     <string name="app_name">Notify</string>
+
     <string-array name="event_types">
         <item>Interview</item>
         <item>Exam</item>
         <item>Train</item>
         <item>Flight</item>
         <item>Marriage</item>
+    </string-array>
+    <string-array name="transport_types">
+        <item>Bike</item>
+        <item>Car</item>
+        <item>Cab</item>
+        <item>Walk</item>
+        <item>Bus</item>
+
     </string-array>
     <string name="title_activity_maps">MapsActivity</string>
     <string name="open">Open</string>

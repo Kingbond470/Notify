@@ -31,6 +31,17 @@ class EventActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        //coming from location search activity
+        val startpoint = intent.getStringExtra("start")
+        val endpoint = intent.getStringExtra("end")
+
+        val eventType2 = intent.getStringExtra("eventType")
+        val eventDescription2 = intent.getStringExtra("eventDescription")
+        val eventDate2 = intent.getStringExtra("eventDate")
+        val eventTime2 = intent.getStringExtra("eventTime")
+        val eventTransport2 = intent.getStringExtra("eventTransport")
+        val startpoint2 = intent.getStringExtra("estart")
+
         eventbinding = ActivityEventBinding.inflate(layoutInflater)
         setContentView(eventbinding.root)
 
@@ -52,6 +63,20 @@ class EventActivity : AppCompatActivity() {
         )
         autotextView.setAdapter(adapter)
 
+
+        //select type of transport
+        val autotextViewTransport =
+            findViewById<AutoCompleteTextView>(R.id.autoCompleteTextViewTypeOfTransport)
+        // Get the array of languages
+        val languagesTransport = resources.getStringArray(R.array.transport_types)
+        // Create adapter and add in AutoCompleteTextView
+        val adapterTransport = ArrayAdapter(
+            this,
+            R.layout.dropdown_item, languagesTransport
+        )
+        autotextViewTransport.setAdapter(adapterTransport)
+
+
         //add Date
         eventbinding.addEventDate.setOnClickListener {
             addDate()
@@ -62,17 +87,74 @@ class EventActivity : AppCompatActivity() {
             addTime()
         }
 
+        val eventType = eventbinding.autoCompleteTextViewTypeOfEvent.getText().toString()
+        val eventDescription = eventbinding.etEventDescription.getText().toString()
+        val eventDate = eventbinding.addEventDate.getText().toString()
+        val eventTime = eventbinding.addEventTime.getText().toString()
+        val eventTransport = eventbinding.autoCompleteTextViewTypeOfTransport.getText().toString()
+
+
         //pick start point
         eventbinding.addStartPoint.setOnClickListener {
+
+            val eventType3 = eventbinding.autoCompleteTextViewTypeOfEvent.getText().toString()
+            val eventDescription3 = eventbinding.etEventDescription.getText().toString()
+            val eventDate3 = eventbinding.addEventDate.getText().toString()
+            val eventTime3 = eventbinding.addEventTime.getText().toString()
+            val eventTransport3 = eventbinding.autoCompleteTextViewTypeOfTransport.getText().toString()
+
             val intent = Intent(this@EventActivity, LocationSearchActivity::class.java)
+            intent.putExtra("location", "start")
+            intent.putExtra("eventType", eventType3)
+            intent.putExtra("eventDescription", eventDescription3)
+            intent.putExtra("eventDate", eventDate3)
+            intent.putExtra("eventTime", eventTime3)
+            intent.putExtra("eventTransport", eventTransport3)
             startActivity(intent)
         }
+        if (startpoint.toString() != "null") {
+            eventbinding.addStartPoint.text = startpoint.toString()
+
+            eventbinding.autoCompleteTextViewTypeOfEvent.setText(eventType2.toString())
+            eventbinding.etEventDescription.setText(eventDescription2.toString())
+            eventbinding.addEventDate.text = eventDate2.toString()
+            eventbinding.addEventTime.text = eventTime2.toString()
+            eventbinding.autoCompleteTextViewTypeOfTransport.setText(eventTransport2.toString())
+
+        }
+
 
         //pick end point
         eventbinding.addEndPoint.setOnClickListener {
+
+            val eventType3 = eventbinding.autoCompleteTextViewTypeOfEvent.getText().toString()
+            val eventDescription3 = eventbinding.etEventDescription.getText().toString()
+            val eventDate3 = eventbinding.addEventDate.getText().toString()
+            val eventTime3 = eventbinding.addEventTime.getText().toString()
+            val eventTransport3 = eventbinding.autoCompleteTextViewTypeOfTransport.getText().toString()
+
             val intent = Intent(this@EventActivity, LocationSearchActivity::class.java)
+            intent.putExtra("location", "end")
+            intent.putExtra("start", eventbinding.addStartPoint.text.toString())
+            intent.putExtra("eventType", eventType3)
+            intent.putExtra("eventDescription", eventDescription3)
+            intent.putExtra("eventDate", eventDate3)
+            intent.putExtra("eventTime", eventTime3)
+            intent.putExtra("eventTransport", eventTransport3)
             startActivity(intent)
         }
+        if (endpoint.toString() != "null") {
+            eventbinding.addEndPoint.text = endpoint.toString()
+
+            eventbinding.addStartPoint.text = startpoint2.toString()
+            eventbinding.autoCompleteTextViewTypeOfEvent.setText(eventType2.toString())
+            eventbinding.etEventDescription.setText(eventDescription2.toString())
+            eventbinding.addEventDate.text = eventDate2.toString()
+            eventbinding.addEventTime.text = eventTime2.toString()
+            eventbinding.autoCompleteTextViewTypeOfTransport.setText(eventTransport2.toString())
+
+        }
+
 
         //add to db
         eventbinding.btnAddEventFab.setOnClickListener(View.OnClickListener
@@ -86,11 +168,12 @@ class EventActivity : AppCompatActivity() {
         val eventDescription = etEventDescription.getText().toString()
         val eventDate = addEventDate.getText().toString()
         val eventTime = addEventTime.getText().toString()
+        val eventTransport = eventbinding.autoCompleteTextViewTypeOfTransport.getText().toString()
 
 
         Toast.makeText(
             this,
-            (eventType + " " + eventDescription + " " + eventDate + " " + eventTime),
+            (eventType + " " + eventDescription + " " + eventDate + " " + eventTime + " " + eventTransport),
             Toast.LENGTH_SHORT
         ).show()
 
