@@ -12,70 +12,98 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        app:cardCornerRadius="10dp">
+        android:layout_marginVertical="10dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="12dp">
 
         <RelativeLayout
             android:id="@+id/goalItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/app_background"
-            android:padding="5dp">
+            android:background="@color/task_background_color"
+            android:padding="10dp">
 
             <TextView
                 android:id="@+id/goalName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="9dp"
+                android:fontFamily="@font/roboto_medium"
                 android:text="@{goal.name}"
                 android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/goalDescription"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/goalName"
-                android:layout_marginLeft="9dp"
-                android:layout_marginTop="10dp"
+                android:fontFamily="@font/roboto"
                 android:maxLines="2"
                 android:text="@{goal.desc}"
-                android:textColor="@color/navigation_color"
-                android:textSize="17sp" />
+                android:textColor="@color/white"
+                android:textSize="16sp" />
 
             <LinearLayout
-                android:id="@+id/goalDates"
+                android:id="@+id/llFromGoal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/goalDescription">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:text="From : "
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tvFromDateGoal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="@{goal.from_date}"
+                    android:layout_marginRight="5dp"
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_calendar" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llToGoal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/goalDescription"
-                android:layout_marginHorizontal="5dp"
-                android:layout_marginTop="15dp">
+                android:layout_alignParentEnd="true"
+                android:layout_marginHorizontal="5dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="from: "
-                    android:textColor="@color/white" />
+                    android:fontFamily="@font/roboto"
+                    android:text="To : "
+                    android:textColor="@color/white"
+                    android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/tvToDateGoal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@{goal.from_date}"
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="    To  "
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
                     android:text="@{goal.to_date}"
-                    android:textColor="@color/white" />
-
-
+                    android:textColor="@color/white"
+                    android:layout_marginRight="5dp"
+                    android:textSize="14sp" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:src="@drawable/ic_baseline_calendar" />
             </LinearLayout>
 
             <ProgressBar
@@ -83,17 +111,104 @@
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/goalDates"
+                android:layout_below="@+id/llToGoal"
                 android:layout_marginTop="10dp"
                 android:backgroundTint="@color/white"
                 android:indeterminate="false"
                 android:max="100"
                 android:progress="@{goal.percent}"
                 android:progressBackgroundTint="@color/blue"
-                android:progressTint="@color/green" />
-
+                android:progressTint="@color/green"
+                android:visibility="gone" />
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
+
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_margin="5dp"-->
+    <!--        app:cardCornerRadius="10dp">-->
+
+    <!--        <RelativeLayout-->
+    <!--            android:id="@+id/goalItem"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:background="@color/app_background"-->
+    <!--            android:padding="5dp">-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/goalName"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginLeft="9dp"-->
+    <!--                android:text="@{goal.name}"-->
+    <!--                android:textColor="@color/white"-->
+    <!--                android:textSize="20sp" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/goalDescription"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_below="@+id/goalName"-->
+    <!--                android:layout_marginLeft="9dp"-->
+    <!--                android:layout_marginTop="10dp"-->
+    <!--                android:maxLines="2"-->
+    <!--                android:text="@{goal.desc}"-->
+    <!--                android:textColor="@color/navigation_color"-->
+    <!--                android:textSize="17sp" />-->
+
+    <!--            <LinearLayout-->
+    <!--                android:id="@+id/goalDates"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_below="@+id/goalDescription"-->
+    <!--                android:layout_marginHorizontal="5dp"-->
+    <!--                android:layout_marginTop="15dp">-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="from: "-->
+    <!--                    android:textColor="@color/white" />-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="@{goal.from_date}"-->
+    <!--                    android:textColor="@color/white" />-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="    To  "-->
+    <!--                    android:textColor="@color/white" />-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:text="@{goal.to_date}"-->
+    <!--                    android:textColor="@color/white" />-->
+
+
+    <!--            </LinearLayout>-->
+
+    <!--            <ProgressBar-->
+    <!--                android:id="@+id/goalProgressBar"-->
+    <!--                style="?android:attr/progressBarStyleHorizontal"-->
+    <!--                android:layout_width="match_parent"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_below="@+id/goalDates"-->
+    <!--                android:layout_marginTop="10dp"-->
+    <!--                android:backgroundTint="@color/white"-->
+    <!--                android:indeterminate="false"-->
+    <!--                android:max="100"-->
+    <!--                android:progress="@{goal.percent}"-->
+    <!--                android:progressBackgroundTint="@color/blue"-->
+    <!--                android:progressTint="@color/green" />-->
+
+    <!--        </RelativeLayout>-->
+
+    <!--    </androidx.cardview.widget.CardView>-->
 
 </layout>

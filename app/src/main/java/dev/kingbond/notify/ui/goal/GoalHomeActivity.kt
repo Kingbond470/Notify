@@ -13,6 +13,7 @@ import dev.kingbond.notify.ui.goal.recyclerView.GoalAdapter
 import dev.kingbond.notify.ui.goal.recyclerView.GoalClickListener
 import dev.kingbond.notify.viewmodel.ViewModelClass
 import dev.kingbond.notify.viewmodel.ViewModelFactory
+import kotlinx.android.synthetic.main.activity_goal_home.*
 import java.io.Serializable
 
 class GoalHomeActivity : AppCompatActivity(), GoalClickListener {
@@ -50,7 +51,7 @@ class GoalHomeActivity : AppCompatActivity(), GoalClickListener {
     }
 
     private fun setRecyclerView() {
-        adapter = GoalAdapter(list,this)
+        adapter = GoalAdapter(list,this, itemViewModel)
         val linearLayoutManager = LinearLayoutManager(this)
         binding.apply {
             goalRecyclerView.adapter = adapter

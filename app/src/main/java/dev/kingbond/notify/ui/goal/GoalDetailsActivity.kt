@@ -59,6 +59,7 @@ class GoalDetailsActivity : AppCompatActivity(), TaskClickListener {
     private fun addTaskToGoal() {
         binding.addTaskToGoal.setOnClickListener {
             val intent = Intent(this, TaskGoalActivity::class.java)
+            intent.putExtra("goalName",binding.goalDetailsTitle.text.toString())
             startActivity(intent)
         }
     }
