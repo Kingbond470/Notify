@@ -52,7 +52,6 @@ public class AlarmBrodcast extends BroadcastReceiver {
 //                .setUsage(AudioAttributes.USAGE_ALARM)
 //                .build();
 
-
 //        mBuilder.setSound(soundUri);
 //        Toast.makeText(context, "android.resource://"
 //                + context.getPackageName() + "/" + R.raw.alarm, Toast.LENGTH_SHORT).show();
