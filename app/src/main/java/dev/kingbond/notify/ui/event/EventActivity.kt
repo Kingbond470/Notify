@@ -1,6 +1,5 @@
 package dev.kingbond.notify.ui.event
 
-import android.annotation.SuppressLint
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
 import android.content.Intent
@@ -13,8 +12,6 @@ import dev.kingbond.notify.R
 import dev.kingbond.notify.data.database.RoomDataBaseClass
 import dev.kingbond.notify.databinding.ActivityEventBinding
 import dev.kingbond.notify.repository.RepositoryClass
-import dev.kingbond.notify.ui.goal.GoalHomeActivity
-import dev.kingbond.notify.ui.goal.model.GoalModel
 import dev.kingbond.notify.viewmodel.ViewModelClass
 import dev.kingbond.notify.viewmodel.ViewModelFactory
 import kotlinx.android.synthetic.main.activity_event.*
@@ -87,12 +84,13 @@ class EventActivity : AppCompatActivity() {
             addTime()
         }
 
+        /*
         val eventType = eventbinding.autoCompleteTextViewTypeOfEvent.getText().toString()
         val eventDescription = eventbinding.etEventDescription.getText().toString()
         val eventDate = eventbinding.addEventDate.getText().toString()
         val eventTime = eventbinding.addEventTime.getText().toString()
         val eventTransport = eventbinding.autoCompleteTextViewTypeOfTransport.getText().toString()
-
+         */
 
         //pick start point
         eventbinding.addStartPoint.setOnClickListener {
@@ -101,7 +99,8 @@ class EventActivity : AppCompatActivity() {
             val eventDescription3 = eventbinding.etEventDescription.getText().toString()
             val eventDate3 = eventbinding.addEventDate.getText().toString()
             val eventTime3 = eventbinding.addEventTime.getText().toString()
-            val eventTransport3 = eventbinding.autoCompleteTextViewTypeOfTransport.getText().toString()
+            val eventTransport3 =
+                eventbinding.autoCompleteTextViewTypeOfTransport.getText().toString()
 
             val intent = Intent(this@EventActivity, LocationSearchActivity::class.java)
             intent.putExtra("location", "start")
@@ -131,7 +130,8 @@ class EventActivity : AppCompatActivity() {
             val eventDescription3 = eventbinding.etEventDescription.getText().toString()
             val eventDate3 = eventbinding.addEventDate.getText().toString()
             val eventTime3 = eventbinding.addEventTime.getText().toString()
-            val eventTransport3 = eventbinding.autoCompleteTextViewTypeOfTransport.getText().toString()
+            val eventTransport3 =
+                eventbinding.autoCompleteTextViewTypeOfTransport.getText().toString()
 
             val intent = Intent(this@EventActivity, LocationSearchActivity::class.java)
             intent.putExtra("location", "end")
