@@ -88,21 +88,21 @@ class TaskHomeActivity : AppCompatActivity(),TaskClickListener {
         taskModel.status = 1
         itemViewModel.updateDataInTaskTable(taskModel)
 
-        var percent = 0
-        itemViewModel.getTasksOfGoal(taskModel.category).observe(this, Observer {
-            percent = (100/it.size)
-        })
-        itemViewModel.getCompletedCountOfTask(taskModel.category).observe(this, Observer {
-            percent = percent*it
-        })
-
-        itemViewModel.getOneGoal(taskModel.category).observe(this, Observer {
-            val goalModel = it
-            val goalpercent = goalModel.percent
-            goalModel.percent= goalpercent+percent
-
-            itemViewModel.updateDataIntoGoalTable(goalModel)
-        })
+//        var percent = 0
+//        itemViewModel.getTasksOfGoal(taskModel.category).observe(this, Observer {
+//            percent = (100/it.size)
+//        })
+//        itemViewModel.getCompletedCountOfTask(taskModel.category).observe(this, Observer {
+//            percent = percent*it
+//        })
+//
+//        itemViewModel.getOneGoal(taskModel.category).observe(this, Observer {
+//            val goalModel = it
+//            val goalpercent = goalModel.percent
+//            goalModel.percent= goalpercent+percent
+//
+//            itemViewModel.updateDataIntoGoalTable(goalModel)
+//        })
 
     }
 

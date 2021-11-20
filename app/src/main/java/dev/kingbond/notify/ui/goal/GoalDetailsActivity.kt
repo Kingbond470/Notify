@@ -99,26 +99,26 @@ class GoalDetailsActivity : AppCompatActivity(), TaskClickListener {
         taskModel.status = 1
         itemViewModel.updateDataInTaskTable(taskModel)
 
-        var percent = 0
-        var size = 0
-        var count = 0
-        itemViewModel.getTasksOfGoal(taskModel.category).observe(this, Observer {
-            size = it.size
-        })
-        itemViewModel.getCompletedCountOfTask(taskModel.category).observe(this, Observer {
-            count = it
-
-            percent = (100/size)*count
-        })
-
-
-        itemViewModel.getOneGoal(taskModel.category).observe(this, Observer {
-            val goalModel = it
-            val goalpercent = goalModel.percent
-            goalModel.percent= goalpercent+percent
-
-            itemViewModel.updateDataIntoGoalTable(goalModel)
-        })
+//        var percent = 0
+//        var size = 0
+//        var count = 0
+//        itemViewModel.getTasksOfGoal(taskModel.category).observe(this, Observer {
+//            size = it.size
+//        })
+//        itemViewModel.getCompletedCountOfTask(taskModel.category).observe(this, Observer {
+//            count = it
+//
+//            percent = (100/size)*count
+//        })
+//
+//
+//        itemViewModel.getOneGoal(taskModel.category).observe(this, Observer {
+//            val goalModel = it
+//            val goalpercent = goalModel.percent
+//            goalModel.percent= goalpercent+percent
+//
+//            itemViewModel.updateDataIntoGoalTable(goalModel)
+//        })
 
     }
 
