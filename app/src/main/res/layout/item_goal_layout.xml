@@ -88,7 +88,7 @@
                 android:backgroundTint="@color/white"
                 android:indeterminate="false"
                 android:max="100"
-                android:progress="70"
+                android:progress="@{goal.percent}"
                 android:progressBackgroundTint="@color/blue"
                 android:progressTint="@color/green" />
 
