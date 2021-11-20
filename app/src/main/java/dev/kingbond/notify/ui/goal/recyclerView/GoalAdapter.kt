@@ -11,8 +11,7 @@ import dev.kingbond.notify.viewmodel.ViewModelClass
 
 class GoalAdapter(
     private val list: ArrayList<GoalModel>,
-    val goalClickListener: GoalClickListener,
-    val itemViewModelClass: ViewModelClass
+    val goalClickListener: GoalClickListener
 ) : RecyclerView.Adapter<GoalViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GoalViewHolder {
         return GoalViewHolder(
@@ -21,7 +20,7 @@ class GoalAdapter(
                 R.layout.item_goal_layout,
                 parent,
                 false
-            ), goalClickListener, itemViewModelClass
+            ), goalClickListener
         )
     }
 
@@ -37,8 +36,7 @@ class GoalAdapter(
 
 class GoalViewHolder(
     var itemGoalLayoutBinding: ItemGoalLayoutBinding,
-    val goalClickListener: GoalClickListener,
-    val itemViewModelClass: ViewModelClass
+    val goalClickListener: GoalClickListener
 ) : RecyclerView.ViewHolder(itemGoalLayoutBinding.root) {
 
     fun setGoalData(goalModel: GoalModel) {

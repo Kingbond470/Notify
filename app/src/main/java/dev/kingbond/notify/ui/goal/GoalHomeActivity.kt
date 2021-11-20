@@ -50,7 +50,7 @@ class GoalHomeActivity : AppCompatActivity(), GoalClickListener {
     }
 
     private fun setRecyclerView() {
-        adapter = GoalAdapter(list,this,itemViewModel)
+        adapter = GoalAdapter(list,this)
         val linearLayoutManager = LinearLayoutManager(this)
         binding.apply {
             goalRecyclerView.adapter = adapter

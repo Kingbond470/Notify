@@ -18,7 +18,10 @@ data class GoalModel(
     val to_date:String,
 
     @ColumnInfo(name = "from_date")
-    val from_date:String
+    val from_date:String,
+
+    @ColumnInfo(name = "percent")
+    val percent:Int
 ) :Serializable{
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")

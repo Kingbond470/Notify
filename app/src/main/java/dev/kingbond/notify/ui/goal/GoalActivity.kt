@@ -49,7 +49,7 @@ class GoalActivity : AppCompatActivity() {
             val toDate = binding.addToDateGoal.text.toString()
             val fromDate = binding.addFromDateGoal.text.toString()
 
-            val goalModel = GoalModel(name, desc, toDate, fromDate)
+            val goalModel = GoalModel(name, desc, toDate, fromDate,0)
             itemViewModel.insertDataIntoGoalTable(goalModel)
 
 //            val intent = Intent(this, GoalHomeActivity::class.java)
