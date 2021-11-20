@@ -17,12 +17,6 @@ class RepositoryClass(val classDao: ClassDao) {
         }
     }
 
-    fun updateDataToGoal(goalModel: GoalModel){
-        CoroutineScope(Dispatchers.IO).launch {
-            classDao.updateDataInGoal(goalModel)
-        }
-    }
-
     fun getAllGoals(): LiveData<List<GoalModel>> {
         return classDao.fetchDataFromGoal()
     }

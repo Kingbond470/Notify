@@ -12,9 +12,6 @@ interface ClassDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertDataInGoal(goalModel: GoalModel)
 
-    @Update
-    fun updateDataInGoal(goalModel: GoalModel)
-
     @Query("select * from goal_table")
     fun fetchDataFromGoal():LiveData<List<GoalModel>>
 

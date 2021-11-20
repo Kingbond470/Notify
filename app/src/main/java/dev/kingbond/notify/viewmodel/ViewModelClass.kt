@@ -15,10 +15,6 @@ class ViewModelClass(val repo: RepositoryClass) : ViewModel() {
         repo.addDataToGoal(goalModel)
     }
 
-    fun updateDataIntoGoalTable(goalModel: GoalModel){
-        repo.updateDataToGoal(goalModel)
-    }
-
     fun getDataFromGoal(): LiveData<List<GoalModel>> {
         return repo.getAllGoals()
     }
