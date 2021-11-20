@@ -25,7 +25,15 @@ class EventAdapter(
 
     override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
         val event = list[position]
-        //list[position].
+
+        /*
+        var t: String = list[position].counter_time.toString()
+        while (t <= 0) {
+            t--
+        }
+
+        */
+
         holder.setEventData(event)
     }
 

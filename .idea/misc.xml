@@ -36,25 +36,11 @@
         <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/layout/activity_maps.xml" value="0.19157608695652173" />
         <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/layout/activity_maps_search.xml" value="0.19157608695652173" />
         <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/layout/activity_spalsh.xml" value="0.19157608695652173" />
+        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/layout/activity_task.xml" value="0.21014492753623187" />
         <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/layout/dropdown_item.xml" value="0.19157608695652173" />
         <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/layout/item_event_layout.xml" value="0.2" />
         <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/layout/item_goal_layout.xml" value="0.213768115942029" />
         <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/layout/item_task_layout.xml" value="0.21014492753623187" />
-        <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_task.xml" value="0.3706777316735823" />
-        <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_task_goal.xml" value="0.2" />
-        <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_task_home.xml" value="0.25" />
-        <entry key="..\:/Android/Notify/app/src/main/res/layout/calendar_cell.xml" value="0.20416666666666666" />
-        <entry key="..\:/Android/Notify/app/src/main/res/layout/fragment_calendar.xml" value="0.2" />
-        <entry key="..\:/Android/Notify/app/src/main/res/layout/fragment_setting.xml" value="0.19010416666666666" />
-        <entry key="..\:/Android/Notify/app/src/main/res/layout/fragment_setting_user_profile.xml" value="0.22" />
-        <entry key="..\:/Android/Notify/app/src/main/res/layout/item_event_layout.xml" value="0.22" />
-        <entry key="..\:/Android/Notify/app/src/main/res/layout/item_goal_layout.xml" value="0.20416666666666666" />
-        <entry key="..\:/Android/Notify/app/src/main/res/layout/item_task_layout.xml" value="0.2" />
-        <entry key="..\:/Android/Notify/app/src/main/res/layout/nav_header.xml" value="0.20416666666666666" />
-        <entry key="..\:/Android/Notify/app/src/main/res/layout/notification_layout.xml" value="0.25" />
-        <entry key="..\:/Android/Notify/app/src/main/res/layout/task_dialogue_layout.xml" value="0.25" />
-        <entry key="..\:/Android/Notify/app/src/main/res/menu/bottom_menu.xml" value="0.20416666666666666" />
-        <entry key="..\:/Android/Notify/app/src/main/res/menu/nav_menu.xml" value="0.20416666666666666" />
       </map>
     </option>
   </component>

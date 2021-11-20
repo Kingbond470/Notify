@@ -265,6 +265,7 @@ class EventActivity : AppCompatActivity() {
     }
 
     private fun addDate() {
+
         val cal = Calendar.getInstance()
         val dateSetListener =
             DatePickerDialog.OnDateSetListener { anotherView, year, monthOfYear, dayOfMonth ->

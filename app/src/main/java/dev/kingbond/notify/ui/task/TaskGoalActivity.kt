@@ -15,8 +15,8 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class TaskGoalActivity : AppCompatActivity() {
-    private lateinit var binding:ActivityTaskGoalBinding
-    private lateinit var itemViewModel:ViewModelClass
+    private lateinit var binding: ActivityTaskGoalBinding
+    private lateinit var itemViewModel: ViewModelClass
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTaskGoalBinding.inflate(layoutInflater)
@@ -27,7 +27,8 @@ class TaskGoalActivity : AppCompatActivity() {
         val dao = roomDatabase.getDao()
         val repo = RepositoryClass(dao)
         val viewModelFactory = ViewModelFactory(repo)
-        itemViewModel = ViewModelProviders.of(this,viewModelFactory).get(ViewModelClass::class.java)
+        itemViewModel =
+            ViewModelProviders.of(this, viewModelFactory).get(ViewModelClass::class.java)
 
 
         setDate()
@@ -35,16 +36,17 @@ class TaskGoalActivity : AppCompatActivity() {
         submitItemTask(goalName!!)
     }
 
-    private fun submitItemTask(goalName:String) {
+    private fun submitItemTask(goalName: String) {
         binding.submitTask.setOnClickListener {
 
             binding.apply {
                 val taskModel = TaskModel(
                     TaskName.text.toString(),
                     TaskDescription.text.toString(),
-                    addToDateTask.text.toString(),addTimeTask.text.toString(),
+                    addToDateTask.text.toString(), addTimeTask.text.toString(),
                     0,
-                    goalName)
+                    goalName
+                )
 
                 itemViewModel.insertDataInTaskTable(taskModel)
             }
