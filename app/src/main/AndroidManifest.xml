@@ -20,6 +20,15 @@
         android:theme="@style/Theme.Notify">
 
         <activity
+            android:name=".ui.settings.SettingsUserProfileActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.settings.SettingsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".ui.profile.EditProfileActivity"
+            android:exported="true"
+            android:theme="@style/Theme.EditProfile" />
             android:name=".ui.event.LocationSearchActivity"
             android:exported="true" />
 

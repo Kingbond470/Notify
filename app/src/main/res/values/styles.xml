@@ -30,4 +30,26 @@
         <!-- Customize your theme here. -->
 
     </style>
+
+    <style name="clickable_effect">
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+        <item name="android:theme">@android:style/ThemeOverlay.Material.Dark</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+    </style>
+
+    <style name="BrandedSwitch">
+        <item name="colorAccent">@color/app_background_navy_blue</item>
+    </style>
+
+    <style name="MatchSpinnerStyle" parent="android:style/Widget.ListView.DropDown">
+        <item name="android:divider">@color/grey1</item>
+        <item name="android:dividerHeight">1dp</item>
+    </style>
+
+    <style name="MatchSpinnerTheme" parent="Theme.AppCompat">
+        <item name="android:dropDownListViewStyle">@style/MatchSpinnerStyle</item>
+    </style>
+
 </resources>
