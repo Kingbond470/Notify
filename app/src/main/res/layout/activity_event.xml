@@ -133,7 +133,7 @@
         android:background="@color/app_background"
         android:padding="15dp"
         android:paddingVertical="10dp"
-        android:text="2021-11-22"
+        android:text="2021-11-21"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -162,7 +162,7 @@
         android:background="@color/app_background"
         android:padding="15dp"
         android:paddingVertical="10dp"
-        android:text="09:00"
+        android:text="09:00 AM"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -275,5 +275,38 @@
         app:layout_constraintRight_toRightOf="parent"
         app:srcCompat="@drawable/ic_task_tick" />
 
+    <TextView
+        android:id="@+id/tvDistance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/app_background"
+        android:padding="15dp"
+        android:paddingVertical="10dp"
+        android:text="Distance to Travel"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tvTimeAlarm"
+        app:layout_constraintTop_toBottomOf="@id/addEndPoint" />
+
+    <TextView
+        android:id="@+id/tvTimeAlarm"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/app_background"
+        android:padding="15dp"
+        android:paddingVertical="10dp"
+        android:text="Alarm Time"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintLeft_toRightOf="@id/tvDistance"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addEndPoint" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

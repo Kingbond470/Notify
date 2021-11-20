@@ -30,14 +30,25 @@ class EventActivity : AppCompatActivity() {
 
         //coming from location search activity
         val startpoint = intent.getStringExtra("start")
+        val startpointLatitude = intent.getStringExtra("startLatitude")
+        val startpointLongitude = intent.getStringExtra("startLongitude")
+
         val endpoint = intent.getStringExtra("end")
+        val endpointLatitude = intent.getStringExtra("endLatitude")
+        val endpointLongitude = intent.getStringExtra("endLongitude")
 
         val eventType2 = intent.getStringExtra("eventType")
         val eventDescription2 = intent.getStringExtra("eventDescription")
         val eventDate2 = intent.getStringExtra("eventDate")
         val eventTime2 = intent.getStringExtra("eventTime")
         val eventTransport2 = intent.getStringExtra("eventTransport")
+
         val startpoint2 = intent.getStringExtra("estart")
+        val startpoint2Latitude = intent.getStringExtra("estartLatitude")
+        val startpoint2Longitude = intent.getStringExtra("estartLongitude")
+
+
+        val distance = intent.getStringExtra("distance")
 
         eventbinding = ActivityEventBinding.inflate(layoutInflater)
         setContentView(eventbinding.root)
@@ -48,6 +59,15 @@ class EventActivity : AppCompatActivity() {
         val viewModelFactory = ViewModelFactory(repo)
         itemViewModel =
             ViewModelProviders.of(this, viewModelFactory).get(ViewModelClass::class.java)
+
+
+        /*Toast.makeText(
+            this,
+            "lat = $startpointLatitude lon = $startpointLongitude",
+            Toast.LENGTH_SHORT
+        )
+            .show()*/
+
 
         //select type of event
         val autotextView = findViewById<AutoCompleteTextView>(R.id.autoCompleteTextViewTypeOfEvent)
@@ -122,7 +142,6 @@ class EventActivity : AppCompatActivity() {
 
         }
 
-
         //pick end point
         eventbinding.addEndPoint.setOnClickListener {
 
@@ -136,6 +155,8 @@ class EventActivity : AppCompatActivity() {
             val intent = Intent(this@EventActivity, LocationSearchActivity::class.java)
             intent.putExtra("location", "end")
             intent.putExtra("start", eventbinding.addStartPoint.text.toString())
+            intent.putExtra("startLatitude", startpointLatitude.toString())
+            intent.putExtra("startLongitude", startpointLongitude.toString())
             intent.putExtra("eventType", eventType3)
             intent.putExtra("eventDescription", eventDescription3)
             intent.putExtra("eventDate", eventDate3)
@@ -147,12 +168,18 @@ class EventActivity : AppCompatActivity() {
             eventbinding.addEndPoint.text = endpoint.toString()
 
             eventbinding.addStartPoint.text = startpoint2.toString()
+
             eventbinding.autoCompleteTextViewTypeOfEvent.setText(eventType2.toString())
             eventbinding.etEventDescription.setText(eventDescription2.toString())
             eventbinding.addEventDate.text = eventDate2.toString()
             eventbinding.addEventTime.text = eventTime2.toString()
             eventbinding.autoCompleteTextViewTypeOfTransport.setText(eventTransport2.toString())
 
+        }
+
+        //distance
+        if (distance != "0.0") {
+            eventbinding.tvDistance.text = distance.toString() + " KM"
         }
 
 
@@ -169,7 +196,6 @@ class EventActivity : AppCompatActivity() {
         val eventDate = addEventDate.getText().toString()
         val eventTime = addEventTime.getText().toString()
         val eventTransport = eventbinding.autoCompleteTextViewTypeOfTransport.getText().toString()
-
 
         Toast.makeText(
             this,
