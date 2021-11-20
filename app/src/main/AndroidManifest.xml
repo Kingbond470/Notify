@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     package="dev.kingbond.notify">
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
@@ -30,8 +29,9 @@
             android:name=".ui.profile.EditProfileActivity"
             android:exported="true"
             android:theme="@style/Theme.EditProfile" />
-        android:name=".ui.event.LocationSearchActivity"
-        android:exported="true" />
+        <activity
+            android:name=".ui.event.LocationSearchActivity"
+            android:exported="true" />
 
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
@@ -50,9 +50,6 @@
             android:name=".ui.event.MapsActivity"
             android:exported="true"
             android:label="@string/title_activity_maps" />
-        <activity
-            android:name=".ui.event.LocationSearchActivity"
-            android:exported="true" />
         <activity
             android:name=".ui.event.EventActivity"
             android:exported="true" />
@@ -76,7 +73,9 @@
         <activity
             android:name=".ui.task.TaskHomeActivity"
             android:exported="true"
-            android:theme="@style/Theme.Goals"></activity>
+            android:theme="@style/Theme.Goals">
+
+        </activity>
         <activity
             android:name=".ui.goal.GoalHomeActivity"
             android:exported="true"
@@ -105,7 +104,6 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-        android:exported="true" />
     </application>
 
 </manifest>
