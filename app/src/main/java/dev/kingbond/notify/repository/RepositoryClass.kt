@@ -39,7 +39,7 @@ class RepositoryClass(val classDao: ClassDao) {
         }
     }
 
-    fun getCompletedTaskGoal(goalName: String):LiveData<Int>{
+    fun getCompletedTaskGoal(goalName: String):LiveData<List<TaskModel>>{
         return classDao.getCountOfCompletedTasks(goalName)
     }
 

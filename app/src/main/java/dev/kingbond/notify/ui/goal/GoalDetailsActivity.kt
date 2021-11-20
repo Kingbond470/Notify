@@ -67,7 +67,7 @@ class GoalDetailsActivity : AppCompatActivity(), TaskClickListener {
 
     private fun setRecyclerView() {
 
-        adapter = TaskAdapter(list, this)
+        adapter = TaskAdapter(list, this,itemViewModel,this)
         val linearLayoutManager = LinearLayoutManager(this)
         binding.apply {
             goalDetailsRecyclerView.adapter = adapter
@@ -99,30 +99,10 @@ class GoalDetailsActivity : AppCompatActivity(), TaskClickListener {
         taskModel.status = 1
         itemViewModel.updateDataInTaskTable(taskModel)
 
-//        var percent = 0
-//        var size = 0
-//        var count = 0
-//        itemViewModel.getTasksOfGoal(taskModel.category).observe(this, Observer {
-//            size = it.size
-//        })
-//        itemViewModel.getCompletedCountOfTask(taskModel.category).observe(this, Observer {
-//            count = it
-//
-//            percent = (100/size)*count
-//        })
-//
-//
-//        itemViewModel.getOneGoal(taskModel.category).observe(this, Observer {
-//            val goalModel = it
-//            val goalpercent = goalModel.percent
-//            goalModel.percent= goalpercent+percent
-//
-//            itemViewModel.updateDataIntoGoalTable(goalModel)
-//        })
-
     }
 
     override fun taskNotCompletedClicked(taskModel: TaskModel) {
-
+        taskModel.status = 0
+        itemViewModel.updateDataInTaskTable(taskModel)
     }
 }

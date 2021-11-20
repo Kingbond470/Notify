@@ -31,7 +31,7 @@ class ViewModelClass(val repo: RepositoryClass) : ViewModel() {
         repo.updateToTask(taskModel)
     }
 
-    fun getCompletedCountOfTask(goalName: String):LiveData<Int>{
+    fun getCompletedCountOfTask(goalName: String):LiveData<List<TaskModel>>{
         return repo.getCompletedTaskGoal(goalName)
     }
 

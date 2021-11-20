@@ -4,18 +4,30 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.RecyclerView
 import dev.kingbond.notify.R
 import dev.kingbond.notify.databinding.ItemTaskLayoutBinding
 import dev.kingbond.notify.databinding.TaskCompletedItemLayoutBinding
 import dev.kingbond.notify.ui.task.model.TaskModel
+import dev.kingbond.notify.viewmodel.ViewModelClass
 
-class TaskAdapter(val list:ArrayList<TaskModel>, val taskClickListener: TaskClickListener):RecyclerView.Adapter<TaskViewHolder>() {
+class TaskAdapter(
+    val list: ArrayList<TaskModel>,
+    private val taskClickListener: TaskClickListener,
+    private val itemViewModelClass: ViewModelClass,
+    private val lifecycleOwner: LifecycleOwner,
+) :
+    RecyclerView.Adapter<TaskViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
         return TaskViewHolder(
-                DataBindingUtil.inflate(LayoutInflater.from(parent.context),
-                R.layout.item_task_layout,parent,false),
-                taskClickListener
+            DataBindingUtil.inflate(
+                LayoutInflater.from(parent.context),
+                R.layout.item_task_layout, parent, false
+            ),
+            taskClickListener,
+            itemViewModelClass,
+            lifecycleOwner
         )
     }
 
@@ -29,10 +41,24 @@ class TaskAdapter(val list:ArrayList<TaskModel>, val taskClickListener: TaskClic
     }
 }
 
-class TaskCompletedAdapter(val list:ArrayList<TaskModel>,val taskClickListener: TaskClickListener):RecyclerView.Adapter<TaskCompletedViewHolder>(){
+class TaskCompletedAdapter(
+    val list: ArrayList<TaskModel>,
+    private val taskClickListener: TaskClickListener,
+    private val itemViewModelClass: ViewModelClass,
+    private val lifecycleOwner: LifecycleOwner
+) : RecyclerView.Adapter<TaskCompletedViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskCompletedViewHolder {
 
-        return TaskCompletedViewHolder(DataBindingUtil.inflate(LayoutInflater.from(parent.context),R.layout.task_completed_item_layout,parent,false),taskClickListener)
+        return TaskCompletedViewHolder(
+            DataBindingUtil.inflate(
+                LayoutInflater.from(parent.context),
+                R.layout.task_completed_item_layout,
+                parent,
+                false
+            ), taskClickListener,
+            itemViewModelClass,
+            lifecycleOwner
+        )
     }
 
     override fun onBindViewHolder(holder: TaskCompletedViewHolder, position: Int) {
@@ -49,9 +75,13 @@ class TaskCompletedAdapter(val list:ArrayList<TaskModel>,val taskClickListener: 
 }
 
 
-
-class TaskViewHolder(val itemTaskLayoutBinding: ItemTaskLayoutBinding,val taskClickListener: TaskClickListener):RecyclerView.ViewHolder(itemTaskLayoutBinding.root){
-    fun setTask(taskModel: TaskModel){
+class TaskViewHolder(
+    private val itemTaskLayoutBinding: ItemTaskLayoutBinding,
+    private val taskClickListener: TaskClickListener,
+    private val itemViewModelClass: ViewModelClass,
+    private val lifecycleOwner: LifecycleOwner
+) : RecyclerView.ViewHolder(itemTaskLayoutBinding.root) {
+    fun setTask(taskModel: TaskModel) {
 
         itemTaskLayoutBinding.task = taskModel
 
@@ -59,19 +89,25 @@ class TaskViewHolder(val itemTaskLayoutBinding: ItemTaskLayoutBinding,val taskCl
             taskClickListener.taskItemClicked(taskModel)
         }
 
+        if(taskModel.status == 1) itemTaskLayoutBinding.ivTaskCompleted.visibility = View.GONE
         itemTaskLayoutBinding.ivTaskCompleted.setOnClickListener {
             taskClickListener.taskCompletedClicked(taskModel)
-            it.visibility = View.GONE
         }
 
         itemTaskLayoutBinding.ivTaskNotCompleted.setOnClickListener {
             taskClickListener.taskNotCompletedClicked(taskModel)
+            itemTaskLayoutBinding.ivTaskCompleted.visibility = View.VISIBLE
         }
     }
 }
 
-class TaskCompletedViewHolder(val itemTaskLayoutBinding: TaskCompletedItemLayoutBinding,val taskClickListener: TaskClickListener):RecyclerView.ViewHolder(itemTaskLayoutBinding.root){
-    fun setTask(taskModel: TaskModel){
+class TaskCompletedViewHolder(
+    private val itemTaskLayoutBinding: TaskCompletedItemLayoutBinding,
+    private val taskClickListener: TaskClickListener,
+    private val itemViewModelClass: ViewModelClass,
+    private val lifecycleOwner: LifecycleOwner
+) : RecyclerView.ViewHolder(itemTaskLayoutBinding.root) {
+    fun setTask(taskModel: TaskModel) {
 
         itemTaskLayoutBinding.task = taskModel
 

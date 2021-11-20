@@ -24,8 +24,8 @@ interface ClassDao {
     @Update
     fun updateDataInTask(taskModel: TaskModel)
 
-    @Query("select sum(status) as total from task_table where category = :goalName")
-    fun getCountOfCompletedTasks(goalName:String):LiveData<Int>
+    @Query("select * from task_table where category = :goalName and status = 1")
+    fun getCountOfCompletedTasks(goalName:String):LiveData<List<TaskModel>>
 
     @Query("select * from task_table where status = 1")
     fun getCompletedTask():LiveData<List<TaskModel>>
