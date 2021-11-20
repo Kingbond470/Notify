@@ -71,7 +71,7 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar), DateClickListener
             goalAdapter.notifyDataSetChanged()
         })
 
-        goalAdapter = GoalAdapter(listGoal, this)
+        goalAdapter = GoalAdapter(listGoal, this,itemViewModel)
         val linearLayoutManager = LinearLayoutManager(requireContext())
         val linearLayoutManager2 = LinearLayoutManager(requireContext())
         binding.apply {
@@ -166,8 +166,6 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar), DateClickListener
         TODO("Not yet implemented")
     }
 
-    override fun goalItemAddClicked(goalModel: GoalModel) {
-        TODO("Not yet implemented")
-    }
+
 
 }
