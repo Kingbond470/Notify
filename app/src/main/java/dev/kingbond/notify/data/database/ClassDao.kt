@@ -16,7 +16,7 @@ interface ClassDao {
     fun updateDataInGoal(goalModel: GoalModel)
 
     @Query("select * from goal_table")
-    fun fetchDataFromGoal(): LiveData<List<GoalModel>>
+    fun fetchDataFromGoal():LiveData<List<GoalModel>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertDataInTask(taskModel: TaskModel)
@@ -24,8 +24,14 @@ interface ClassDao {
     @Update
     fun updateDataInTask(taskModel: TaskModel)
 
+    @Query("select sum(status) as total from task_table where category = :goalName")
+    fun getCountOfCompletedTasks(goalName:String):LiveData<Int>
+
+    @Query("select * from task_table where status = 1")
+    fun getCompletedTask():LiveData<List<TaskModel>>
+
     @Query("select * from task_table")
-    fun fetchDataFromTask(): LiveData<List<TaskModel>>
+    fun fetchDataFromTask():LiveData<List<TaskModel>>
 
     @Query("select * from task_table where category = :goalName")
     fun getTasksWithGoal(goalName: String): LiveData<List<TaskModel>>
@@ -35,5 +41,10 @@ interface ClassDao {
 
     @Query("select * from event_table")
     fun fetchDataFromEvent(): LiveData<List<EventModel>>
+
+    @Query("select * from goal_table where name = :goalName")
+    fun getGoalModel(goalName:String):LiveData<GoalModel>
+
+
 
 }

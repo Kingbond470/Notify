@@ -59,6 +59,8 @@ class GoalDetailsActivity : AppCompatActivity(), TaskClickListener {
     private fun addTaskToGoal() {
         binding.addTaskToGoal.setOnClickListener {
             val intent = Intent(this, TaskGoalActivity::class.java)
+            val name = binding.goalDetailsTitle.text.toString()
+            intent.putExtra("goalName",name)
             startActivity(intent)
         }
     }
@@ -90,5 +92,37 @@ class GoalDetailsActivity : AppCompatActivity(), TaskClickListener {
         taskDialogLayoutBinding.okDialogTask.setOnClickListener {
             bottomSheetDialog.dismiss()
         }
+    }
+
+    override fun taskCompletedClicked(taskModel: TaskModel) {
+
+        taskModel.status = 1
+        itemViewModel.updateDataInTaskTable(taskModel)
+
+//        var percent = 0
+//        var size = 0
+//        var count = 0
+//        itemViewModel.getTasksOfGoal(taskModel.category).observe(this, Observer {
+//            size = it.size
+//        })
+//        itemViewModel.getCompletedCountOfTask(taskModel.category).observe(this, Observer {
+//            count = it
+//
+//            percent = (100/size)*count
+//        })
+//
+//
+//        itemViewModel.getOneGoal(taskModel.category).observe(this, Observer {
+//            val goalModel = it
+//            val goalpercent = goalModel.percent
+//            goalModel.percent= goalpercent+percent
+//
+//            itemViewModel.updateDataIntoGoalTable(goalModel)
+//        })
+
+    }
+
+    override fun taskNotCompletedClicked(taskModel: TaskModel) {
+
     }
 }

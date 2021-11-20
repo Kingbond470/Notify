@@ -12,6 +12,7 @@ import dev.kingbond.notify.data.database.RoomDataBaseClass
 import dev.kingbond.notify.databinding.ActivityTaskHomeBinding
 import dev.kingbond.notify.databinding.TaskDialogueLayoutBinding
 import dev.kingbond.notify.repository.RepositoryClass
+import dev.kingbond.notify.ui.goal.model.GoalModel
 import dev.kingbond.notify.ui.task.model.TaskModel
 import dev.kingbond.notify.ui.task.recyclerView.TaskAdapter
 import dev.kingbond.notify.ui.task.recyclerView.TaskClickListener
@@ -76,6 +77,33 @@ class TaskHomeActivity : AppCompatActivity(),TaskClickListener {
         taskDialogLayoutBinding.okDialogTask.setOnClickListener {
             bottomSheetDialog.dismiss()
         }
+
+    }
+
+    override fun taskCompletedClicked(taskModel: TaskModel) {
+
+        taskModel.status = 1
+        itemViewModel.updateDataInTaskTable(taskModel)
+
+//        var percent = 0
+//        itemViewModel.getTasksOfGoal(taskModel.category).observe(this, Observer {
+//            percent = (100/it.size)
+//        })
+//        itemViewModel.getCompletedCountOfTask(taskModel.category).observe(this, Observer {
+//            percent = percent*it
+//        })
+//
+//        itemViewModel.getOneGoal(taskModel.category).observe(this, Observer {
+//            val goalModel = it
+//            val goalpercent = goalModel.percent
+//            goalModel.percent= goalpercent+percent
+//
+//            itemViewModel.updateDataIntoGoalTable(goalModel)
+//        })
+
+    }
+
+    override fun taskNotCompletedClicked(taskModel: TaskModel) {
 
     }
 }

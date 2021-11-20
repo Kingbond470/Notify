@@ -145,5 +145,9 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:18.0.0'
     implementation 'com.google.android.gms:play-services-location:18.0.0'
 
+    //chart library
+    implementation 'com.github.AnyChart:AnyChart-Android:1.1.2'
+
+
 
 }

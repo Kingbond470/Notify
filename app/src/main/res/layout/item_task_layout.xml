@@ -99,6 +99,20 @@
                     android:src="@drawable/ic_task_check_thin" />
 
                 <ImageView
+                    android:id="@+id/ivTaskCompleted"
+                    android:src="@drawable/ic_task_tick"
+                    android:backgroundTint="@color/app_background_navy_blue"
+                    android:padding="10dp"
+                    android:layout_marginRight="5dp"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
+
+                <ImageView
+                    android:id="@+id/ivTaskNotCompleted"
+                    android:layout_marginLeft="5dp"
+                    android:padding="5dp"
+                    android:src="@drawable/ic_task_cancel"
+                    android:textColor="@color/white"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ic_task_cross_thin" />

@@ -41,6 +41,23 @@
         <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/layout/item_event_layout.xml" value="0.2" />
         <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/layout/item_goal_layout.xml" value="0.213768115942029" />
         <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/layout/item_task_layout.xml" value="0.21014492753623187" />
+        <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_task.xml" value="0.2" />
+        <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_task_goal.xml" value="0.2" />
+        <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_task_home.xml" value="0.2" />
+        <entry key="..\:/Android/Notify/app/src/main/res/layout/calendar_cell.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android/Notify/app/src/main/res/layout/fragment_calendar.xml" value="0.2" />
+        <entry key="..\:/Android/Notify/app/src/main/res/layout/fragment_setting.xml" value="0.19010416666666666" />
+        <entry key="..\:/Android/Notify/app/src/main/res/layout/fragment_setting_user_profile.xml" value="0.22" />
+        <entry key="..\:/Android/Notify/app/src/main/res/layout/item_event_layout.xml" value="0.22" />
+        <entry key="..\:/Android/Notify/app/src/main/res/layout/item_goal_layout.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android/Notify/app/src/main/res/layout/item_task_layout.xml" value="0.22" />
+        <entry key="..\:/Android/Notify/app/src/main/res/layout/nav_header.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android/Notify/app/src/main/res/menu/bottom_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android/Notify/app/src/main/res/menu/nav_menu.xml" value="0.20416666666666666" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Notify/app/src/main/res/layout/activity_goal_details.xml" value="0.13903985507246377" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Notify/app/src/main/res/layout/item_goal_layout.xml" value="0.136" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Notify/app/src/main/res/layout/item_task_layout.xml" value="0.13903985507246377" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Notify/app/src/main/res/layout/task_completed_item_layout.xml" value="0.2484375" />
       </map>
     </option>
   </component>
