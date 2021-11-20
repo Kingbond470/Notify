@@ -74,6 +74,7 @@ class HomeActivity : AppCompatActivity() {
                 R.id.profileFragment -> {
                     // replaceFragment()
                     Toast.makeText(applicationContext, "Profile", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this,SettingsActivity::class.java))
                 }
 
             }
