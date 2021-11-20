@@ -5,11 +5,12 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.location.*
 import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.EditText
 import android.widget.Toast
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.api.GoogleApiClient
@@ -26,7 +27,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import dev.kingbond.notify.R
 import kotlinx.android.synthetic.main.activity_location_search.*
 import java.io.IOException
-import android.location.Geocoder
+import java.time.LocalTime
 import java.util.*
 
 
@@ -141,6 +142,7 @@ class LocationSearchActivity : AppCompatActivity(), OnMapReadyCallback, Location
 
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     fun searchLocation(view: View) {
         val locationSearch: EditText = findViewById(R.id.et_search)
         var location: String
@@ -190,6 +192,43 @@ class LocationSearchActivity : AppCompatActivity(), OnMapReadyCallback, Location
                     dis = dis * 1.60934
                 }
 
+
+                //time
+
+                val hh = eventTime.split(":").toTypedArray()
+                val mm = hh[1].split(" ").toTypedArray()
+
+                val localTime = LocalTime.of(hh[0].toInt(), mm[0].toInt())
+
+                val aaa: String = mm[1].toString()
+
+
+                var time: Double = dis / 60.0
+
+                //hour
+                var hour: Double = 0.0
+                while (time / 1.0 >= 1.0) {
+                    hour = hour + 1.0
+                    time = time - 1.0
+                }
+                time = time * 60
+                //minute
+                var minute: Double = 0.0
+                while (time / 1.0 >= 1.0) {
+                    minute = minute + 1.0
+                    time = time - 1.0
+                }
+
+
+                val updatedTime: LocalTime =
+                    localTime.minusHours(hour.toLong()).minusMinutes(minute.toLong())
+
+
+
+
+
+                val alarmTime: String = updatedTime.toString() + " " + aaa
+
                 val intent = Intent(this@LocationSearchActivity, EventActivity::class.java)
                 intent.putExtra(loc, place)
                 intent.putExtra(loc + "Latitude", latitude.toString())
@@ -205,6 +244,8 @@ class LocationSearchActivity : AppCompatActivity(), OnMapReadyCallback, Location
                 intent.putExtra("estartLongitude", estartLongitude)
 
                 intent.putExtra("distance", dis.toString())
+
+                intent.putExtra("time", alarmTime.toString())
 
                 startActivity(intent)
             }

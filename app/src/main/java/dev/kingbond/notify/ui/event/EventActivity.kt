@@ -49,6 +49,7 @@ class EventActivity : AppCompatActivity() {
 
 
         val distance = intent.getStringExtra("distance")
+        val time = intent.getStringExtra("time")
 
         eventbinding = ActivityEventBinding.inflate(layoutInflater)
         setContentView(eventbinding.root)
@@ -180,6 +181,7 @@ class EventActivity : AppCompatActivity() {
         //distance
         if (distance != "0.0") {
             eventbinding.tvDistance.text = distance.toString() + " KM"
+            eventbinding.tvTimeAlarm.text = time.toString()
         }
 
 
