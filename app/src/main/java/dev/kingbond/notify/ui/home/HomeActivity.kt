@@ -136,15 +136,16 @@ class HomeActivity : AppCompatActivity() {
         homeBinding.fbAddNotify.setOnClickListener {
             // to show the three things -> events, task and goal
 
-            /*
+
             //event
             val intent = Intent(this@HomeActivity, EventActivity::class.java)
             startActivity(intent)
-             */
 
+            /*
             //goal
             val intent = Intent(this@HomeActivity, GoalHomeActivity::class.java)
             startActivity(intent)
+             */
 
         }
     }

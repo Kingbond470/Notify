@@ -14,7 +14,6 @@ import kotlinx.android.synthetic.main.activity_event.*
 import java.text.SimpleDateFormat
 import java.util.*
 
-
 class EventActivity : AppCompatActivity() {
 
     //private lateinit var binding: ActivityLoginBinding
