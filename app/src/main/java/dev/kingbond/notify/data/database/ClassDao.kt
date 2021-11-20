@@ -2,6 +2,7 @@ package dev.kingbond.notify.data.database
 
 import androidx.lifecycle.LiveData
 import androidx.room.*
+import dev.kingbond.notify.ui.event.EventModel
 import dev.kingbond.notify.ui.goal.model.GoalModel
 import dev.kingbond.notify.ui.task.model.TaskModel
 

@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.RecyclerView
 import dev.kingbond.notify.R
 import dev.kingbond.notify.databinding.ItemGoalLayoutBinding
 import dev.kingbond.notify.ui.goal.model.GoalModel
-import dev.kingbond.notify.viewmodel.ViewModelClass
 
 class GoalAdapter(
     private val list: ArrayList<GoalModel>,

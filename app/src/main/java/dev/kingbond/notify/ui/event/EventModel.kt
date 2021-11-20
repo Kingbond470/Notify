@@ -43,7 +43,10 @@ data class EventModel(
     val distance: String,
 
     @ColumnInfo(name = "alarm_time")
-    val alarm_time: String
+    val alarm_time: String,
+
+    @ColumnInfo(name = "counter_time")
+    val counter_time: String
 
 ) : Serializable {
     @PrimaryKey(autoGenerate = true)

@@ -225,6 +225,7 @@ class EventActivity : AppCompatActivity() {
                         endpointLatitude,
                         endpointLongitude,
                         distance,
+                        time,
                         time
                     )
                 itemViewModel.insertDataIntoEventTable(eventModel)

@@ -8,7 +8,7 @@ import dev.kingbond.notify.ui.event.EventModel
 import dev.kingbond.notify.ui.goal.model.GoalModel
 import dev.kingbond.notify.ui.task.model.TaskModel
 
-@Database(entities = [GoalModel::class, TaskModel::class, EventModel::class], version = 5)
+@Database(entities = [GoalModel::class, TaskModel::class, EventModel::class], version = 6)
 abstract class RoomDataBaseClass : RoomDatabase() {
     abstract fun getDao(): ClassDao
 

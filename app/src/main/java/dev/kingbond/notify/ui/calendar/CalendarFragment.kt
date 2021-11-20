@@ -19,6 +19,7 @@ import dev.kingbond.notify.databinding.ActivityGoalDetailsBinding
 import dev.kingbond.notify.databinding.FragmentCalendarBinding
 import dev.kingbond.notify.repository.RepositoryClass
 import dev.kingbond.notify.ui.event.EventAdapter
+import dev.kingbond.notify.ui.event.EventClickListener
 import dev.kingbond.notify.ui.event.EventModel
 import dev.kingbond.notify.ui.goal.model.GoalModel
 import dev.kingbond.notify.ui.goal.recyclerView.GoalAdapter
@@ -34,7 +35,8 @@ import java.time.YearMonth
 import java.time.format.DateTimeFormatter
 
 @RequiresApi(Build.VERSION_CODES.O)
-class CalendarFragment : Fragment(R.layout.fragment_calendar), DateClickListener, GoalClickListener, TaskClickListener {
+class CalendarFragment : Fragment(R.layout.fragment_calendar), DateClickListener, GoalClickListener,
+    TaskClickListener, EventClickListener {
 
     private var selectedDate: LocalDate? = null
     private lateinit var calendarAdapter: CalendarAdapter
@@ -92,9 +94,9 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar), DateClickListener
         })
 
 
-        goalAdapter = GoalAdapter(listGoal, this, itemViewModel)
+        goalAdapter = GoalAdapter(listGoal, this)
         taskAdapter = TaskAdapter(listTask, this)
-        eventAdapter = EventAdapter(listEvent)
+        eventAdapter = EventAdapter(listEvent, this)
         val linearLayoutManagerGoal = LinearLayoutManager(requireContext())
         val linearLayoutManagerTask = LinearLayoutManager(requireContext())
         val linearLayoutManagerEvent = LinearLayoutManager(requireContext())
@@ -199,6 +201,10 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar), DateClickListener
     }
 
     override fun taskItemClicked(taskModel: TaskModel) {
+        TODO("Not yet implemented")
+    }
+
+    override fun eventItemClicked(eventModel: EventModel) {
         TODO("Not yet implemented")
     }
 
