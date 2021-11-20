@@ -12,15 +12,16 @@ import android.widget.SeekBar
 import androidx.databinding.DataBindingUtil.setContentView
 import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
-import dev.kingbond.notify.R
 import dev.kingbond.notify.databinding.ActivitySettingsBinding
 import dev.kingbond.notify.databinding.FragmentSettingBinding
 import dev.kingbond.notify.ui.home.HomeActivity
 import dev.kingbond.notify.ui.login.LoginActivity
+import android.R
+import androidx.fragment.app.FragmentTransaction
 
 
 class SettingFragment
-    : Fragment(R.layout.fragment_setting) {
+    : Fragment(dev.kingbond.notify.R.layout.fragment_setting) {
     private lateinit var settingsBinding: FragmentSettingBinding
     //profile
     private lateinit var mAuth: FirebaseAuth
@@ -32,7 +33,10 @@ class SettingFragment
 
             settingsBinding.llViewProfile.setOnClickListener {
                // startActivity(Intent(requireContext(), SettingsUserProfileActivity::class.java))
-
+                val ft: FragmentTransaction = parentFragmentManager.beginTransaction()
+                ft.replace(dev.kingbond.notify.R.id.fragmentContainer, SettingUserProfileFragment(), "User Profile Fragment")
+                ft.addToBackStack(null)
+                ft.commit()
             }
 
 
@@ -51,7 +55,7 @@ class SettingFragment
                 settingsBinding.ivEmail.text = user.email
                 settingsBinding.tvLogOutName.text = "You are logged in as ${user.displayName}"
             } else {
-                Glide.with(settingsBinding.ivSettingProfileImage).load(R.drawable.man)
+                Glide.with(settingsBinding.ivSettingProfileImage).load(dev.kingbond.notify.R.drawable.man)
                     .into(settingsBinding.ivSettingProfileImage)
                 settingsBinding.tvSettingsProfileName.text = "Masai Android"
             }
