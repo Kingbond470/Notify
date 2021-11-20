@@ -8,9 +8,9 @@ import dev.kingbond.notify.R
 import dev.kingbond.notify.databinding.ItemTaskLayoutBinding
 import dev.kingbond.notify.ui.task.model.TaskModel
 
-class TaskAdapter(val list:ArrayList<TaskModel>):RecyclerView.Adapter<TaskViewHolder>() {
+class TaskAdapter(val list:ArrayList<TaskModel>, val taskClickListener: TaskClickListener):RecyclerView.Adapter<TaskViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TaskViewHolder {
-        return TaskViewHolder(DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.item_task_layout,parent,false))
+        return TaskViewHolder(DataBindingUtil.inflate(LayoutInflater.from(parent.context), R.layout.item_task_layout,parent,false),taskClickListener)
     }
 
     override fun onBindViewHolder(holder: TaskViewHolder, position: Int) {
@@ -23,8 +23,13 @@ class TaskAdapter(val list:ArrayList<TaskModel>):RecyclerView.Adapter<TaskViewHo
     }
 }
 
-class TaskViewHolder(val itemTaskLayoutBinding: ItemTaskLayoutBinding):RecyclerView.ViewHolder(itemTaskLayoutBinding.root){
+class TaskViewHolder(val itemTaskLayoutBinding: ItemTaskLayoutBinding,val taskClickListener: TaskClickListener):RecyclerView.ViewHolder(itemTaskLayoutBinding.root){
     fun setTask(taskModel: TaskModel){
+
         itemTaskLayoutBinding.task = taskModel
+
+        itemTaskLayoutBinding.taskItemLayout.setOnClickListener {
+            taskClickListener.taskItemClicked(taskModel)
+        }
     }
 }

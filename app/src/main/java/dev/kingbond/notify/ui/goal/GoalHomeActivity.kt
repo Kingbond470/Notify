@@ -21,7 +21,7 @@ import dev.kingbond.notify.viewmodel.ViewModelClass
 import dev.kingbond.notify.viewmodel.ViewModelFactory
 import java.io.Serializable
 
-class GoalHomeActivity : AppCompatActivity(),GoalClickListener {
+class GoalHomeActivity : AppCompatActivity(), GoalClickListener {
 
     private lateinit var binding : ActivityGoalHomeBinding
 
@@ -55,7 +55,7 @@ class GoalHomeActivity : AppCompatActivity(),GoalClickListener {
     }
 
     private fun setRecyclerView() {
-        adapter = GoalAdapter(list,this)
+        adapter = GoalAdapter(list,this,itemViewModel)
         val linearLayoutManager = LinearLayoutManager(this)
         binding.apply {
             goalRecyclerView.adapter = adapter
@@ -66,12 +66,6 @@ class GoalHomeActivity : AppCompatActivity(),GoalClickListener {
     override fun goalItemClicked(goalModel: GoalModel) {
         val intent = Intent(this,GoalDetailsActivity::class.java)
         intent.putExtra("goalModel", goalModel as Serializable)
-        startActivity(intent)
-    }
-
-    override fun goalItemAddClicked(goalModel: GoalModel) {
-        val intent = Intent(this,TaskGoalActivity::class.java)
-        intent.putExtra("goalName",goalModel.name)
         startActivity(intent)
     }
 }

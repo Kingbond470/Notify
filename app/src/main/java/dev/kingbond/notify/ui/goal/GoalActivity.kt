@@ -52,8 +52,9 @@ class GoalActivity : AppCompatActivity() {
             val goalModel = GoalModel(name, desc, toDate, fromDate)
             itemViewModel.insertDataIntoGoalTable(goalModel)
 
-            val intent = Intent(this, GoalHomeActivity::class.java)
-            startActivity(intent)
+//            val intent = Intent(this, GoalHomeActivity::class.java)
+//            startActivity(intent)
+            finish()
         }
     }
 

@@ -13,6 +13,7 @@
 
         <RelativeLayout
             android:padding="10dp"
+            android:id="@+id/taskItemLayout"
             android:background="@color/app_background"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -60,6 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
             <LinearLayout
+                android:id="@+id/checkStatus"
                 android:layout_alignParentEnd="true"
                 android:layout_below="@+id/itemTaskDate"
                 android:layout_width="wrap_content"
