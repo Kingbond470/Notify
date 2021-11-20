@@ -10,7 +10,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
         android:allowBackup="true"
@@ -19,6 +19,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Notify">
+        <activity
+            android:name=".ui.event.EventDetailsActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.event.EventHomeActivity"
             android:exported="true"
@@ -70,9 +73,9 @@
             android:name=".ui.home.HomeActivity"
             android:exported="true" />
         <activity
-            android:theme="@style/Theme.Goals"
             android:name=".ui.goal.GoalDetailsActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.Goals" />
         <activity
             android:name=".ui.task.TaskGoalActivity"
             android:exported="true"
@@ -98,7 +101,6 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -126,6 +128,7 @@
             android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>

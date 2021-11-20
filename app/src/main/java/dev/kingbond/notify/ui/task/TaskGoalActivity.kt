@@ -2,15 +2,12 @@ package dev.kingbond.notify.ui.task
 
 import android.app.DatePickerDialog
 import android.app.TimePickerDialog
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProviders
-import dev.kingbond.notify.R
 import dev.kingbond.notify.data.database.RoomDataBaseClass
 import dev.kingbond.notify.databinding.ActivityTaskGoalBinding
 import dev.kingbond.notify.repository.RepositoryClass
-import dev.kingbond.notify.ui.goal.GoalHomeActivity
 import dev.kingbond.notify.ui.task.model.TaskModel
 import dev.kingbond.notify.viewmodel.ViewModelClass
 import dev.kingbond.notify.viewmodel.ViewModelFactory

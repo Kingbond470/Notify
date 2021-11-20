@@ -11,7 +11,6 @@ import dev.kingbond.notify.data.database.RoomDataBaseClass
 import dev.kingbond.notify.ui.goal.model.GoalModel
 import dev.kingbond.notify.ui.goal.recyclerView.GoalAdapter
 import dev.kingbond.notify.ui.goal.recyclerView.GoalClickListener
-import dev.kingbond.notify.ui.task.TaskGoalActivity
 import dev.kingbond.notify.viewmodel.ViewModelClass
 import dev.kingbond.notify.viewmodel.ViewModelFactory
 import java.io.Serializable

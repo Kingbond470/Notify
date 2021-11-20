@@ -1,6 +1,8 @@
 package dev.kingbond.notify.ui.event
 
+import android.app.AlarmManager
 import android.app.DatePickerDialog
+import android.app.PendingIntent
 import android.app.TimePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -9,12 +11,15 @@ import android.view.View
 import android.widget.*
 import androidx.lifecycle.ViewModelProviders
 import dev.kingbond.notify.R
+import dev.kingbond.notify.alarmAndReminder.AlarmBrodcast
 import dev.kingbond.notify.data.database.RoomDataBaseClass
 import dev.kingbond.notify.databinding.ActivityEventBinding
 import dev.kingbond.notify.repository.RepositoryClass
 import dev.kingbond.notify.viewmodel.ViewModelClass
 import dev.kingbond.notify.viewmodel.ViewModelFactory
 import kotlinx.android.synthetic.main.activity_event.*
+import java.text.DateFormat
+import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -181,7 +186,7 @@ class EventActivity : AppCompatActivity() {
 
 
         //distance
-        if ( distance != "null") {
+        if (distance != "null" && distance != "0.0 KM") {
             eventbinding.tvDistance.text = distance.toString() + " KM"
             eventbinding.tvTimeAlarm.text = time.toString()
         }
@@ -224,6 +229,13 @@ class EventActivity : AppCompatActivity() {
                     )
                 itemViewModel.insertDataIntoEventTable(eventModel)
             }
+
+            //set alarm
+            setAlarm(
+                (eventDescription + " " + eventType),
+                eventDate,
+                time.toString()
+            )
 
 
             val intent = Intent(this, EventHomeActivity::class.java)
@@ -269,6 +281,24 @@ class EventActivity : AppCompatActivity() {
             cal.get(Calendar.MONTH),
             cal.get(Calendar.DAY_OF_MONTH)
         ).show()
+    }
+
+    private fun setAlarm(text: String, date: String, time: String) {
+        val am = getSystemService(ALARM_SERVICE) as AlarmManager
+        val intent = Intent(applicationContext, AlarmBrodcast::class.java)
+        intent.putExtra("event", text)
+        intent.putExtra("date", date)
+        intent.putExtra("time", time)
+        val pendingIntent =
+            PendingIntent.getBroadcast(applicationContext, 0, intent, PendingIntent.FLAG_ONE_SHOT)
+        val dateandtime = "$date $time"
+        val formatter: DateFormat = SimpleDateFormat("yyyy-MM-dd hh-mm aaa")
+        try {
+            val date1 = formatter.parse(dateandtime)
+            am[AlarmManager.RTC_WAKEUP, date1.time] = pendingIntent
+        } catch (e: ParseException) {
+            e.printStackTrace()
+        }
     }
 
 }
