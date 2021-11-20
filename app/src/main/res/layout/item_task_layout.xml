@@ -19,22 +19,24 @@
             android:id="@+id/taskItemLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:background="@color/task_background_color"
             android:padding="10dp">
 
             <TextView
                 android:id="@+id/itemTaskName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_light"
                 android:text="@{task.name}"
-                android:textColor="@color/black"
-                android:textSize="20sp" />
+                android:textColor="@color/white"
+                android:textSize="18sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_marginHorizontal="10dp"
+                android:fontFamily="@font/roboto_light"
                 android:text="@{task.category}"
                 android:textColor="@color/yellow"
                 android:textSize="16sp" />
@@ -44,30 +46,43 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/itemTaskName"
+                android:fontFamily="@font/roboto_light"
                 android:maxLines="2"
                 android:text="@{task.desc}"
-                android:textColor="@color/black"
-                android:textSize="15sp" />
-
-            <TextView
-                android:id="@+id/itemTaskDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/itemTaskDescription"
-                android:text="@{task.date}"
-                android:textColor="@color/black"
+                android:textColor="@color/white"
                 android:textSize="16sp" />
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/itemTaskDate"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_below="@+id/itemTaskDescription"-->
+            <!--                android:text="@{task.date}"-->
+            <!--                android:fontFamily="@font/roboto_light"-->
+            <!--                android:textColor="@color/white"-->
+            <!--                android:textSize="14sp" />-->
 
             <TextView
                 android:id="@+id/itemTaskTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/itemTaskDescription"
-                android:layout_marginLeft="10dp"
-                android:layout_toEndOf="@+id/itemTaskDate"
+                android:fontFamily="@font/roboto_light"
                 android:text="@{task.time}"
-                android:textColor="@color/black"
-                android:textSize="16sp" />
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/itemTaskDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/itemTaskDescription"
+                android:layout_toRightOf="@id/itemTaskTime"
+                android:fontFamily="@font/roboto_light"
+                android:text="@{task.date}"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
 
             <LinearLayout
                 android:id="@+id/checkStatus"
