@@ -12,86 +12,186 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="15dp">
+        android:elevation="12dp"
+        android:layout_marginVertical="10dp"
+        android:padding="10dp"
+        app:cardCornerRadius="12dp">
 
         <RelativeLayout
             android:id="@+id/eventItem"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
             android:background="@color/app_background"
-            android:padding="5dp">
-
+            android:paddingHorizontal="15dp"
+            android:paddingVertical="10dp">
 
             <TextView
-                android:id="@+id/eventName"
-                android:layout_width="wrap_content"
+                android:id="@+id/tvNameEventItemLayout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="9dp"
+                android:fontFamily="@font/roboto"
                 android:text="@{event.type}"
                 android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:textSize="18sp" />
 
             <TextView
-                android:id="@+id/eventDescription"
-                android:layout_width="wrap_content"
+                android:id="@+id/tvDescriptionEventItemLayout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/eventName"
-                android:layout_marginLeft="9dp"
-                android:layout_marginTop="10dp"
-                android:maxLines="2"
+                android:layout_below="@+id/tvNameEventItemLayout"
+                android:layout_marginVertical="5dp"
+                android:fontFamily="@font/roboto_light"
                 android:text="@{event.event_description}"
-                android:textColor="@color/navigation_color"
-                android:textSize="17sp" />
-
-            <!-- <TextView
-                 android:id="@+id/addTaskByEvent"
-                 android:layout_width="wrap_content"
-                 android:layout_height="wrap_content"
-                 android:layout_alignParentEnd="true"
-                 android:background="@drawable/bg_rectangle_stroke_white"
-                 android:drawableEnd="@drawable/ic_baseline_add_24"
-                 android:gravity="center"
-                 android:text="Add Task"
-                 android:textColor="@color/white"
-                 android:textSize="15sp" />
-              -->
+                android:textColor="@color/white"
+                android:textSize="16sp" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:id="@+id/llDateOfEventItemLayout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/eventDescription"
-                android:layout_marginHorizontal="5dp"
-                android:layout_marginTop="15dp">
+                android:layout_below="@+id/tvDescriptionEventItemLayout"
+                android:layout_marginVertical="5dp"
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Date: "
-                    android:textColor="@color/white" />
+                    android:fontFamily="@font/roboto_light"
+                    android:text="Date of event : "
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/tvDateEventItemLayout"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
                     android:text="@{event.date}"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llTimeOfEventItemLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/llDateOfEventItemLayout"
+                android:layout_marginVertical="5dp"
+                android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="                                Time:"
-                    android:textColor="@color/white" />
-
+                    android:fontFamily="@font/roboto_light"
+                    android:text="Time of event : "
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/tvTimeEventItemLayout"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto_light"
                     android:text="@{event.time}"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
         </RelativeLayout>
+
     </androidx.cardview.widget.CardView>
+
+    <!--    <androidx.cardview.widget.CardView-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:elevation="10dp"-->
+    <!--        android:layout_marginVertical="10dp"-->
+    <!--        app:cardCornerRadius="10dp">-->
+
+    <!--        <RelativeLayout-->
+    <!--            android:id="@+id/eventItem"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:background="@color/app_background">-->
+
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/eventName"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_marginLeft="9dp"-->
+    <!--                android:fontFamily="@font/roboto_light"-->
+    <!--                android:text="@{event.type}"-->
+    <!--                android:textColor="@color/white"-->
+    <!--                android:textSize="18sp" />-->
+
+    <!--            <TextView-->
+    <!--                android:id="@+id/eventDescription"-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_below="@+id/eventName"-->
+    <!--                android:layout_marginLeft="9dp"-->
+    <!--                android:layout_marginTop="10dp"-->
+    <!--                android:fontFamily="@font/roboto_thin"-->
+    <!--                android:maxLines="2"-->
+    <!--                android:text="@{event.event_description}"-->
+    <!--                android:textColor="@color/navigation_color"-->
+    <!--                android:textSize="16sp" />-->
+
+    <!--            &lt;!&ndash; <TextView-->
+    <!--                 android:id="@+id/addTaskByEvent"-->
+    <!--                 android:layout_width="wrap_content"-->
+    <!--                 android:layout_height="wrap_content"-->
+    <!--                 android:layout_alignParentEnd="true"-->
+    <!--                 android:background="@drawable/bg_rectangle_stroke_white"-->
+    <!--                 android:drawableEnd="@drawable/ic_baseline_add_24"-->
+    <!--                 android:gravity="center"-->
+    <!--                 android:text="Add Task"-->
+    <!--                 android:textColor="@color/white"-->
+    <!--                 android:textSize="15sp" />-->
+    <!--              &ndash;&gt;-->
+
+    <!--            <LinearLayout-->
+    <!--                android:layout_width="wrap_content"-->
+    <!--                android:layout_height="wrap_content"-->
+    <!--                android:layout_below="@+id/eventDescription"-->
+    <!--                android:layout_marginHorizontal="5dp"-->
+    <!--                android:layout_marginTop="15dp">-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:fontFamily="@font/roboto_light"-->
+    <!--                    android:text="Date : "-->
+    <!--                    android:textColor="@color/white" />-->
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:fontFamily="@font/roboto_thin"-->
+    <!--                    android:text="@{event.date}"-->
+    <!--                    android:textColor="@color/white" />-->
+
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:fontFamily="@font/roboto_light"-->
+    <!--                    android:text="Time :"-->
+    <!--                    android:textColor="@color/white" />-->
+
+
+    <!--                <TextView-->
+    <!--                    android:layout_width="wrap_content"-->
+    <!--                    android:layout_height="wrap_content"-->
+    <!--                    android:fontFamily="@font/roboto_thin"-->
+    <!--                    android:text="@{event.time}"-->
+    <!--                    android:textColor="@color/white" />-->
+
+    <!--            </LinearLayout>-->
+
+    <!--        </RelativeLayout>-->
+    <!--    </androidx.cardview.widget.CardView>-->
 </layout>
