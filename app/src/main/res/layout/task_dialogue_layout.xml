@@ -5,7 +5,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:padding="10dp">
+        android:paddingHorizontal="15dp"
+        android:paddingTop="20dp"
+        android:paddingBottom="20dp">
 
         <TextView
             android:id="@+id/dialog_task_name"
@@ -14,7 +16,15 @@
             android:fontFamily="@font/roboto_bold"
             android:text="TaskName"
             android:textColor="@color/app_background"
-            android:textSize="20sp" />
+            android:textSize="18sp" />
+
+        <ImageView
+            android:id="@+id/ivTaskDialogueImage"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_toRightOf="@id/dialog_task_name"
+            android:src="@drawable/man" />
 
         <TextView
             android:id="@+id/dialog_task_desc"
@@ -22,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/dialog_task_name"
             android:layout_marginTop="10dp"
-            android:fontFamily="@font/roboto_bold"
+            android:fontFamily="@font/roboto_light"
             android:text="Description"
             android:textColor="@color/app_background"
             android:textSize="16sp" />
@@ -33,9 +43,10 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/dialog_task_desc"
             android:layout_marginTop="10dp"
-            android:text="Date:   "
+            android:fontFamily="@font/roboto_light"
+            android:text="Date: "
             android:textColor="@color/app_background"
-            android:textSize="15sp" />
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/dialog_task_date"
@@ -44,8 +55,10 @@
             android:layout_below="@id/dialog_task_desc"
             android:layout_marginTop="10dp"
             android:layout_toEndOf="@id/dialog_date_text"
-            android:text="date"
-            android:textColor="@color/app_background" />
+            android:fontFamily="@font/roboto_thin"
+            android:text="20-11-2021"
+            android:textColor="@color/app_background"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/dialog_task_time"
@@ -54,22 +67,24 @@
             android:layout_below="@id/dialog_task_desc"
             android:layout_alignParentEnd="true"
             android:layout_margin="10dp"
+            android:fontFamily="@font/roboto_thin"
             android:text="time"
             android:textColor="@color/app_background"
-            android:textSize="17dp" />
+            android:textSize="16dp" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/ok_dialog_task"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/dialog_task_date"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
             android:backgroundTint="@color/app_background"
+            android:fontFamily="@font/roboto_light"
             android:gravity="center"
-            android:padding="7dp"
-            android:text="ok"
+            android:text="Done"
+            android:textAllCaps="false"
             android:textColor="@color/white"
-            android:textSize="20sp"
-            app:cornerRadius="10dp" />
+            android:textSize="18sp"
+            app:cornerRadius="8dp" />
     </RelativeLayout>
 </layout>
