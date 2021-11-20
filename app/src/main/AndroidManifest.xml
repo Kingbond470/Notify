@@ -60,6 +60,24 @@
             android:name=".ui.home.HomeActivity"
             android:exported="true" />
         <activity
+            android:name=".ui.goal.GoalDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.task.TaskGoalActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Goals" />
+        <activity
+            android:name=".ui.task.TaskActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Goals" />
+        <activity
+            android:name=".ui.task.TaskHomeActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Goals"></activity>
+        <activity
+            android:name=".ui.goal.GoalHomeActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Goals">
             android:name=".ui.splash.SpalshActivity"
             android:exported="true"
             android:theme="@style/Theme.Splash">
@@ -74,6 +92,11 @@
             android:exported="true" />
         <activity
             android:name=".ui.event.EventActivity"
+            android:name=".ui.goal.GoalActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Goals" />
+        <activity
+            android:name=".ui.splash.SpalshActivity"
             android:exported="true" />
         <activity
             android:name=".MainActivity"
@@ -82,6 +105,7 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
+            android:exported="true" />
     </application>
 
 </manifest>
