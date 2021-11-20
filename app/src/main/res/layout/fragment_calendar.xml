@@ -290,7 +290,16 @@
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:layout_below="@id/rcvGoalsCalendar"
-                    android:id="@+id/rcvGoalsCalendar2"
+                    android:id="@+id/rcvTaskCalendar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="80dp"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_below="@id/rcvTaskCalendar"
+                    android:id="@+id/rcvEventsCalendar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"

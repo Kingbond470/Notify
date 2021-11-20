@@ -18,11 +18,14 @@ import dev.kingbond.notify.data.database.RoomDataBaseClass
 import dev.kingbond.notify.databinding.ActivityGoalDetailsBinding
 import dev.kingbond.notify.databinding.FragmentCalendarBinding
 import dev.kingbond.notify.repository.RepositoryClass
+import dev.kingbond.notify.ui.event.EventAdapter
+import dev.kingbond.notify.ui.event.EventModel
 import dev.kingbond.notify.ui.goal.model.GoalModel
 import dev.kingbond.notify.ui.goal.recyclerView.GoalAdapter
 import dev.kingbond.notify.ui.goal.recyclerView.GoalClickListener
 import dev.kingbond.notify.ui.task.model.TaskModel
 import dev.kingbond.notify.ui.task.recyclerView.TaskAdapter
+import dev.kingbond.notify.ui.task.recyclerView.TaskClickListener
 import dev.kingbond.notify.viewmodel.ViewModelClass
 import dev.kingbond.notify.viewmodel.ViewModelFactory
 import kotlinx.android.synthetic.main.fragment_calendar.*
@@ -31,15 +34,20 @@ import java.time.YearMonth
 import java.time.format.DateTimeFormatter
 
 @RequiresApi(Build.VERSION_CODES.O)
-class CalendarFragment : Fragment(R.layout.fragment_calendar), DateClickListener, GoalClickListener {
+class CalendarFragment : Fragment(R.layout.fragment_calendar), DateClickListener, GoalClickListener, TaskClickListener {
 
     private var selectedDate: LocalDate? = null
     private lateinit var calendarAdapter: CalendarAdapter
+    private lateinit var goalAdapter: GoalAdapter
+    private lateinit var taskAdapter: TaskAdapter
+    private lateinit var eventAdapter: EventAdapter
 
     private lateinit var binding: FragmentCalendarBinding
     private lateinit var itemViewModel: ViewModelClass
-    private lateinit var goalAdapter: GoalAdapter
+
     private var listGoal = arrayListOf<GoalModel>()
+    private var listTask = arrayListOf<TaskModel>()
+    private var listEvent = arrayListOf<EventModel>()
     private lateinit var daysInMonth: ArrayList<String>
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -66,21 +74,45 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar), DateClickListener
 //            listGoal.clear()
             listGoal.addAll(it)
             listGoal.addAll(it)
-            listGoal.addAll(it)
-            listGoal.addAll(it)
             goalAdapter.notifyDataSetChanged()
         })
 
-        goalAdapter = GoalAdapter(listGoal, this,itemViewModel)
-        val linearLayoutManager = LinearLayoutManager(requireContext())
-        val linearLayoutManager2 = LinearLayoutManager(requireContext())
+        itemViewModel.getDataFromTask().observe(viewLifecycleOwner, Observer {
+//            listTask.clear()
+            listTask.addAll(it)
+            listTask.addAll(it)
+            taskAdapter.notifyDataSetChanged()
+        })
+
+        itemViewModel.getDataFromEventTable().observe(viewLifecycleOwner, Observer {
+//            listEvent.clear()
+            listEvent.addAll(it)
+            listEvent.addAll(it)
+            eventAdapter.notifyDataSetChanged()
+        })
+
+
+        goalAdapter = GoalAdapter(listGoal, this, itemViewModel)
+        taskAdapter = TaskAdapter(listTask, this)
+        eventAdapter = EventAdapter(listEvent)
+        val linearLayoutManagerGoal = LinearLayoutManager(requireContext())
+        val linearLayoutManagerTask = LinearLayoutManager(requireContext())
+        val linearLayoutManagerEvent = LinearLayoutManager(requireContext())
         binding.apply {
+            //Goal
             rcvGoalsCalendar.adapter = goalAdapter
-            rcvGoalsCalendar.layoutManager = linearLayoutManager
+            rcvGoalsCalendar.layoutManager = linearLayoutManagerGoal
             rcvGoalsCalendar.isNestedScrollingEnabled = false
-            rcvGoalsCalendar2.adapter = goalAdapter
-            rcvGoalsCalendar2.layoutManager = linearLayoutManager2
-            rcvGoalsCalendar2.isNestedScrollingEnabled = false
+
+            //Task
+            rcvTaskCalendar.adapter = taskAdapter
+            rcvTaskCalendar.layoutManager = linearLayoutManagerTask
+            rcvTaskCalendar.isNestedScrollingEnabled = false
+
+            //Event
+            rcvEventsCalendar.adapter = eventAdapter
+            rcvEventsCalendar.layoutManager = linearLayoutManagerEvent
+            rcvEventsCalendar.isNestedScrollingEnabled = false
         }
     }
 
@@ -166,6 +198,8 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar), DateClickListener
         TODO("Not yet implemented")
     }
 
-
+    override fun taskItemClicked(taskModel: TaskModel) {
+        TODO("Not yet implemented")
+    }
 
 }

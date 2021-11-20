@@ -6,7 +6,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/app_background_navy_blue"
+        android:background="@color/task_background_color"
         android:orientation="vertical"
         android:padding="10dp"
         tools:context=".ui.task.TaskHomeActivity">

@@ -34,4 +34,6 @@
     <color name="light_pink">#ffe5ee</color>
     <color name="very_light_pink">#fff5f6</color>
     <color name="very_light_blue">#f2f9ff</color>
+
+    <color name="task_background_color">#1d9bf0</color>
 </resources>
