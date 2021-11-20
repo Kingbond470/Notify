@@ -7,11 +7,12 @@ import androidx.recyclerview.widget.RecyclerView
 import dev.kingbond.notify.R
 import dev.kingbond.notify.databinding.ItemGoalLayoutBinding
 import dev.kingbond.notify.ui.goal.model.GoalModel
+import dev.kingbond.notify.viewmodel.ViewModelClass
 
 class GoalAdapter(
-
     private val list: ArrayList<GoalModel>,
-    val goalClickListener: GoalClickListener
+    val goalClickListener: GoalClickListener,
+    val itemViewModelClass: ViewModelClass
 ) : RecyclerView.Adapter<GoalViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): GoalViewHolder {
         return GoalViewHolder(
@@ -20,7 +21,7 @@ class GoalAdapter(
                 R.layout.item_goal_layout,
                 parent,
                 false
-            ), goalClickListener
+            ), goalClickListener, itemViewModelClass
         )
     }
 
@@ -36,14 +37,14 @@ class GoalAdapter(
 
 class GoalViewHolder(
     var itemGoalLayoutBinding: ItemGoalLayoutBinding,
-    val goalClickListener: GoalClickListener
+    val goalClickListener: GoalClickListener,
+    val itemViewModelClass: ViewModelClass
 ) : RecyclerView.ViewHolder(itemGoalLayoutBinding.root) {
 
     fun setGoalData(goalModel: GoalModel) {
+
+
         itemGoalLayoutBinding.goal = goalModel
-        itemGoalLayoutBinding.addTaskByGoal.setOnClickListener {
-            goalClickListener.goalItemAddClicked(goalModel)
-        }
         itemGoalLayoutBinding.goalItem.setOnClickListener {
             goalClickListener.goalItemClicked(goalModel)
         }

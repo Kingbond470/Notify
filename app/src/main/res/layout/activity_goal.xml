@@ -14,10 +14,7 @@
             android:id="@+id/setGoalDetails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
+            android:layout_margin="20dp"
             android:orientation="vertical">
 
             <TextView
@@ -101,26 +98,6 @@
                 android:textSize="20dp" />
         </LinearLayout>
 
-
-        <TextView
-            android:id="@+id/addTaskInGoal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/setGoalDetails"
-            android:background="@color/app_background"
-            android:drawableEnd="@drawable/ic_baseline_add_24"
-            android:paddingHorizontal="10dp"
-            android:paddingVertical="5dp"
-            android:text="Add"
-            android:textColor="@color/white"
-            android:textSize="20dp" />
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/idGoalTaskAdd"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/addTaskInGoal" />
-
         <com.google.android.material.button.MaterialButton
             android:id="@+id/submitGoal"
             android:layout_width="match_parent"
@@ -135,6 +112,6 @@
             android:textColor="@color/white"
             app:cornerRadius="16dp" />
 
-
     </RelativeLayout>
+
 </layout>

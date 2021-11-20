@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/dialog_task_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_bold"
+            android:text="TaskName"
+            android:textColor="@color/app_background"
+            android:textSize="20sp" />
+
+        <TextView
+            android:id="@+id/dialog_task_desc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/dialog_task_name"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="Description"
+            android:textColor="@color/app_background"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/dialog_date_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dialog_task_desc"
+            android:layout_marginTop="10dp"
+            android:text="Date:   "
+            android:textColor="@color/app_background"
+            android:textSize="15sp" />
+
+        <TextView
+            android:id="@+id/dialog_task_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dialog_task_desc"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@id/dialog_date_text"
+            android:text="date"
+            android:textColor="@color/app_background" />
+
+        <TextView
+            android:id="@+id/dialog_task_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dialog_task_desc"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="10dp"
+            android:text="time"
+            android:textColor="@color/app_background"
+            android:textSize="17dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/ok_dialog_task"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/dialog_task_date"
+            android:layout_marginTop="30dp"
+            android:backgroundTint="@color/app_background"
+            android:gravity="center"
+            android:padding="7dp"
+            android:text="ok"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:cornerRadius="10dp" />
+    </RelativeLayout>
+</layout>
