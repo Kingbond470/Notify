@@ -9,43 +9,36 @@
     android:background="@color/app_background"
     tools:context=".ui.settings.SettingsActivity">
 
-    <!--    <RelativeLayout-->
-    <!--        android:id="@+id/relativeLayout"-->
-    <!--        android:layout_width="match_parent"-->
-    <!--        android:layout_height="wrap_content"-->
-    <!--        android:layout_marginHorizontal="10dp"-->
-    <!--        android:layout_marginTop="10dp"-->
-    <!--        android:padding="10dp">-->
-
-    <!--        <androidx.cardview.widget.CardView-->
-    <!--            android:id="@+id/cdSettingsProfile"-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:backgroundTint="@color/dark_grey">-->
-
-    <!--            <ImageView-->
-    <!--                android:id="@+id/ivSettingProfile"-->
-    <!--                android:layout_width="wrap_content"-->
-    <!--                android:layout_height="wrap_content"-->
-    <!--                android:scaleType="fitXY"-->
-    <!--                android:src="@drawable/ic_back_arrow" />-->
+        <RelativeLayout
+            android:id="@+id/relativeLayoutSettings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/navigation_color"
+            android:padding="10dp">
 
 
-    <!--        </androidx.cardview.widget.CardView>-->
+                <ImageView
+                    android:id="@+id/ivBackSettingProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/ic_back_arrow" />
 
-    <!--        <TextView-->
-    <!--            android:layout_width="wrap_content"-->
-    <!--            android:layout_height="wrap_content"-->
-    <!--            android:layout_centerHorizontal="true"-->
-    <!--            android:text="Settings"-->
-    <!--            android:textColor="@color/white"-->
-    <!--            android:textSize="15sp"-->
-    <!--            android:textStyle="bold" />-->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Settings"
+                android:fontFamily="@font/roboto"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
-    <!--    </RelativeLayout>-->
+        </RelativeLayout>
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/relativeLayoutSettings"
         android:layout_alignParentBottom="true">
 
         <LinearLayout
