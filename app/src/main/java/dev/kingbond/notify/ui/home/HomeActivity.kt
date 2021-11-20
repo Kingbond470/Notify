@@ -17,6 +17,7 @@ import dev.kingbond.notify.R
 import dev.kingbond.notify.databinding.ActivityHomeBinding
 import dev.kingbond.notify.ui.about.AboutActivity
 import dev.kingbond.notify.ui.event.EventActivity
+import dev.kingbond.notify.ui.goal.GoalHomeActivity
 import dev.kingbond.notify.ui.profile.EditProfileActivity
 import dev.kingbond.notify.ui.settings.SettingsActivity
 
@@ -135,8 +136,14 @@ class HomeActivity : AppCompatActivity() {
         homeBinding.fbAddNotify.setOnClickListener {
             // to show the three things -> events, task and goal
 
+            /*
             //event
             val intent = Intent(this@HomeActivity, EventActivity::class.java)
+            startActivity(intent)
+             */
+
+            //goal
+            val intent = Intent(this@HomeActivity, GoalHomeActivity::class.java)
             startActivity(intent)
 
         }
