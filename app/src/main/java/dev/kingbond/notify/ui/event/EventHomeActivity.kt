@@ -10,8 +10,9 @@ import dev.kingbond.notify.databinding.ActivityEventHomeBinding
 import dev.kingbond.notify.repository.RepositoryClass
 import dev.kingbond.notify.viewmodel.ViewModelClass
 import dev.kingbond.notify.viewmodel.ViewModelFactory
+import java.io.Serializable
 
-class EventHomeActivity : AppCompatActivity() {
+class EventHomeActivity : AppCompatActivity(), EventClickListener {
 
     private lateinit var binding: ActivityEventHomeBinding
     private lateinit var adapter: EventAdapter
@@ -35,6 +36,7 @@ class EventHomeActivity : AppCompatActivity() {
         itemViewModel.getDataFromEventTable().observe(this, androidx.lifecycle.Observer {
             list.clear()
             list.addAll(it)
+            list.reverse()
             adapter.notifyDataSetChanged()
         })
 
@@ -46,11 +48,18 @@ class EventHomeActivity : AppCompatActivity() {
     }
 
     private fun setRecyclerView() {
-        adapter = EventAdapter(list)
+        adapter = EventAdapter(list, this)
         val linearLayoutManager = LinearLayoutManager(this)
         binding.apply {
             eventRecyclerView.adapter = adapter
             eventRecyclerView.layoutManager = linearLayoutManager
         }
     }
+
+    override fun eventItemClicked(eventModel: EventModel) {
+        val intent = Intent(this, EventDetailsActivity::class.java)
+        intent.putExtra("eventModel", eventModel as Serializable)
+        startActivity(intent)
+    }
+
 }

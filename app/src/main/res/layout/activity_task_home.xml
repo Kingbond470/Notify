@@ -3,48 +3,70 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <FrameLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/app_background_navy_blue"
         android:orientation="vertical"
-        android:padding="10dp"
         tools:context=".ui.task.TaskHomeActivity">
 
-
-        <LinearLayout
+        <RelativeLayout
+            android:id="@+id/relativeLayoutTask"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:background="@color/app_background"
+            android:padding="15dp">
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/taskRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" />
+            <ImageView
+                android:id="@+id/ibBackTask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:layout_marginTop="3dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_back_arrow" />
 
-        </LinearLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/roboto"
+                android:text="Task"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
 
-        <!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-        <!--            android:id="@+id/addTaskHome"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:layout_gravity="bottom|end"-->
-        <!--            android:layout_margin="20dp"-->
-        <!--            android:backgroundTint="#2671F6"-->
-        <!--            android:src="@drawable/ic_add_white"-->
-        <!--            app:cornerRadius="20dp"-->
-        <!--            app:maxImageSize="45dp" />-->
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/ivTaskImage"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_below="@+id/relativeLayoutTask"
+            android:src="@drawable/ic_edit_email" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/taskRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="10dp"
+            android:layout_below="@+id/ivTaskImage"
+            android:padding="10dp" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/addTaskHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="bottom|end"
-            android:layout_margin="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
             app:backgroundTint="@color/white"
             app:cornerRadius="20dp"
             app:fabSize="normal"
             app:srcCompat="@drawable/ic_add_white" />
 
-    </FrameLayout>
+    </RelativeLayout>
 </layout>

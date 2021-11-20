@@ -59,6 +59,7 @@ class TaskActivity : AppCompatActivity() {
 
                 itemViewModel.insertDataInTaskTable(taskModel)
                 setAlarm(TaskDescription.text.toString(),addToDateTask.text.toString().trim(),addTimeTask.text.toString())
+
             }
 
 //            val intent = Intent(this,TaskHomeActivity::class.java)

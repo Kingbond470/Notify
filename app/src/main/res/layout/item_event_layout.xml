@@ -12,8 +12,8 @@
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:elevation="12dp"
         android:layout_marginVertical="10dp"
+        android:elevation="12dp"
         android:padding="10dp"
         app:cardCornerRadius="12dp">
 
@@ -25,25 +25,102 @@
             android:paddingHorizontal="15dp"
             android:paddingVertical="10dp">
 
-            <TextView
+            <LinearLayout
                 android:id="@+id/tvNameEventItemLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto"
-                android:text="@{event.type}"
-                android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:layout_marginVertical="5dp"
+                android:orientation="horizontal">
 
-            <TextView
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="Name : "
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvEventName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="@{event.type}"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvEventDateTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="Event Date : "
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvEventDate"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="@{event.date}"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:id="@+id/tvDescriptionEventItemLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvNameEventItemLayout"
                 android:layout_marginVertical="5dp"
-                android:fontFamily="@font/roboto_light"
-                android:text="@{event.event_description}"
-                android:textColor="@color/white"
-                android:textSize="16sp" />
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="Description : "
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvEventDescription"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="@{event.event_description}"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvEventTimeTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="Event Time : "
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvEventTime"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="@{event.event_time}"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
 
             <LinearLayout
                 android:id="@+id/llDateOfEventItemLayout"
@@ -54,21 +131,43 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:fontFamily="@font/roboto_light"
-                    android:text="Date of event : "
+                    android:text="From : "
                     android:textColor="@color/white"
                     android:textSize="16sp" />
 
                 <TextView
-                    android:id="@+id/tvDateEventItemLayout"
-                    android:layout_width="match_parent"
+                    android:id="@+id/tvEventFrom"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:fontFamily="@font/roboto_light"
-                    android:text="@{event.date}"
+                    android:text="@{event.start_point}"
+                    android:textColor="@color/white"
+                    android:textSize="8sp" />
+
+                <TextView
+                    android:id="@+id/tvEventToTitle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="To : "
                     android:textColor="@color/white"
                     android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvEventTot"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="@{event.end_point}"
+                    android:textColor="@color/white"
+                    android:textSize="8sp" />
 
             </LinearLayout>
 
@@ -81,19 +180,41 @@
                 android:orientation="horizontal">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:fontFamily="@font/roboto_light"
-                    android:text="Time of event : "
+                    android:text="Vehicle : "
                     android:textColor="@color/white"
                     android:textSize="16sp" />
 
                 <TextView
-                    android:id="@+id/tvTimeEventItemLayout"
-                    android:layout_width="match_parent"
+                    android:id="@+id/tvEventTransportType"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_weight="1"
                     android:fontFamily="@font/roboto_light"
-                    android:text="@{event.event_time}"
+                    android:text="@{event.transport_type}"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvTimeLeft"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="Time Left : "
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tvEventTimeLeft"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="@{event.alarm_time}"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
 

@@ -228,6 +228,8 @@ class LocationSearchActivity : AppCompatActivity(), OnMapReadyCallback, Location
                 val updatedTime: LocalTime =
                     localTime.minusHours(hour.toLong()).minusMinutes(minute.toLong())
 
+                //bug is there in am pm need to fix
+                /*
                 val uhh = updatedTime.toString().split(":").toTypedArray()
                 if (hh[0].toInt() > uhh[0].toInt()) {
                     if (aaa == "AM")
@@ -235,6 +237,8 @@ class LocationSearchActivity : AppCompatActivity(), OnMapReadyCallback, Location
                     else
                         aaa = "AM"
                 }
+                 */
+
 
                 val alarmTime: String = updatedTime.toString() + " " + aaa
 
