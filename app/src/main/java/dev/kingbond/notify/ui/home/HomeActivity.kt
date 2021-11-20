@@ -20,6 +20,7 @@ import dev.kingbond.notify.ui.event.EventActivity
 import dev.kingbond.notify.ui.goal.GoalHomeActivity
 import dev.kingbond.notify.ui.helpandsupport.HelpAndSupportActivity
 import dev.kingbond.notify.ui.profile.EditProfileActivity
+import dev.kingbond.notify.ui.settings.SettingFragment
 import dev.kingbond.notify.ui.settings.SettingsActivity
 
 class HomeActivity : AppCompatActivity() {
@@ -72,8 +73,9 @@ class HomeActivity : AppCompatActivity() {
                     Toast.makeText(applicationContext, "Completerd", Toast.LENGTH_SHORT).show()
                 }
                 R.id.profileFragment -> {
-                    // replaceFragment()
+                     replaceFragment(SettingFragment(),"Settings")
                     Toast.makeText(applicationContext, "Profile", Toast.LENGTH_SHORT).show()
+                   // startActivity(Intent(this,SettingsActivity::class.java))
                 }
 
             }
