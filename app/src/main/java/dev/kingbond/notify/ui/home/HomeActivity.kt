@@ -18,6 +18,7 @@ import dev.kingbond.notify.databinding.ActivityHomeBinding
 import dev.kingbond.notify.ui.about.AboutActivity
 import dev.kingbond.notify.ui.event.EventActivity
 import dev.kingbond.notify.ui.goal.GoalHomeActivity
+import dev.kingbond.notify.ui.helpandsupport.HelpAndSupportActivity
 import dev.kingbond.notify.ui.profile.EditProfileActivity
 import dev.kingbond.notify.ui.settings.SettingsActivity
 
@@ -126,6 +127,13 @@ class HomeActivity : AppCompatActivity() {
                     startActivity(intent)
                     homeBinding.drawerLayout.closeDrawer(GravityCompat.START)
 
+                }
+
+                R.id.nav_help ->{
+                    val intent =
+                        Intent(this@HomeActivity, HelpAndSupportActivity::class.java)
+                    startActivity(intent)
+                    homeBinding.drawerLayout.closeDrawer(GravityCompat.START)
                 }
 
             }

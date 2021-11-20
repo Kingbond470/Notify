@@ -22,10 +22,15 @@
             android:name=".ui.event.EventHomeActivity"
             android:exported="false" />
         <activity
+            android:name=".ui.helpandsupport.HelpAndSupportActivity"
+            android:theme="@style/Theme.EditProfile"
+            android:exported="true" />
+        <activity
             android:name=".ui.settings.SettingsUserProfileActivity"
             android:exported="true" />
         <activity
             android:name=".ui.settings.SettingsActivity"
+            android:theme="@style/Theme.EditProfile"
             android:exported="true" />
         <activity
             android:name=".ui.profile.EditProfileActivity"
