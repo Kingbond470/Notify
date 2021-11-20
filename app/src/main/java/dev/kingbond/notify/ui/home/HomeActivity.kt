@@ -145,6 +145,7 @@ class HomeActivity : AppCompatActivity() {
             // to show the three things -> events, task and goal
 
 
+
             //event
             val intent = Intent(this@HomeActivity, EventActivity::class.java)
             startActivity(intent)
