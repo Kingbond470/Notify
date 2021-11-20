@@ -21,8 +21,9 @@ import java.util.*
 class EventActivity : AppCompatActivity() {
 
     private lateinit var eventbinding: ActivityEventBinding
+    var distance: String = "0.0"
 
-    //private lateinit var adapter: GoalAdapter
+    //private lateinit var adapter: EventAdapter
     private lateinit var itemViewModel: ViewModelClass
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -41,14 +42,14 @@ class EventActivity : AppCompatActivity() {
         val eventDescription2 = intent.getStringExtra("eventDescription")
         val eventDate2 = intent.getStringExtra("eventDate")
         val eventTime2 = intent.getStringExtra("eventTime")
-        val eventTransport2 = intent.getStringExtra("eventTransport")
+        val eventTransport2 = intent.getStringExtra("eventTransport").toString()
 
         val startpoint2 = intent.getStringExtra("estart")
         val startpoint2Latitude = intent.getStringExtra("estartLatitude")
         val startpoint2Longitude = intent.getStringExtra("estartLongitude")
 
 
-        val distance = intent.getStringExtra("distance")
+        distance = intent.getStringExtra("distance").toString()
         val time = intent.getStringExtra("time")
 
         eventbinding = ActivityEventBinding.inflate(layoutInflater)
@@ -178,8 +179,9 @@ class EventActivity : AppCompatActivity() {
 
         }
 
+
         //distance
-        if (distance != "0.0") {
+        if ( distance != "null") {
             eventbinding.tvDistance.text = distance.toString() + " KM"
             eventbinding.tvTimeAlarm.text = time.toString()
         }
@@ -188,31 +190,47 @@ class EventActivity : AppCompatActivity() {
         //add to db
         eventbinding.btnAddEventFab.setOnClickListener(View.OnClickListener
         {
-            addEvent()
+            val eventType = eventbinding.autoCompleteTextViewTypeOfEvent.getText().toString()
+            val eventDescription = etEventDescription.getText().toString()
+            val eventDate = addEventDate.getText().toString()
+            val eventTime = addEventTime.getText().toString()
+            val eventTransport =
+                eventbinding.autoCompleteTextViewTypeOfTransport.getText().toString()
+
+
+            Toast.makeText(
+                this,
+                (eventTransport + " " + time + " " + startpoint2Latitude + " " + startpoint2Longitude),
+                Toast.LENGTH_SHORT
+            ).show()
+
+
+            if (startpoint2 != null && startpoint2Latitude != null && startpoint2Longitude != null && endpoint != null && endpointLatitude != null && endpointLongitude != null && distance != null && time != null) {
+                val eventModel =
+                    EventModel(
+                        eventType,
+                        eventDescription,
+                        eventDate,
+                        eventTime,
+                        eventTransport,
+                        startpoint2,
+                        startpoint2Latitude,
+                        startpoint2Longitude,
+                        endpoint,
+                        endpointLatitude,
+                        endpointLongitude,
+                        distance,
+                        time
+                    )
+                itemViewModel.insertDataIntoEventTable(eventModel)
+            }
+
+
+            val intent = Intent(this, EventHomeActivity::class.java)
+            startActivity(intent)
         })
     }
 
-    private fun addEvent() {
-        val eventType = eventbinding.autoCompleteTextViewTypeOfEvent.getText().toString()
-        val eventDescription = etEventDescription.getText().toString()
-        val eventDate = addEventDate.getText().toString()
-        val eventTime = addEventTime.getText().toString()
-        val eventTransport = eventbinding.autoCompleteTextViewTypeOfTransport.getText().toString()
-
-        Toast.makeText(
-            this,
-            (eventType + " " + eventDescription + " " + eventDate + " " + eventTime + " " + eventTransport),
-            Toast.LENGTH_SHORT
-        ).show()
-
-
-        val eventModel = EventModel(eventType, eventDescription, eventDate, eventTime)
-        itemViewModel.insertDataIntoEventTable(eventModel)
-
-        val intent = Intent(this, EventHomeActivity::class.java)
-        startActivity(intent)
-
-    }
 
     private fun addTime() {
         val cal = Calendar.getInstance()
