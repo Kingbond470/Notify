@@ -106,6 +106,7 @@ class EventActivity : AppCompatActivity() {
             addDate()
         }
 
+
         //add Time
         eventbinding.addEventTime.setOnClickListener {
             addTime()
@@ -148,6 +149,7 @@ class EventActivity : AppCompatActivity() {
             eventbinding.autoCompleteTextViewTypeOfTransport.setText(eventTransport2.toString())
 
         }
+
 
         //pick end point
         eventbinding.addEndPoint.setOnClickListener {

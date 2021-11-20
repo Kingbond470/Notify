@@ -9,7 +9,7 @@
         android:layout_height="match_parent"
         android:background="@color/app_background_navy_blue"
         android:orientation="vertical"
-        android:padding="10dp"
+        android:padding="20dp"
         tools:context=".ui.event.EventDetailsActivity">
 
         <LinearLayout
@@ -17,59 +17,161 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-
             <TextView
-                android:id="@+id/goalDetailsTitle"
+                android:id="@+id/eventDetailsTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="title:"
+                android:text="Title"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/eventDetailsDesc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Description"
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Date : "
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/eventDetailsEventDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="2021-11-21"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/goalDetailsDesc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
-                android:text="description"
+                android:text="Event Time : "
                 android:textColor="@color/white"
-                android:textSize="15sp" />
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/eventDetailsEventTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="09:00 AM"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Vehicle : "
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/eventDetailsEventVehicle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Bike"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
 
             <LinearLayout
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="5dp"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="From : "
+                    android:textColor="@color/white"
+                    android:textSize="30sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="To : "
+                    android:textColor="@color/white"
+                    android:textSize="30sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/goalDescription"
                 android:layout_marginHorizontal="5dp"
                 android:layout_marginTop="15dp">
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:id="@+id/tvEventDetailFrom"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="from: "
-                    android:textColor="@color/white" />
+                    android:layout_weight="1"
+                    android:text="Raipur"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
 
                 <TextView
-                    android:id="@+id/fromGoalDetails"
-                    android:layout_width="wrap_content"
+                    android:id="@+id/tvEventDetailTo"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="date"
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="    To  "
-                    android:textColor="@color/white" />
-
-                <TextView
-                    android:id="@+id/toGoalDetails"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="date"
-                    android:textColor="@color/white" />
-
+                    android:layout_weight="1"
+                    android:text="Mumbai"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
 
             </LinearLayout>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Distance : "
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/eventDetailsEventDistance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="30 KM"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="Time Left : "
+                android:textColor="@color/white"
+                android:textSize="30sp" />
+
+            <TextView
+                android:id="@+id/eventDetailsEventTimeLeft"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:text="00:00:00"
+                android:textColor="@color/white"
+                android:textSize="40sp" />
 
         </LinearLayout>
 
