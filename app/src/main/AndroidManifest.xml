@@ -68,7 +68,13 @@
             android:exported="true" />
         <activity
             android:name=".ui.home.HomeActivity"
-            android:exported="true" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:theme="@style/Theme.Goals"
             android:name=".ui.goal.GoalDetailsActivity"
@@ -93,17 +99,7 @@
             android:name=".ui.splash.SpalshActivity"
             android:exported="true"
             android:theme="@style/Theme.Splash">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".ui.login.LoginActivity"

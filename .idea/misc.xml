@@ -39,6 +39,10 @@
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_security.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_signup_india.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_task_cancel.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_task_check_thin.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_task_complete.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_task_cross.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_task_cross_thin.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_task_tick.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_tools.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_welcome.xml" value="0.2203125" />
@@ -68,8 +72,9 @@
         <entry key="..\:/Android/Notify/app/src/main/res/layout/fragment_setting_user_profile.xml" value="0.22" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/item_event_layout.xml" value="0.22" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/item_goal_layout.xml" value="0.20416666666666666" />
-        <entry key="..\:/Android/Notify/app/src/main/res/layout/item_task_layout.xml" value="0.22" />
+        <entry key="..\:/Android/Notify/app/src/main/res/layout/item_task_layout.xml" value="0.2" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/nav_header.xml" value="0.20416666666666666" />
+        <entry key="..\:/Android/Notify/app/src/main/res/layout/notification_layout.xml" value="0.25" />
         <entry key="..\:/Android/Notify/app/src/main/res/menu/bottom_menu.xml" value="0.20416666666666666" />
         <entry key="..\:/Android/Notify/app/src/main/res/menu/nav_menu.xml" value="0.20416666666666666" />
       </map>
