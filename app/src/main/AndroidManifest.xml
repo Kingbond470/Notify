@@ -20,18 +20,19 @@
         android:theme="@style/Theme.Notify">
         <activity
             android:name=".ui.event.EventHomeActivity"
-            android:exported="false" />
+            android:exported="true"
+            android:theme="@style/Theme.Goals" />
         <activity
             android:name=".ui.helpandsupport.HelpAndSupportActivity"
-            android:theme="@style/Theme.EditProfile"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.EditProfile" />
         <activity
             android:name=".ui.settings.SettingsUserProfileActivity"
             android:exported="true" />
         <activity
             android:name=".ui.settings.SettingsActivity"
-            android:theme="@style/Theme.EditProfile"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.EditProfile" />
         <activity
             android:name=".ui.profile.EditProfileActivity"
             android:exported="true"
@@ -51,13 +52,16 @@
         <activity
             android:name=".ui.event.MapsActivity"
             android:exported="true"
-            android:label="@string/title_activity_maps" />
+            android:label="@string/title_activity_maps"
+            android:theme="@style/Theme.Goals" />
         <activity
             android:name=".ui.event.LocationSearchActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.Goals" />
         <activity
             android:name=".ui.event.EventActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.Goals" />
         <activity
             android:name=".ui.about.AboutActivity"
             android:exported="true" />
@@ -66,14 +70,14 @@
             android:exported="true" />
         <activity
             android:name=".ui.goal.GoalDetailsActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ui.task.TaskGoalActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.Goals" />
         <activity
             android:name=".ui.task.TaskActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.Goals" />
         <activity
             android:name=".ui.task.TaskHomeActivity"

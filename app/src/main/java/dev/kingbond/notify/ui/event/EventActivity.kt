@@ -116,7 +116,7 @@ class EventActivity : AppCompatActivity() {
             timeSetListener,
             cal.get(Calendar.HOUR_OF_DAY),
             cal.get(Calendar.MINUTE),
-            true
+            false
         ).show()
     }
 
