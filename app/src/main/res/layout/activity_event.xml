@@ -241,7 +241,7 @@
         android:paddingVertical="10dp"
         android:text="Start Point"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="8sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/addEndPoint"
         app:layout_constraintTop_toBottomOf="@id/tvTravelPath" />
@@ -258,7 +258,7 @@
         android:paddingVertical="10dp"
         android:text="End Point"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="8sp"
         app:layout_constraintLeft_toRightOf="@id/addStartPoint"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTravelPath" />
