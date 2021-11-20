@@ -9,7 +9,7 @@
         android:background="@color/app_background_navy_blue"
         android:orientation="vertical"
         android:padding="10dp"
-        tools:context=".ui.task.TaskHomeActivity">
+        tools:context=".ui.event.EventHomeActivity">
 
 
         <LinearLayout
@@ -18,14 +18,14 @@
             android:orientation="vertical">
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/taskRecyclerView"
+                android:id="@+id/eventRecyclerView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
 
         </LinearLayout>
 
         <!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
-        <!--            android:id="@+id/addTaskHome"-->
+        <!--            android:id="@+id/addEventHome"-->
         <!--            android:layout_width="wrap_content"-->
         <!--            android:layout_height="wrap_content"-->
         <!--            android:layout_gravity="bottom|end"-->
@@ -36,7 +36,7 @@
         <!--            app:maxImageSize="45dp" />-->
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:id="@+id/addTaskHome"
+            android:id="@+id/addEventHome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|end"

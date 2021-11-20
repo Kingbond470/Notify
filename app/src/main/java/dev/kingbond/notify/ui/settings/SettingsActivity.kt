@@ -13,6 +13,7 @@ import com.bumptech.glide.Glide
 import com.google.firebase.auth.FirebaseAuth
 import dev.kingbond.notify.R
 import dev.kingbond.notify.databinding.ActivitySettingsBinding
+import dev.kingbond.notify.ui.home.HomeActivity
 import dev.kingbond.notify.ui.login.LoginActivity
 
 class SettingsActivity : AppCompatActivity() {
@@ -31,20 +32,27 @@ class SettingsActivity : AppCompatActivity() {
             startActivity(Intent(this, SettingsUserProfileActivity::class.java))
         }
 
+        settingsBinding.ivBackSettingProfile.setOnClickListener {
+            startActivity(Intent(this, HomeActivity::class.java))
+        }
+
         //profile
         mAuth = FirebaseAuth.getInstance()
         val user = mAuth.currentUser
         if (user != null) {
-            Glide.with(settingsBinding.ivSettingProfileImage).load(user.photoUrl).into(settingsBinding.ivSettingProfileImage)
+            Glide.with(settingsBinding.ivSettingProfileImage).load(user.photoUrl)
+                .into(settingsBinding.ivSettingProfileImage)
             settingsBinding.tvSettingsProfileName.text = user.displayName
             settingsBinding.ivEmail.text = user.email
             settingsBinding.tvLogOutName.text = "You are logged in as ${user.displayName}"
-            Glide.with(settingsBinding.ivSettingProfileImage).load(user.photoUrl).into(settingsBinding.ivSettingProfileImage)
+            Glide.with(settingsBinding.ivSettingProfileImage).load(user.photoUrl)
+                .into(settingsBinding.ivSettingProfileImage)
             settingsBinding.tvSettingsProfileName.text = user.displayName
             settingsBinding.ivEmail.text = user.email
             settingsBinding.tvLogOutName.text = "You are logged in as ${user.displayName}"
         } else {
-            Glide.with(settingsBinding.ivSettingProfileImage).load(R.drawable.man).into(settingsBinding.ivSettingProfileImage)
+            Glide.with(settingsBinding.ivSettingProfileImage).load(R.drawable.man)
+                .into(settingsBinding.ivSettingProfileImage)
             settingsBinding.tvSettingsProfileName.text = "Masai Android"
         }
 
@@ -60,7 +68,7 @@ class SettingsActivity : AppCompatActivity() {
             val logout = Intent(this, LoginActivity::class.java)
             startActivity(logout)
 
-          //  (activity as Activity?)?.overridePendingTransition(0, 0)
+            //  (activity as Activity?)?.overridePendingTransition(0, 0)
         }
 
         if (settingsBinding.spinnerSettingDownload.count > 1) {
@@ -75,7 +83,8 @@ class SettingsActivity : AppCompatActivity() {
                 if (fromUser) {
                     if (progress >= 0 && progress <= seekBar.max) {
                         val progressString = (progress).toString() + " s"
-                        settingsBinding.tvCrossfade12s.text = progressString // the TextView Reference
+                        settingsBinding.tvCrossfade12s.text =
+                            progressString // the TextView Reference
                         seekBar.secondaryProgress = progress
                     }
                 }
@@ -108,4 +117,4 @@ class SettingsActivity : AppCompatActivity() {
 
     }
 
-    }
+}

@@ -55,7 +55,7 @@ class TaskActivity : AppCompatActivity() {
                     addToDateTask.text.toString(),
                     addTimeTask.text.toString(),
                     0,
-                    "regular_task")
+                    "Normal")
 
                 itemViewModel.insertDataInTaskTable(taskModel)
                 setAlarm(TaskDescription.text.toString(),addToDateTask.text.toString().trim(),addTimeTask.text.toString())

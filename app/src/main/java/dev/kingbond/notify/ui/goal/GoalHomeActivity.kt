@@ -3,15 +3,10 @@ package dev.kingbond.notify.ui.goal
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Parcelable
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.room.Room
-import dev.kingbond.notify.R
 import dev.kingbond.notify.databinding.ActivityGoalHomeBinding
 import dev.kingbond.notify.repository.RepositoryClass
-import dev.kingbond.notify.data.database.ClassDao
 import dev.kingbond.notify.data.database.RoomDataBaseClass
 import dev.kingbond.notify.ui.goal.model.GoalModel
 import dev.kingbond.notify.ui.goal.recyclerView.GoalAdapter
@@ -29,6 +24,7 @@ class GoalHomeActivity : AppCompatActivity(), GoalClickListener {
     private lateinit var itemViewModel: ViewModelClass
 
     private var list = arrayListOf<GoalModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityGoalHomeBinding.inflate(layoutInflater)

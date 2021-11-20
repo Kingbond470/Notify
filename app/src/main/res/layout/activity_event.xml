@@ -7,54 +7,52 @@
     android:background="@color/app_background_navy_blue"
     tools:context=".ui.event.EventActivity">
 
-    <!--
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:background="@color/navigation_color"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/navigation_color"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/ic_task_back"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="62dp"
+            android:fontFamily="@font/roboto_bold"
+            android:text="New Event"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_home_search"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:src="@drawable/ic_task_back"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="62dp"
-                android:fontFamily="@font/roboto_bold"
-                android:text="New Event"
-                android:textColor="@color/white"
-                android:textSize="20sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginRight="20dp"
-                android:src="@drawable/ic_home_search"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    -->
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/tvWhatIsTheEvent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="70dp"
         android:fontFamily="@font/roboto_bold"
         android:text="What is the Event?"
         android:textColor="@color/app_background"
@@ -68,7 +66,9 @@
         android:id="@+id/llSelectType"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
         android:orientation="vertical"
         android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -99,7 +99,9 @@
         android:id="@+id/etEventDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
         android:hint="Description"
         android:textColor="@android:color/white"
         android:textColorHint="@android:color/white"
@@ -113,7 +115,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/roboto_bold"
         android:text="Date"
         android:textColor="@color/app_background"
@@ -125,11 +127,13 @@
         android:id="@+id/addEventDate"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
         android:background="@color/app_background"
         android:padding="15dp"
         android:paddingVertical="10dp"
-        android:text="2021-11-22"
+        android:text="2021-11-21"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -140,7 +144,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/roboto_bold"
         android:text="Time"
         android:textColor="@color/app_background"
@@ -152,40 +156,92 @@
         android:id="@+id/addEventTime"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
         android:background="@color/app_background"
         android:padding="15dp"
         android:paddingVertical="10dp"
-        android:text="09:00"
+        android:text="09:00 AM"
         android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTime" />
 
     <TextView
-        android:id="@+id/tvTravelPath"
+        android:id="@+id/tvTransportType"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/roboto_bold"
-        android:text="Travel Path"
+        android:text="Transport Type"
         android:textColor="@color/app_background"
         android:textSize="18sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@id/addEventTime" />
 
+    <!-- drop down-->
+
+    <LinearLayout
+        android:id="@+id/llSelectTransportType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:orientation="vertical"
+        android:theme="@style/Theme.MaterialComponents.DayNight.DarkActionBar"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTransportType">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tvTypeOfTransport"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/app_background">
+
+            <AutoCompleteTextView
+                android:id="@+id/autoCompleteTextViewTypeOfTransport"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:inputType="none"
+                android:text="Type of Transport"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvTravelPath"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Travel Path"
+        android:textColor="@color/app_background"
+        android:textSize="18sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/llSelectTransportType" />
+
     <TextView
         android:id="@+id/addStartPoint"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
         android:background="@color/app_background"
         android:padding="15dp"
         android:paddingVertical="10dp"
         android:text="Start Point"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="8sp"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@id/addEndPoint"
         app:layout_constraintTop_toBottomOf="@id/tvTravelPath" />
@@ -194,13 +250,15 @@
         android:id="@+id/addEndPoint"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
         android:background="@color/app_background"
         android:padding="15dp"
         android:paddingVertical="10dp"
         android:text="End Point"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="8sp"
         app:layout_constraintLeft_toRightOf="@id/addStartPoint"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvTravelPath" />
@@ -217,5 +275,38 @@
         app:layout_constraintRight_toRightOf="parent"
         app:srcCompat="@drawable/ic_task_tick" />
 
+    <TextView
+        android:id="@+id/tvDistance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/app_background"
+        android:padding="15dp"
+        android:paddingVertical="10dp"
+        android:text="Distance to Travel"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toLeftOf="@id/tvTimeAlarm"
+        app:layout_constraintTop_toBottomOf="@id/addEndPoint" />
+
+    <TextView
+        android:id="@+id/tvTimeAlarm"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="20dp"
+        android:background="@color/app_background"
+        android:padding="15dp"
+        android:paddingVertical="10dp"
+        android:text="Alarm Time"
+        android:textColor="@color/white"
+        android:textSize="10sp"
+        app:layout_constraintLeft_toRightOf="@id/tvDistance"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/addEndPoint" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

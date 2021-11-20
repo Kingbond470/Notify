@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="dev.kingbond.notify">
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the "MyLocation" functionality.
     -->
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -19,21 +19,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Notify">
-
+        <activity
+            android:name=".ui.event.EventHomeActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Goals" />
+        <activity
+            android:name=".ui.helpandsupport.HelpAndSupportActivity"
+            android:exported="true"
+            android:theme="@style/Theme.EditProfile" />
         <activity
             android:name=".ui.settings.SettingsUserProfileActivity"
             android:exported="true" />
         <activity
             android:name=".ui.settings.SettingsActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.EditProfile" />
         <activity
             android:name=".ui.profile.EditProfileActivity"
             android:exported="true"
             android:theme="@style/Theme.EditProfile" />
-        <activity
-            android:name=".ui.event.LocationSearchActivity"
-            android:exported="true" />
-
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -42,7 +46,6 @@
              sign the APK for publishing.
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
@@ -50,10 +53,16 @@
         <activity
             android:name=".ui.event.MapsActivity"
             android:exported="true"
-            android:label="@string/title_activity_maps" />
+            android:label="@string/title_activity_maps"
+            android:theme="@style/Theme.Goals" />
+        <activity
+            android:name=".ui.event.LocationSearchActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Goals" />
         <activity
             android:name=".ui.event.EventActivity"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.Goals" />
         <activity
             android:name=".ui.about.AboutActivity"
             android:exported="true" />
@@ -63,21 +72,19 @@
         <activity
             android:theme="@style/Theme.Goals"
             android:name=".ui.goal.GoalDetailsActivity"
-            android:exported="false" />
+            android:exported="true" />
         <activity
             android:name=".ui.task.TaskGoalActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.Goals" />
         <activity
             android:name=".ui.task.TaskActivity"
-            android:exported="false"
+            android:exported="true"
             android:theme="@style/Theme.Goals" />
         <activity
             android:name=".ui.task.TaskHomeActivity"
             android:exported="true"
-            android:theme="@style/Theme.Goals">
-
-        </activity>
+            android:theme="@style/Theme.Goals" />
         <activity
             android:name=".ui.goal.GoalHomeActivity"
             android:exported="true"
@@ -92,6 +99,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".ui.login.LoginActivity"
