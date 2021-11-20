@@ -4,6 +4,7 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/app_logo_background.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/bg_rectangle.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/blood_group_not_selected.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/blood_group_selected.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/blood_group_selector.xml" value="0.2203125" />
@@ -37,9 +38,13 @@
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_tools.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_welcome.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/login_logo_background.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/memory_indicator_progress.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/rb_not_selected.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/rb_selected.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/rb_selector.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/splash_logo.xml" value="0.2203125" />
-        <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_edit_profile.xml" value="0.22" />
+        <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_event.xml" value="0.20416666666666666" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_help_and_support.xml" value="0.29015544041450775" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_home.xml" value="0.2" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_login.xml" value="0.22" />
@@ -47,31 +52,8 @@
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_settings.xml" value="0.22" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_settings_user_profile.xml" value="0.22" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_spalsh.xml" value="0.19010416666666666" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/drawable/floating_add_button.xml" value="0.19444444444444445" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/drawable/ic_home_add.xml" value="0.24114583333333334" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/drawable/ic_home_calender.xml" value="0.24114583333333334" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/drawable/ic_home_completed.xml" value="0.24114583333333334" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/drawable/ic_home_icon.xml" value="0.24114583333333334" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/drawable/ic_home_setting.xml" value="0.24114583333333334" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/drawable/ic_task_tick.xml" value="0.19444444444444445" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/drawable/ic_transport_mode_bus.xml" value="0.24114583333333334" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/drawable/ic_transport_mode_car.xml" value="0.24114583333333334" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/drawable/ic_transport_mode_cycle.xml" value="0.24114583333333334" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/drawable/ic_transport_mode_train.xml" value="0.24114583333333334" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/drawable/ic_transport_mode_walk.xml" value="0.24114583333333334" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/layout/activity_event.xml" value="0.18" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/layout/activity_event_home.xml" value="0.2109375" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/layout/activity_goal_home.xml" value="0.213768115942029" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/layout/activity_home.xml" value="0.18" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/layout/activity_location_search.xml" value="0.19157608695652173" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/layout/activity_login.xml" value="0.1094224924012158" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/layout/activity_main.xml" value="0.1094224924012158" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/layout/activity_maps.xml" value="0.19157608695652173" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/layout/activity_maps_search.xml" value="0.19157608695652173" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/layout/activity_spalsh.xml" value="0.19157608695652173" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/layout/dropdown_item.xml" value="0.19157608695652173" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/layout/item_event_layout.xml" value="0.213768115942029" />
-        <entry key="..\:/Construct Week Project/Hackaton/Notify/app/src/main/res/layout/item_goal_layout.xml" value="0.213768115942029" />
+        <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_task.xml" value="0.22" />
+        <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_task_home.xml" value="0.20416666666666666" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/fragment_setting.xml" value="0.19010416666666666" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/fragment_setting_user_profile.xml" value="0.22" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/nav_header.xml" value="0.20416666666666666" />

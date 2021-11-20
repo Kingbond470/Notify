@@ -1,26 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:background="@color/app_background_navy_blue"
         android:layout_height="match_parent"
+        android:background="@color/app_background_navy_blue"
         tools:context=".ui.task.TaskActivity">
+
+        <RelativeLayout
+            android:id="@+id/relativeLayoutNewTask"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/app_background"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/ibProfileBackNewTask"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_back_arrow" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/roboto"
+                android:text="New Task"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/ivNewTaskImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginVertical="20dp"
+            android:layout_below="@id/relativeLayoutNewTask"
+            android:src="@drawable/ic_transport_mode_walk" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="20dp"
+            android:layout_below="@+id/ivNewTaskImage"
+            android:layout_margin="15dp"
             android:orientation="vertical">
 
             <TextView
-                android:layout_marginBottom="5dp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/roboto_light"
                 android:text="Name"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
@@ -29,18 +64,21 @@
                 android:id="@+id/TaskName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
                 android:background="@drawable/bg_rectangle"
-                android:hint="enter the title name"
+                android:fontFamily="@font/roboto_thin"
+                android:hint="Enter task name"
                 android:padding="15dp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/roboto_light"
                 android:text="Description"
-                android:layout_marginBottom="5dp"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
 
@@ -48,55 +86,60 @@
                 android:id="@+id/TaskDescription"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
                 android:background="@drawable/bg_rectangle"
-                android:hint="enter the description"
+                android:fontFamily="@font/roboto_thin"
+                android:hint="Enter description for task"
                 android:padding="15dp"
                 android:textColor="@color/white"
                 android:textColorHint="@color/white" />
 
             <TextView
-                android:layout_marginBottom="5dp"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="15dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/roboto_light"
                 android:text="Date and Time"
                 android:textColor="@color/white"
                 android:textSize="20sp" />
+
             <LinearLayout
-                android:weightSum="2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:weightSum="2">
+
                 <TextView
-                    android:layout_weight="1"
                     android:id="@+id/addToDateTask"
-                    android:drawablePadding="15dp"
-                    android:drawableRight="@drawable/ic_baseline_calendar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginRight="6dp"
+                    android:layout_weight="1"
                     android:background="@drawable/bg_rectangle"
+                    android:drawableRight="@drawable/ic_baseline_calendar"
+                    android:drawablePadding="15dp"
+                    android:fontFamily="@font/roboto_thin"
                     android:padding="15dp"
                     android:paddingVertical="10dp"
                     android:text="Set Date"
-                    android:layout_marginRight="6dp"
                     android:textColor="@color/white"
                     android:textSize="20dp" />
 
                 <TextView
-                    android:drawableRight="@drawable/ic_baseline_access_time"
-                    android:layout_weight="1"
                     android:id="@+id/addTimeTask"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="6dp"
+                    android:layout_weight="1"
                     android:background="@drawable/bg_rectangle"
+                    android:drawableRight="@drawable/ic_baseline_access_time"
+                    android:fontFamily="@font/roboto_thin"
                     android:padding="15dp"
                     android:paddingVertical="10dp"
                     android:text="Set Time"
-                    android:layout_marginLeft="6dp"
                     android:textColor="@color/white"
                     android:textSize="20dp" />
             </LinearLayout>
-
-
 
 
         </LinearLayout>
@@ -108,11 +151,12 @@
             android:layout_alignParentBottom="true"
             android:layout_marginHorizontal="15dp"
             android:layout_marginBottom="10dp"
-            android:background="@drawable/bg_rectangle"
+            android:backgroundTint="@color/navigation_color"
+            android:fontFamily="@font/roboto"
             android:gravity="center"
-            android:padding="10dp"
+            android:padding="15dp"
             android:text="submit"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white" />
 
     </RelativeLayout>
 </layout>

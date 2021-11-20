@@ -22,6 +22,7 @@ import dev.kingbond.notify.ui.helpandsupport.HelpAndSupportActivity
 import dev.kingbond.notify.ui.profile.EditProfileActivity
 import dev.kingbond.notify.ui.settings.SettingFragment
 import dev.kingbond.notify.ui.settings.SettingsActivity
+import dev.kingbond.notify.ui.task.TaskHomeActivity
 
 class HomeActivity : AppCompatActivity() {
 
@@ -87,10 +88,10 @@ class HomeActivity : AppCompatActivity() {
         homeBinding.navView.setNavigationItemSelectedListener(NavigationView.OnNavigationItemSelectedListener { item ->
             when (item.itemId) {
                 R.id.nav_task -> {
-//                    val intent =
-//                        Intent(this@HomeActivity, Task::class.java)
-//                    startActivity(intent)
-//                    drawableLayout.closeDrawer(GravityCompat.START)
+                    val intent =
+                        Intent(this@HomeActivity, TaskHomeActivity::class.java)
+                    startActivity(intent)
+                    homeBinding.drawerLayout.closeDrawer(GravityCompat.START)
                     Toast.makeText(this, "Task", Toast.LENGTH_SHORT).show()
                 }
 
