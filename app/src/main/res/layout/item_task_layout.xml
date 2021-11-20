@@ -26,7 +26,7 @@
                 android:id="@+id/itemTaskName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_light"
+                android:fontFamily="@font/roboto_medium"
                 android:text="@{task.name}"
                 android:textColor="@color/white"
                 android:textSize="18sp" />
@@ -36,7 +36,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_marginHorizontal="10dp"
-                android:fontFamily="@font/roboto_light"
+                android:fontFamily="@font/roboto"
                 android:text="@{task.category}"
                 android:textColor="@color/yellow"
                 android:textSize="16sp" />
@@ -46,7 +46,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/itemTaskName"
-                android:fontFamily="@font/roboto_light"
+                android:fontFamily="@font/roboto"
                 android:maxLines="2"
                 android:text="@{task.desc}"
                 android:textColor="@color/white"
@@ -67,7 +67,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/itemTaskDescription"
-                android:fontFamily="@font/roboto_light"
+                android:fontFamily="@font/roboto"
                 android:text="@{task.time}"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
@@ -78,7 +78,7 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@id/itemTaskDescription"
                 android:layout_toRightOf="@id/itemTaskTime"
-                android:fontFamily="@font/roboto_light"
+                android:fontFamily="@font/roboto"
                 android:text="@{task.date}"
                 android:textColor="@color/white"
                 android:textSize="14sp" />
