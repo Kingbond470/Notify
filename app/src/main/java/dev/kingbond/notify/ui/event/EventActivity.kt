@@ -191,7 +191,7 @@ class EventActivity : AppCompatActivity() {
         val timeSetListener = TimePickerDialog.OnTimeSetListener { timePicker, hour, minute ->
             cal.set(Calendar.HOUR_OF_DAY, hour)
             cal.set(Calendar.MINUTE, minute)
-            addEventTime.text = SimpleDateFormat("HH:mm").format(cal.time)
+            addEventTime.text = SimpleDateFormat("hh:mm aaa").format(cal.time)
         }
 
         TimePickerDialog(

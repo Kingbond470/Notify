@@ -26,6 +26,9 @@ import com.google.android.gms.maps.model.MarkerOptions
 import dev.kingbond.notify.R
 import kotlinx.android.synthetic.main.activity_location_search.*
 import java.io.IOException
+import android.location.Geocoder
+import java.util.*
+
 
 class LocationSearchActivity : AppCompatActivity(), OnMapReadyCallback, LocationListener,
     GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
@@ -147,13 +150,25 @@ class LocationSearchActivity : AppCompatActivity(), OnMapReadyCallback, Location
             }
 
             val address = addressList!![0]
+
             val latLng = LatLng(address.latitude, address.longitude)
             mMap!!.addMarker(MarkerOptions().position(latLng).title(location))
             mMap!!.animateCamera(CameraUpdateFactory.newLatLng(latLng))
 
+            val latitude = address.latitude
+            val longitude = address.longitude
+
+            val geocoder = Geocoder(this)
+            val addresses = geocoder.getFromLocation(latitude, longitude, 1)
+            val cityName = addresses[0].getAddressLine(0)
+            val stateName = addresses[0].getAddressLine(1)
+            val countryName = addresses[0].getAddressLine(2)
+
+            val place = cityName + ", " + stateName + ", " + countryName
+
             btnAddLocation.setOnClickListener {
                 val intent = Intent(this@LocationSearchActivity, EventActivity::class.java)
-                intent.putExtra(loc, latLng.toString())
+                intent.putExtra(loc, place)
                 intent.putExtra("eventType", eventType)
                 intent.putExtra("eventDescription", eventDescription)
                 intent.putExtra("eventDate", eventDate)
