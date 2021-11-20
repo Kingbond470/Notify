@@ -19,6 +19,7 @@ import dev.kingbond.notify.R
 import dev.kingbond.notify.databinding.ActivityHomeBinding
 import dev.kingbond.notify.ui.about.AboutActivity
 import dev.kingbond.notify.ui.calendar.CalendarFragment
+import dev.kingbond.notify.ui.completed.CompletedTasks
 import dev.kingbond.notify.ui.event.EventActivity
 import dev.kingbond.notify.ui.goal.GoalHomeActivity
 import dev.kingbond.notify.ui.helpandsupport.HelpAndSupportActivity
@@ -75,8 +76,8 @@ class HomeActivity : AppCompatActivity() {
                     Toast.makeText(applicationContext, "Calendar", Toast.LENGTH_SHORT).show()
                 }
                 R.id.completedFragment -> {
-                    // replaceFragment()
-                    Toast.makeText(applicationContext, "Completerd", Toast.LENGTH_SHORT).show()
+                     replaceFragment(CompletedTasks(),"Completed")
+                    Toast.makeText(applicationContext, "Completed", Toast.LENGTH_SHORT).show()
                 }
                 R.id.profileFragment -> {
                     replaceFragment(SettingFragment(), "Settings")

@@ -59,14 +59,15 @@ class GoalDetailsActivity : AppCompatActivity(), TaskClickListener {
     private fun addTaskToGoal() {
         binding.addTaskToGoal.setOnClickListener {
             val intent = Intent(this, TaskGoalActivity::class.java)
-            intent.putExtra("goalName",binding.goalDetailsTitle.text.toString())
+            val name = binding.goalDetailsTitle.text.toString()
+            intent.putExtra("goalName",name)
             startActivity(intent)
         }
     }
 
     private fun setRecyclerView() {
 
-        adapter = TaskAdapter(list, this)
+        adapter = TaskAdapter(list, this,itemViewModel,this)
         val linearLayoutManager = LinearLayoutManager(this)
         binding.apply {
             goalDetailsRecyclerView.adapter = adapter
@@ -91,5 +92,17 @@ class GoalDetailsActivity : AppCompatActivity(), TaskClickListener {
         taskDialogLayoutBinding.okDialogTask.setOnClickListener {
             bottomSheetDialog.dismiss()
         }
+    }
+
+    override fun taskCompletedClicked(taskModel: TaskModel) {
+
+        taskModel.status = 1
+        itemViewModel.updateDataInTaskTable(taskModel)
+
+    }
+
+    override fun taskNotCompletedClicked(taskModel: TaskModel) {
+        taskModel.status = 0
+        itemViewModel.updateDataInTaskTable(taskModel)
     }
 }

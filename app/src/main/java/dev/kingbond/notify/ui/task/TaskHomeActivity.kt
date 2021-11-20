@@ -12,6 +12,7 @@ import dev.kingbond.notify.data.database.RoomDataBaseClass
 import dev.kingbond.notify.databinding.ActivityTaskHomeBinding
 import dev.kingbond.notify.databinding.TaskDialogueLayoutBinding
 import dev.kingbond.notify.repository.RepositoryClass
+import dev.kingbond.notify.ui.goal.model.GoalModel
 import dev.kingbond.notify.ui.task.model.TaskModel
 import dev.kingbond.notify.ui.task.recyclerView.TaskAdapter
 import dev.kingbond.notify.ui.task.recyclerView.TaskClickListener
@@ -51,7 +52,7 @@ class TaskHomeActivity : AppCompatActivity(),TaskClickListener {
     }
 
     private fun setRecyclerView() {
-        adapter = TaskAdapter(list,this)
+        adapter = TaskAdapter(list,this, itemViewModel, this)
         val linearLayoutManager = LinearLayoutManager(this)
         binding.apply {
             taskRecyclerView.adapter = adapter
@@ -77,5 +78,17 @@ class TaskHomeActivity : AppCompatActivity(),TaskClickListener {
             bottomSheetDialog.dismiss()
         }
 
+    }
+
+    override fun taskCompletedClicked(taskModel: TaskModel) {
+
+        taskModel.status = 1
+        itemViewModel.updateDataInTaskTable(taskModel)
+
+    }
+
+    override fun taskNotCompletedClicked(taskModel: TaskModel) {
+        taskModel.status = 0
+        itemViewModel.updateDataInTaskTable(taskModel)
     }
 }

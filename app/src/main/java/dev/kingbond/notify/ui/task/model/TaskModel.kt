@@ -15,7 +15,7 @@ class TaskModel(
     @ColumnInfo(name = "time")
     val time:String,
     @ColumnInfo(name = "status")
-    val status:Int,
+    var status:Int,
     @ColumnInfo(name = "category")
     val category:String
 ) {

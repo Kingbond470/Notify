@@ -2,6 +2,7 @@ package dev.kingbond.notify.viewmodel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
+import com.google.android.gms.tasks.Task
 import dev.kingbond.notify.repository.RepositoryClass
 import dev.kingbond.notify.ui.event.EventModel
 import dev.kingbond.notify.ui.goal.model.GoalModel
@@ -14,12 +15,24 @@ class ViewModelClass(val repo: RepositoryClass) : ViewModel() {
         repo.addDataToGoal(goalModel)
     }
 
+    fun updateDataIntoGoalTable(goalModel: GoalModel){
+        repo.updateDataToGoal(goalModel)
+    }
+
     fun getDataFromGoal(): LiveData<List<GoalModel>> {
         return repo.getAllGoals()
     }
 
     fun insertDataInTaskTable(taskModel: TaskModel) {
         repo.addDataToTask(taskModel)
+    }
+
+    fun updateDataInTaskTable(taskModel: TaskModel){
+        repo.updateToTask(taskModel)
+    }
+
+    fun getCompletedCountOfTask(goalName: String):LiveData<List<TaskModel>>{
+        return repo.getCompletedTaskGoal(goalName)
     }
 
     fun getDataFromTask(): LiveData<List<TaskModel>> {
@@ -36,5 +49,13 @@ class ViewModelClass(val repo: RepositoryClass) : ViewModel() {
 
     fun getDataFromEventTable(): LiveData<List<EventModel>> {
         return repo.getAllEvents()
+    }
+
+    fun getOneGoal(goalName:String):LiveData<GoalModel>{
+        return repo.getOneGoal(goalName)
+    }
+
+    fun getCompletedTask():LiveData<List<TaskModel>>{
+        return repo.getCompletedTask()
     }
 }

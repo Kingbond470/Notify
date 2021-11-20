@@ -7,22 +7,26 @@ import java.io.Serializable
 
 @Entity(tableName = "goal_table")
 data class GoalModel(
+
     @ColumnInfo(name = "name")
-    val name:String,
+    val name: String,
+
     @ColumnInfo(name = "description")
-    val desc:String,
+    val desc: String,
 
     @ColumnInfo(name = "to_date")
-    val to_date:String,
+    val to_date: String,
 
     @ColumnInfo(name = "from_date")
-    val from_date:String,
+    val from_date: String,
 
     @ColumnInfo(name = "percent")
-    val percent:Int
-) :Serializable{
+    var percent: Int
+
+) : Serializable {
+
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "id")
-    var id: Int ?= null
+    var id: Int? = null
 
 }
