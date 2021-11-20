@@ -42,8 +42,8 @@
             android:label="@string/title_activity_maps" />
         <activity
             android:name=".ui.profile.EditProfileActivity"
-            android:theme="@style/Theme.EditProfile"
-            android:exported="true" />
+            android:exported="true"
+            android:theme="@style/Theme.EditProfile" />
         <activity
             android:name=".ui.about.AboutActivity"
             android:exported="true" />
@@ -52,8 +52,8 @@
             android:exported="true" />
         <activity
             android:name=".ui.splash.SpalshActivity"
+            android:exported="true"
             android:theme="@style/Theme.Splash">
-            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
