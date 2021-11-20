@@ -69,8 +69,6 @@
         <activity
             android:name=".ui.home.HomeActivity"
             android:exported="true" />
-            android:exported="true" >
-        </activity>
         <activity
             android:theme="@style/Theme.Goals"
             android:name=".ui.goal.GoalDetailsActivity"

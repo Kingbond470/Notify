@@ -93,7 +93,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/roboto_light"
-                    android:text="@{event.time}"
+                    android:text="@{event.event_time}"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
 
