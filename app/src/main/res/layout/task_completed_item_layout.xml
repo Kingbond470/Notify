@@ -68,31 +68,15 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
 
-            <LinearLayout
+            <TextView
+                android:text="Task Completed!"
+                android:textColor="@color/green"
+                android:textSize="15sp"
                 android:id="@+id/checkStatus"
                 android:layout_alignParentEnd="true"
                 android:layout_below="@+id/itemTaskDate"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
-
-                <ImageView
-                    android:id="@+id/ivTaskCompleted"
-                    android:src="@drawable/ic_task_tick"
-                    android:backgroundTint="@color/app_background_navy_blue"
-                    android:padding="10dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp" />
-
-                <ImageView
-                    android:id="@+id/ivTaskNotCompleted"
-                    android:layout_marginLeft="5dp"
-                    android:padding="5dp"
-                    android:src="@drawable/ic_task_cancel"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-            </LinearLayout>
+                android:layout_height="wrap_content"/>
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
