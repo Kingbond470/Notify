@@ -41,8 +41,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
     }
     kotlinOptions {
         jvmTarget = '1.8'
@@ -145,9 +145,9 @@ dependencies {
     implementation 'com.google.android.gms:play-services-maps:18.0.0'
     implementation 'com.google.android.gms:play-services-location:18.0.0'
 
-//    //chart library
-//    implementation 'com.github.AnyChart:AnyChart-Android:1.1.2'
-
+    //chart library
+//    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
+    implementation 'com.github.lecho:hellocharts-library:1.5.8@aar'
 
 
 }

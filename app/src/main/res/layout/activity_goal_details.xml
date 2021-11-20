@@ -15,8 +15,6 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-
-
             <TextView
                 android:id="@+id/goalDetailsTitle"
                 android:textSize="20sp"
