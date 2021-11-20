@@ -7,7 +7,6 @@
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the "MyLocation" functionality.
     -->
-
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -19,7 +18,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Notify">
-
+        <activity
+            android:name=".ui.event.EventHomeActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.settings.SettingsUserProfileActivity"
             android:exported="true" />
@@ -30,9 +31,6 @@
             android:name=".ui.profile.EditProfileActivity"
             android:exported="true"
             android:theme="@style/Theme.EditProfile" />
-        android:name=".ui.event.LocationSearchActivity"
-        android:exported="true" />
-
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -41,7 +39,6 @@
              sign the APK for publishing.
              You can define the keys for the debug and release targets in src/debug/ and src/release/.
         -->
-
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
@@ -76,7 +73,7 @@
         <activity
             android:name=".ui.task.TaskHomeActivity"
             android:exported="true"
-            android:theme="@style/Theme.Goals"></activity>
+            android:theme="@style/Theme.Goals" />
         <activity
             android:name=".ui.goal.GoalHomeActivity"
             android:exported="true"
@@ -105,7 +102,6 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-        android:exported="true" />
     </application>
 
 </manifest>
