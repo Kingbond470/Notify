@@ -115,11 +115,8 @@
                 android:layout_marginTop="10dp"
                 android:backgroundTint="@color/white"
                 android:indeterminate="false"
-                android:max="100"
-                android:progress="@{goal.percent}"
                 android:progressBackgroundTint="@color/blue"
-                android:progressTint="@color/green"
-                android:visibility="gone" />
+                android:progressTint="@color/green" />
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>

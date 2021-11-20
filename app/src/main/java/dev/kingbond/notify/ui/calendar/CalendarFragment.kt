@@ -94,8 +94,8 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar), DateClickListener
         })
 
 
-        goalAdapter = GoalAdapter(listGoal, this, itemViewModel)
-        taskAdapter = TaskAdapter(listTask, this)
+        goalAdapter = GoalAdapter(listGoal, this, itemViewModel,this)
+        taskAdapter = TaskAdapter(listTask, this,itemViewModel,this)
         eventAdapter = EventAdapter(listEvent, this)
         val linearLayoutManagerGoal = LinearLayoutManager(requireContext())
         val linearLayoutManagerTask = LinearLayoutManager(requireContext())
@@ -202,6 +202,14 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar), DateClickListener
 
     override fun taskItemClicked(taskModel: TaskModel) {
         Toast.makeText(context, "Task Clicked", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun taskCompletedClicked(taskModel: TaskModel) {
+
+    }
+
+    override fun taskNotCompletedClicked(taskModel: TaskModel) {
+
     }
 
     override fun eventItemClicked(eventModel: EventModel) {
