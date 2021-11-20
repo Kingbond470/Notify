@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <data>
+
         <variable
             name="task"
             type="dev.kingbond.notify.ui.task.model.TaskModel" />
     </data>
+
     <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         app:cardCornerRadius="10dp"
@@ -16,13 +19,15 @@
             android:background="@color/app_background"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <TextView
                 android:id="@+id/itemTaskName"
                 android:text="@{task.name}"
                 android:textSize="20sp"
                 android:textColor="@color/white"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
+
             <TextView
                 android:textSize="16sp"
                 android:textColor="@color/red"
@@ -30,7 +35,8 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginHorizontal="10dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
+
             <TextView
                 android:layout_below="@+id/itemTaskName"
                 android:textSize="15sp"
@@ -39,7 +45,8 @@
                 android:maxLines="2"
                 android:text="@{task.desc}"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
+
             <TextView
                 android:textSize="16sp"
                 android:textColor="@color/white"
@@ -47,7 +54,7 @@
                 android:id="@+id/itemTaskDate"
                 android:layout_below="@+id/itemTaskDescription"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:layout_marginLeft="10dp"
@@ -58,30 +65,29 @@
                 android:layout_below="@id/itemTaskDescription"
                 android:id="@+id/itemTaskTime"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
+
             <LinearLayout
                 android:layout_alignParentEnd="true"
                 android:layout_below="@+id/itemTaskDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content">
-                <TextView
-                    android:text="Completed"
-                    android:padding="5dp"
-                    android:background="@drawable/bg_rectangle_stroke_white"
-                    android:textSize="20sp"
+
+                <ImageView
+                    android:src="@drawable/ic_task_tick"
+                    android:backgroundTint="@color/app_background_navy_blue"
+                    android:padding="10dp"
                     android:layout_marginRight="5dp"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-                <TextView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp" />
+
+                <ImageView
                     android:layout_marginLeft="5dp"
                     android:padding="5dp"
-                    android:background="@drawable/bg_rectangle_stroke_white"
-                    android:text="Not Completed"
-                    android:textSize="20sp"
+                    android:src="@drawable/ic_task_cancel"
                     android:textColor="@color/white"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content" />
             </LinearLayout>
         </RelativeLayout>
 

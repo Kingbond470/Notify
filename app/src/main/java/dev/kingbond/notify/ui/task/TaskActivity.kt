@@ -47,7 +47,7 @@ class TaskActivity : AppCompatActivity() {
                     TaskDescription.text.toString(),
                     addToDateTask.text.toString(),addTimeTask.text.toString(),
                     0,
-                    "regular_task")
+                    "Normal")
 
                 itemViewModel.insertDataInTaskTable(taskModel)
             }
