@@ -200,10 +200,15 @@ class LocationSearchActivity : AppCompatActivity(), OnMapReadyCallback, Location
 
                 val localTime = LocalTime.of(hh[0].toInt(), mm[0].toInt())
 
-                val aaa: String = mm[1].toString()
+                var aaa: String = mm[1].toString()
 
 
+
+
+                //implement for different vehicle
                 var time: Double = dis / 60.0
+
+
 
                 //hour
                 var hour: Double = 0.0
@@ -223,9 +228,13 @@ class LocationSearchActivity : AppCompatActivity(), OnMapReadyCallback, Location
                 val updatedTime: LocalTime =
                     localTime.minusHours(hour.toLong()).minusMinutes(minute.toLong())
 
-
-
-
+                val uhh = updatedTime.toString().split(":").toTypedArray()
+                if (hh[0].toInt() > uhh[0].toInt()) {
+                    if (aaa == "AM")
+                        aaa = "PM"
+                    else
+                        aaa = "AM"
+                }
 
                 val alarmTime: String = updatedTime.toString() + " " + aaa
 
