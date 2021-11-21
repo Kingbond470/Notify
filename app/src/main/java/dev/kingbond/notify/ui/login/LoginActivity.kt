@@ -99,6 +99,7 @@ class LoginActivity : AppCompatActivity() {
                     val user = mAuth.currentUser
                     val intent = Intent(this@LoginActivity, HomeActivity::class.java)
                     startActivity(intent)
+                    finish()
                 } else {
                     // If sign in fails, display a message to the user.
                     Log.w(TAG, "signInWithCredential:failure", task.exception)

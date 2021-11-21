@@ -27,11 +27,11 @@
     </string-array>
 
     <string-array name="wifiAndCellularStreaming">
-        <item>Automatic</item>
-        <item>Low</item>
-        <item>Normal</item>
-        <item>High</item>
-        <item>Very High</item>
+        <item>Current time</item>
+        <item>Next full hour</item>
+        <item>After 6 hour</item>
+        <item>After 12 hour</item>
+        <item>Other time</item>
     </string-array>
 
     <string-array name="downloadQuality">
