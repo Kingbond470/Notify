@@ -1,6 +1,7 @@
 package dev.kingbond.notify.ui.goal
 
 import android.content.Intent
+import android.graphics.Color
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -19,6 +20,9 @@ import dev.kingbond.notify.ui.task.recyclerView.TaskAdapter
 import dev.kingbond.notify.ui.task.recyclerView.TaskClickListener
 import dev.kingbond.notify.viewmodel.ViewModelClass
 import dev.kingbond.notify.viewmodel.ViewModelFactory
+import kotlinx.android.synthetic.main.fragment_completed.*
+import kotlinx.android.synthetic.main.item_goal_layout.*
+import org.eazegraph.lib.models.PieModel
 
 class GoalDetailsActivity : AppCompatActivity(), TaskClickListener {
 
@@ -26,6 +30,9 @@ class GoalDetailsActivity : AppCompatActivity(), TaskClickListener {
     private lateinit var itemViewModel: ViewModelClass
     private lateinit var adapter: TaskAdapter
     private var list = arrayListOf<TaskModel>()
+
+    private var completedTasks = 0F
+    private var remainingTasks = 0F
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -52,9 +59,50 @@ class GoalDetailsActivity : AppCompatActivity(), TaskClickListener {
             adapter.notifyDataSetChanged()
         })
 
+        itemViewModel.getCompletedCountOfTask(data.name).observe(this, Observer {
+            completedTasks = it.size.toFloat()
+            setData()
+        })
+        itemViewModel.getTasksOfGoal(data.name).observe(this, Observer {
+            remainingTasks = it.size - completedTasks
+            setData()
+        })
+
         setRecyclerView()
         addTaskToGoal()
     }
+    private fun setData() {
+
+        binding.pieChartGoalDetails.clearChart()
+
+        // Set the data and color to the pie chart
+        binding.pieChartGoalDetails.addPieSlice(
+            PieModel(
+                "completedTasks", completedTasks,
+                Color.parseColor("#66BB6A")
+            )
+        )
+        binding.pieChartGoalDetails.addPieSlice(
+            PieModel(
+                "remainingTasks", remainingTasks,
+                Color.parseColor("#FFA726")
+            )
+        )
+
+
+        if(completedTasks == 0F && remainingTasks == 0F) {
+            binding.pieChartGoalDetails.addPieSlice(
+                PieModel(
+                    "Nothing", 0F,
+                    Color.parseColor("#57D6C0")
+                )
+            )
+        }
+
+        // To animate the pie chart
+        binding.pieChartGoalDetails.startAnimation()
+    }
+
 
     private fun addTaskToGoal() {
         binding.addTaskToGoal.setOnClickListener {
