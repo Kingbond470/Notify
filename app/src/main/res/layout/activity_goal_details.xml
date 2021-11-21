@@ -1,98 +1,273 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="10dp"
-        android:orientation="vertical"
         android:background="@color/app_background_navy_blue"
+        android:orientation="vertical"
         tools:context=".ui.goal.GoalDetailsActivity">
 
-        <LinearLayout
+        <RelativeLayout
+            android:id="@+id/relativeLayoutGoalDetails"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:background="@color/app_background"
+            android:padding="15dp">
+
+            <ImageView
+                android:id="@+id/ivBackGoalDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:paddingLeft="5dp"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_back_arrow" />
 
             <TextView
-                android:id="@+id/goalDetailsTitle"
-                android:textSize="20sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:fontFamily="@font/roboto"
+                android:text="New Goal"
                 android:textColor="@color/white"
-                android:text="title:"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/ivNewGoalImage"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_below="@id/relativeLayoutGoalDetails"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:src="@drawable/ic_transport_mode_walk" />
+
+        <TextView
+            android:id="@+id/goalDetailsTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ivNewGoalImage"
+            android:layout_marginVertical="5dp"
+            android:fontFamily="@font/roboto"
+            android:paddingHorizontal="15dp"
+            android:text="Name"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/goalDetailsDesc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/goalDetailsTitle"
+            android:layout_marginVertical="5dp"
+            android:fontFamily="@font/roboto"
+            android:maxLines="3"
+            android:paddingHorizontal="15dp"
+            android:text="Description"
+            android:textColor="@color/white"
+            android:textSize="16sp" />
+
+        <LinearLayout
+            android:id="@+id/llDateGoalDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/goalDetailsDesc"
+            android:weightSum="2"
+            android:orientation="horizontal">
+
+            <RelativeLayout
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <TextView
-                android:id="@+id/goalDetailsDesc"
-                android:layout_marginTop="10dp"
-                android:textColor="@color/white"
-                android:textSize="15sp"
-                android:text="description"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-            <LinearLayout
-                android:layout_marginHorizontal="5dp"
-                android:layout_marginTop="15dp"
-                android:layout_below="@+id/goalDescription"
-                android:layout_width="wrap_content"
+                android:layout_weight="1"
                 android:layout_height="wrap_content">
 
                 <TextView
+                    android:id="@+id/goalFromDateDetails"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="from: "
-                    android:textColor="@color/white" />
+                    android:layout_marginVertical="5dp"
+                    android:fontFamily="@font/roboto"
+                    android:paddingHorizontal="15dp"
+                    android:text="From : "
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
                 <TextView
                     android:id="@+id/fromGoalDetails"
-                    android:textColor="@color/white"
-                    android:text="date"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_toRightOf="@+id/goalFromDateDetails"
+                    android:drawableRight="@drawable/ic_baseline_calendar"
+                    android:drawablePadding="15dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="Date"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
+
                 <TextView
-                    android:text="    To  "
-                    android:textColor="@color/white"
+                    android:id="@+id/toGoalDateDetails"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:fontFamily="@font/roboto"
+                    android:paddingHorizontal="15dp"
+                    android:text="To : "
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/toGoalDetails"
-                    android:textColor="@color/white"
-                    android:text="date"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-
-            </LinearLayout>
-
-            <TextView
-                android:layout_marginTop="10dp"
-                android:text="Tasks"
-                android:textSize="20sp"
-                android:textColor="@color/red"
-                android:background="@color/app_background"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_marginTop="5dp"
-                android:id="@+id/goalDetailsRecyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_toRightOf="@+id/toGoalDateDetails"
+                    android:drawableRight="@drawable/ic_baseline_calendar"
+                    android:drawablePadding="15dp"
+                    android:fontFamily="@font/roboto_light"
+                    android:text="Date"
+                    android:textColor="@color/white"
+                    android:textSize="16dp" />
+            </RelativeLayout>
 
         </LinearLayout>
 
 
+        <TextView
+            android:id="@+id/tvTaskGoalDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/llDateGoalDetails"
+            android:layout_marginVertical="10dp"
+            android:fontFamily="@font/roboto"
+            android:paddingHorizontal="15dp"
+            android:text="Tasks"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/goalDetailsRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tvTaskGoalDetails"
+            android:layout_marginVertical="5dp"
+            android:padding="15dp" />
+
+
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
-            app:maxImageSize="45dp"
             android:id="@+id/addTaskToGoal"
-            android:src="@drawable/ic_add_white"
-            android:layout_margin="20dp"
-            android:layout_gravity="bottom|end"
-            app:cornerRadius="20dp"
-            android:backgroundTint="#2671F6"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            app:backgroundTint="@color/white"
+            app:cornerRadius="20dp"
+            app:fabSize="normal"
+            app:srcCompat="@drawable/ic_add_white" />
+
+        <!--        <LinearLayout-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:orientation="vertical">-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/goalDetailsTitle"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="title:"-->
+        <!--                android:textColor="@color/white"-->
+        <!--                android:textSize="20sp" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/goalDetailsDesc"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginTop="10dp"-->
+        <!--                android:text="description"-->
+        <!--                android:textColor="@color/white"-->
+        <!--                android:textSize="15sp" />-->
+
+        <!--            <LinearLayout-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_below="@+id/goalDescription"-->
+        <!--                android:layout_marginHorizontal="5dp"-->
+        <!--                android:layout_marginTop="15dp">-->
+
+        <!--                <TextView-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:text="from: "-->
+        <!--                    android:textColor="@color/white" />-->
+
+        <!--                <TextView-->
+        <!--                    android:id="@+id/fromGoalDetails"-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:text="date"-->
+        <!--                    android:textColor="@color/white" />-->
+
+        <!--                <TextView-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:text="    To  "-->
+        <!--                    android:textColor="@color/white" />-->
+
+        <!--                <TextView-->
+        <!--                    android:id="@+id/toGoalDetails"-->
+        <!--                    android:layout_width="wrap_content"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:text="date"-->
+        <!--                    android:textColor="@color/white" />-->
 
 
-    </FrameLayout>
+        <!--            </LinearLayout>-->
+
+        <!--            <TextView-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginTop="10dp"-->
+        <!--                android:background="@color/app_background"-->
+        <!--                android:text="Tasks"-->
+        <!--                android:textColor="@color/red"-->
+        <!--                android:textSize="20sp" />-->
+
+        <!--            <androidx.recyclerview.widget.RecyclerView-->
+        <!--                android:id="@+id/goalDetailsRecyclerView"-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginTop="5dp" />-->
+
+        <!--        </LinearLayout>-->
+
+        <!--        <com.google.android.material.floatingactionbutton.FloatingActionButton-->
+        <!--            android:id="@+id/addTaskToGoal"-->
+        <!--            android:layout_width="wrap_content"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:layout_gravity="bottom|end"-->
+        <!--            android:layout_margin="20dp"-->
+        <!--            android:backgroundTint="#2671F6"-->
+        <!--            android:src="@drawable/ic_add_white"-->
+        <!--            app:cornerRadius="20dp"-->
+        <!--            app:maxImageSize="45dp" />-->
+
+
+    </RelativeLayout>
 </layout>

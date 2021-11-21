@@ -96,6 +96,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/roboto_light"
+                    android:maxLines="1"
                     android:text="@{event.event_description}"
                     android:textColor="@color/white"
                     android:textSize="16sp" />
@@ -145,9 +146,11 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/roboto_light"
+                    android:maxLength="15"
+                    android:maxLines="1"
                     android:text="@{event.start_point}"
                     android:textColor="@color/white"
-                    android:textSize="8sp" />
+                    android:textSize="16sp" />
 
                 <TextView
                     android:id="@+id/tvEventToTitle"
@@ -165,9 +168,11 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/roboto_light"
+                    android:maxLength="15"
+                    android:maxLines="1"
                     android:text="@{event.end_point}"
                     android:textColor="@color/white"
-                    android:textSize="8sp" />
+                    android:textSize="16sp" />
 
             </LinearLayout>
 
