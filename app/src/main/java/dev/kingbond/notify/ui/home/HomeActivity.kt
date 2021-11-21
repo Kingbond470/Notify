@@ -47,7 +47,7 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        replaceFragment(HomeFragment(),"HomeFragment")
+        replaceFragment(HomeFragment(), "HomeFragment")
         homeBinding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(homeBinding.root)
 
@@ -148,21 +148,21 @@ class HomeActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.homeFragment -> {
                     // replaceFragment()
-                    replaceFragment(HomeFragment(),"Home")
-                   // Toast.makeText(applicationContext, "Home", Toast.LENGTH_SHORT).show()
+                    replaceFragment(HomeFragment(), "Home")
+                    // Toast.makeText(applicationContext, "Home", Toast.LENGTH_SHORT).show()
                 }
                 R.id.calendarFragment -> {
                     // replaceFragment()
                     replaceFragment(CalendarFragment(), "Calendar")
-                  //  Toast.makeText(applicationContext, "Calendar", Toast.LENGTH_SHORT).show()
+                    //  Toast.makeText(applicationContext, "Calendar", Toast.LENGTH_SHORT).show()
                 }
                 R.id.completedFragment -> {
-                     replaceFragment(CompletedFragment(),"Completed")
-                  //  Toast.makeText(applicationContext, "Completed", Toast.LENGTH_SHORT).show()
+                    replaceFragment(CompletedFragment(), "Completed")
+                    //  Toast.makeText(applicationContext, "Completed", Toast.LENGTH_SHORT).show()
                 }
                 R.id.profileFragment -> {
                     replaceFragment(SettingFragment(), "Settings")
-                   // Toast.makeText(applicationContext, "Profile", Toast.LENGTH_SHORT).show()
+                    // Toast.makeText(applicationContext, "Profile", Toast.LENGTH_SHORT).show()
                     // startActivity(Intent(this,SettingsActivity::class.java))
                 }
 
@@ -205,6 +205,11 @@ class HomeActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
 
+                R.id.nav_event -> {
+                    val intent = Intent(this, EventHomeActivity::class.java)
+                    startActivity(intent)
+                }
+
 //                R.id.privacyPolicy -> {
 //                    Toast.makeText(
 //                        applicationContext,
@@ -236,7 +241,6 @@ class HomeActivity : AppCompatActivity() {
             }
             true
         })
-
 
 
     }

@@ -12,6 +12,7 @@ import dev.kingbond.notify.databinding.ActivityGoalBinding
 import dev.kingbond.notify.repository.RepositoryClass
 import dev.kingbond.notify.data.database.RoomDataBaseClass
 import dev.kingbond.notify.ui.goal.model.GoalModel
+import dev.kingbond.notify.ui.home.HomeActivity
 import dev.kingbond.notify.viewmodel.ViewModelClass
 import dev.kingbond.notify.viewmodel.ViewModelFactory
 import java.text.SimpleDateFormat
@@ -21,7 +22,7 @@ class GoalActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGoalBinding
     private lateinit var itemViewModel: ViewModelClass
 
-    private  var timeNotify = ""
+    private var timeNotify = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,6 +44,11 @@ class GoalActivity : AppCompatActivity() {
         setTimeFrom()
         submitTheGoal()
 
+        binding.ibProfileBackNewGoal.setOnClickListener {
+            startActivity(Intent(this, GoalHomeActivity::class.java))
+            finish()
+        }
+
     }
 
 
@@ -54,7 +60,7 @@ class GoalActivity : AppCompatActivity() {
             val toDate = binding.addToDateGoal.text.toString()
             val fromDate = binding.addFromDateGoal.text.toString()
 
-            val goalModel = GoalModel(name, desc, toDate, fromDate,0)
+            val goalModel = GoalModel(name, desc, toDate, fromDate, 0)
             itemViewModel.insertDataIntoGoalTable(goalModel)
 
 //            val intent = Intent(this, GoalHomeActivity::class.java)

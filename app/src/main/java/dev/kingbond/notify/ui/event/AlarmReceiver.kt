@@ -11,6 +11,7 @@ import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import dev.kingbond.notify.R
+import dev.kingbond.notify.ui.home.HomeActivity
 
 class AlarmReceiver : BroadcastReceiver() {
 
@@ -21,7 +22,7 @@ class AlarmReceiver : BroadcastReceiver() {
         var mp: MediaPlayer = MediaPlayer.create(context, R.raw.alarm_tone)
         mp.start()
 
-        val i = Intent(context, DestinationActivity::class.java)
+        val i = Intent(context, HomeActivity::class.java)
         intent!!.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         /*Handler().postDelayed({
 

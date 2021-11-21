@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import dev.kingbond.notify.data.database.RoomDataBaseClass
 import dev.kingbond.notify.databinding.ActivityEventHomeBinding
 import dev.kingbond.notify.repository.RepositoryClass
+import dev.kingbond.notify.ui.home.HomeActivity
 import dev.kingbond.notify.viewmodel.ViewModelClass
 import dev.kingbond.notify.viewmodel.ViewModelFactory
 import java.io.Serializable
@@ -24,6 +25,10 @@ class EventHomeActivity : AppCompatActivity(), EventClickListener {
         super.onCreate(savedInstanceState)
         binding = ActivityEventHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.ivBackEvents.setOnClickListener {
+            startActivity(Intent(this,HomeActivity::class.java))
+        }
 
         val roomDatabase = RoomDataBaseClass.getDataBaseObject(this)
         val dao = roomDatabase.getDao()

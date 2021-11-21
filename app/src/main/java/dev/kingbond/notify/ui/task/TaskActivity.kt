@@ -41,7 +41,7 @@ class TaskActivity : AppCompatActivity() {
         itemViewModel = ViewModelProviders.of(this,viewModelFactory).get(ViewModelClass::class.java)
 
         binding.ibProfileBackNewTask.setOnClickListener {
-            val intent = Intent(this, HomeActivity::class.java)
+            val intent = Intent(this, TaskHomeActivity::class.java)
             startActivity(intent)
             finish()
         }

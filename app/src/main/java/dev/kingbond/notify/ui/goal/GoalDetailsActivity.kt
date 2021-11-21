@@ -70,7 +70,13 @@ class GoalDetailsActivity : AppCompatActivity(), TaskClickListener {
 
         setRecyclerView()
         addTaskToGoal()
+
+        binding.ivBackGoalDetails.setOnClickListener {
+            startActivity(Intent(this, GoalHomeActivity::class.java))
+            finish()
+        }
     }
+
     private fun setData() {
 
         binding.pieChartGoalDetails.clearChart()
@@ -90,7 +96,7 @@ class GoalDetailsActivity : AppCompatActivity(), TaskClickListener {
         )
 
 
-        if(completedTasks == 0F && remainingTasks == 0F) {
+        if (completedTasks == 0F && remainingTasks == 0F) {
             binding.pieChartGoalDetails.addPieSlice(
                 PieModel(
                     "Nothing", 0F,
@@ -108,14 +114,14 @@ class GoalDetailsActivity : AppCompatActivity(), TaskClickListener {
         binding.addTaskToGoal.setOnClickListener {
             val intent = Intent(this, TaskGoalActivity::class.java)
             val name = binding.goalDetailsTitle.text.toString()
-            intent.putExtra("goalName",name)
+            intent.putExtra("goalName", name)
             startActivity(intent)
         }
     }
 
     private fun setRecyclerView() {
 
-        adapter = TaskAdapter(list, this,itemViewModel,this)
+        adapter = TaskAdapter(list, this, itemViewModel, this)
         val linearLayoutManager = LinearLayoutManager(this)
         binding.apply {
             goalDetailsRecyclerView.adapter = adapter

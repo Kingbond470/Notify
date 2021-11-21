@@ -42,6 +42,8 @@ interface ClassDao {
     @Query("select * from goal_table where name = :goalName")
     fun getGoalModel(goalName:String):LiveData<GoalModel>
 
+    @Query("select * from task_table where date = :date")
+    fun getTaskByDate(date:String):LiveData<List<TaskModel>>
 
 
 }

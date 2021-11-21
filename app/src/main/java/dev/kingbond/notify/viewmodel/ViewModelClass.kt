@@ -54,4 +54,8 @@ class ViewModelClass(val repo: RepositoryClass) : ViewModel() {
     fun getCompletedTask():LiveData<List<TaskModel>>{
         return repo.getCompletedTask()
     }
+
+    fun getTasksByDate(date:String):LiveData<List<TaskModel>>{
+        return repo.getTasksByDate(date)
+    }
 }

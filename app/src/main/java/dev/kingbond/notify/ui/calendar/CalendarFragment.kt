@@ -64,14 +64,17 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar), DateClickListener
         itemViewModel =
             ViewModelProviders.of(this, viewModelFactory).get(ViewModelClass::class.java)
 
-        rcvGoals()
-
         selectedDate = LocalDate.now()
+        Toast.makeText(context, selectedDate.toString(), Toast.LENGTH_SHORT).show()
         setMonthView()
         jumpToDate()
+
+        rcvGoals(selectedDate.toString())
+
     }
 
-    private fun rcvGoals() {
+    private fun rcvGoals(today: String) {
+
         itemViewModel.getDataFromGoal().observe(viewLifecycleOwner, Observer {
             listGoal.clear()
             listGoal.addAll(it)
@@ -86,7 +89,7 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar), DateClickListener
             goalAdapter.notifyDataSetChanged()
         })
 
-        itemViewModel.getDataFromTask().observe(viewLifecycleOwner, Observer {
+        itemViewModel.getTasksByDate(today).observe(viewLifecycleOwner, Observer {
             listTask.clear()
             listTask.addAll(it)
             if(listTask.isNotEmpty()) {
@@ -150,11 +153,12 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar), DateClickListener
 
         val currentDate = selectedDate.toString()
         daysInMonth = daysInMonthArray(selectedDate!!)
-        calendarAdapter = CalendarAdapter(daysInMonth, this, currentDate)
+        calendarAdapter = CalendarAdapter(daysInMonth, this, currentDate, viewLifecycleOwner, itemViewModel)
         val layoutManager: RecyclerView.LayoutManager = GridLayoutManager(requireContext(), 7)
 
         binding.apply {
             monthYearTV.text = monthYearFromDate(selectedDate!!)
+//            monthYearTV.text = currentDate
             calendarRecyclerView.layoutManager = layoutManager
             calendarRecyclerView.adapter = calendarAdapter
         }
@@ -207,22 +211,25 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar), DateClickListener
 //        }
 //    }
 
-    override fun onDateClicked(date: String, position: Int) {
+    override fun onDateClicked(date: String, position: Int, today: String) {
+
+        rcvGoals(today)
+
         if (date != "") {
             val message =
                 "Selected Date " + date.toString() + " " + monthYearFromDate(selectedDate!!)
-            Toast.makeText(context, message, Toast.LENGTH_LONG).show()
+//            Toast.makeText(context, message, Toast.LENGTH_LONG).show()
         } else {
-            Toast.makeText(context, "null", Toast.LENGTH_LONG).show()
+//            Toast.makeText(context, "null", Toast.LENGTH_LONG).show()
         }
     }
 
     override fun goalItemClicked(goalModel: GoalModel) {
-        Toast.makeText(context, "Goal Clicked", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(context, "Goal Clicked", Toast.LENGTH_SHORT).show()
     }
 
     override fun taskItemClicked(taskModel: TaskModel) {
-        Toast.makeText(context, "Task Clicked", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(context, "Task Clicked", Toast.LENGTH_SHORT).show()
     }
 
     override fun taskCompletedClicked(taskModel: TaskModel) {
@@ -236,7 +243,7 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar), DateClickListener
     }
 
     override fun eventItemClicked(eventModel: EventModel) {
-        Toast.makeText(context, "Item Clicked", Toast.LENGTH_SHORT).show()
+//        Toast.makeText(context, "Item Clicked", Toast.LENGTH_SHORT).show()
     }
 
 }

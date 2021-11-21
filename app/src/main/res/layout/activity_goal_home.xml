@@ -7,7 +7,7 @@
         android:layout_height="match_parent"
         android:background="@color/app_background_navy_blue"
         android:orientation="vertical"
-        tools:context=".ui.task.TaskHomeActivity">
+        tools:context=".ui.goal.GoalHomeActivity">
 
         <RelativeLayout
             android:id="@+id/relativeLayoutGoal"
@@ -17,7 +17,7 @@
             android:padding="15dp">
 
             <ImageView
-                android:id="@+id/ibBackTask"
+                android:id="@+id/ibBackGoalHome"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"

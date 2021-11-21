@@ -75,6 +75,7 @@ class LocationSearchActivity : AppCompatActivity(), OnMapReadyCallback, Location
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap;
+       // mMap!!.mapType = GoogleMap.MAP_TYPE_HYBRID
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ContextCompat.checkSelfPermission(
                     this,

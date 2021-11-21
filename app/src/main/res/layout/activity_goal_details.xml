@@ -48,6 +48,7 @@
             <org.eazegraph.lib.charts.PieChart
                 android:id="@+id/pieChartGoalDetails"
                 android:layout_width="100dp"
+                android:layout_marginVertical="10dp"
                 android:layout_height="100dp"
                 android:padding="6dp" />
             <RelativeLayout

@@ -113,6 +113,12 @@ class EventActivity : AppCompatActivity() {
             addTime()
         }
 
+        // to go back
+        eventbinding.ivBackNewEvent.setOnClickListener {
+            startActivity(Intent(this,EventHomeActivity::class.java))
+            finish()
+        }
+
         /*
         val eventType = eventbinding.autoCompleteTextViewTypeOfEvent.getText().toString()
         val eventDescription = eventbinding.etEventDescription.getText().toString()

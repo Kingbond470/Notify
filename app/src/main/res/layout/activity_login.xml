@@ -108,7 +108,7 @@
             android:layout_below="@+id/btnSignInWithFacebook"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/roboto"
-            android:text="Login"
+            android:text="Free Login"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="18sp" />

@@ -63,4 +63,8 @@ class RepositoryClass(val classDao: ClassDao) {
         return classDao.getCompletedTask()
     }
 
+    fun getTasksByDate(date:String):LiveData<List<TaskModel>>{
+        return classDao.getTaskByDate(date)
+    }
+
 }

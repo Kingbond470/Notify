@@ -7,8 +7,12 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import androidx.collection.arraySetOf
+import androidx.lifecycle.LifecycleOwner
 import androidx.recyclerview.widget.RecyclerView
 import dev.kingbond.notify.R
+import dev.kingbond.notify.ui.task.model.TaskModel
+import dev.kingbond.notify.viewmodel.ViewModelClass
 import kotlinx.android.synthetic.main.calendar_cell.view.*
 import java.time.LocalDate
 import java.util.*
@@ -17,7 +21,9 @@ import java.util.*
 class CalendarAdapter(
     private var dateList: ArrayList<String>,
     private val clickListener: DateClickListener,
-    private val currentDate: String
+    private val currentDate: String,
+    private val lifecycleOwner: LifecycleOwner,
+    private val itemViewModel: ViewModelClass
 ) :
     RecyclerView.Adapter<CalendarAdapter.CalendarViewHolder>() {
 
@@ -30,7 +36,7 @@ class CalendarAdapter(
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.calendar_cell, parent, false)
         itemViewList.add(view)
-        return CalendarViewHolder(view, clickListener)
+        return CalendarViewHolder(view, clickListener, lifecycleOwner, itemViewModel)
     }
 
     override fun onBindViewHolder(holder: CalendarViewHolder, position: Int) {
@@ -44,7 +50,9 @@ class CalendarAdapter(
 
     inner class CalendarViewHolder(
         private val view: View,
-        private val clickListener: DateClickListener
+        private val clickListener: DateClickListener,
+        private val lifecycleOwner: LifecycleOwner,
+        private val itemViewModel: ViewModelClass
     ) : RecyclerView.ViewHolder(view) {
 
         internal fun setData(date: String) {
@@ -55,6 +63,18 @@ class CalendarAdapter(
 //                view.setOnClickListener {
 //                    clickListener.onDateClicked(date, adapterPosition)
 //                }
+
+                //yyyy-MM-dd
+                var today = currentDate.substring(0, currentDate.length-2)
+                today += date
+
+                var listOfTasks = arraySetOf<TaskModel>()
+                itemViewModel.getTasksByDate(today).observe(lifecycleOwner, androidx.lifecycle.Observer {
+                    listOfTasks.addAll(it)
+                    if(listOfTasks.isNotEmpty()) {
+                        eventsCardView.visibility = View.VISIBLE
+                    }
+                })
 
                 selectedDate = LocalDate.now()
                 curDate = selectedDate.toString().split("-")
@@ -68,8 +88,6 @@ class CalendarAdapter(
                 }
 
                 if (view.cellDayText.text.toString() != "") {
-
-//                    eventsCardView.visibility = View.VISIBLE
 
                     rlDate.setOnClickListener {
                         if (bool[adapterPosition]) {
@@ -88,9 +106,7 @@ class CalendarAdapter(
                             }
                             bool[adapterPosition] = true
                         }
-
-                        clickListener.onDateClicked(date, adapterPosition)
-
+                        clickListener.onDateClicked(date, adapterPosition, today)
                     }
                 }
             }
@@ -116,5 +132,5 @@ class CalendarAdapter(
 }
 
 interface DateClickListener {
-    fun onDateClicked(date: String, position: Int)
+    fun onDateClicked(date: String, position: Int, today: String)
 }

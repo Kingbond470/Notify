@@ -11,6 +11,7 @@ import dev.kingbond.notify.data.database.RoomDataBaseClass
 import dev.kingbond.notify.ui.goal.model.GoalModel
 import dev.kingbond.notify.ui.goal.recyclerView.GoalAdapter
 import dev.kingbond.notify.ui.goal.recyclerView.GoalClickListener
+import dev.kingbond.notify.ui.home.HomeActivity
 import dev.kingbond.notify.ui.task.TaskGoalActivity
 import dev.kingbond.notify.viewmodel.ViewModelClass
 import dev.kingbond.notify.viewmodel.ViewModelFactory
@@ -47,6 +48,12 @@ class GoalHomeActivity : AppCompatActivity(), GoalClickListener {
         binding.addGoalHome.setOnClickListener {
             val intent = Intent(this,GoalActivity::class.java)
             startActivity(intent)
+        }
+
+        binding.ibBackGoalHome.setOnClickListener {
+            val intent = Intent(this,HomeActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 

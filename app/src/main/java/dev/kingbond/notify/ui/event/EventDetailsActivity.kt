@@ -1,5 +1,6 @@
 package dev.kingbond.notify.ui.event
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import dev.kingbond.notify.databinding.ActivityEventDetailsBinding
@@ -13,6 +14,14 @@ class EventDetailsActivity : AppCompatActivity() {
 
         binding = ActivityEventDetailsBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.ivBackEventDetails.setOnClickListener {
+            startActivity(Intent(this, EventHomeActivity::class.java))
+        }
+
+        binding.btnDoneEventDetails.setOnClickListener {
+            startActivity(Intent(this, EventHomeActivity::class.java))
+        }
 
         val data = intent.getSerializableExtra("eventModel") as EventModel
         binding.apply {
