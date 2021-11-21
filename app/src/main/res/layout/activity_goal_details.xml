@@ -104,11 +104,11 @@
                     android:layout_marginRight="6dp"
                     android:layout_toRightOf="@+id/goalFromDateDetails"
                     android:drawableRight="@drawable/ic_baseline_calendar"
-                    android:drawablePadding="15dp"
+                    android:drawablePadding="7dp"
                     android:fontFamily="@font/roboto_light"
                     android:text="Date"
                     android:textColor="@color/white"
-                    android:textSize="16dp" />
+                    android:textSize="14dp" />
             </RelativeLayout>
 
             <RelativeLayout
@@ -135,11 +135,11 @@
                     android:layout_marginRight="6dp"
                     android:layout_toRightOf="@+id/toGoalDateDetails"
                     android:drawableRight="@drawable/ic_baseline_calendar"
-                    android:drawablePadding="15dp"
+                    android:drawablePadding="7dp"
                     android:fontFamily="@font/roboto_light"
                     android:text="Date"
                     android:textColor="@color/white"
-                    android:textSize="16dp" />
+                    android:textSize="14dp" />
             </RelativeLayout>
 
         </LinearLayout>

@@ -19,14 +19,17 @@ import dev.kingbond.notify.R
 import dev.kingbond.notify.databinding.ActivityHomeBinding
 import dev.kingbond.notify.ui.about.AboutActivity
 import dev.kingbond.notify.ui.calendar.CalendarFragment
+import dev.kingbond.notify.ui.completed.CompletedFragment
 import dev.kingbond.notify.ui.completed.CompletedTasks
 import dev.kingbond.notify.ui.event.EventActivity
+import dev.kingbond.notify.ui.event.EventHomeActivity
 import dev.kingbond.notify.ui.goal.GoalHomeActivity
 import dev.kingbond.notify.ui.helpandsupport.HelpAndSupportActivity
 import dev.kingbond.notify.ui.profile.EditProfileActivity
 import dev.kingbond.notify.ui.settings.SettingFragment
 import dev.kingbond.notify.ui.settings.SettingsActivity
 import dev.kingbond.notify.ui.task.TaskHomeActivity
+import kotlinx.android.synthetic.main.activity_home.*
 
 class HomeActivity : AppCompatActivity() {
 
@@ -42,6 +45,59 @@ class HomeActivity : AppCompatActivity() {
         homeBinding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(homeBinding.root)
 
+        homeBinding.apply {
+            btnAddGoal.visibility = View.GONE
+            btnAddEvent.visibility = View.GONE
+            btnAddTask.visibility = View.GONE
+
+            add_event_text.visibility = View.GONE
+            add_goal_text.visibility = View.GONE
+            add_task_text.visibility = View.GONE
+        }
+
+        var isAllVisible = false
+
+        homeBinding.fbAddNotify.setOnClickListener {
+            if(!isAllVisible){
+                homeBinding.apply {
+                    btnAddGoal.visibility = View.VISIBLE
+                    btnAddEvent.visibility = View.VISIBLE
+                    btnAddTask.visibility = View.VISIBLE
+
+                    add_event_text.visibility = View.VISIBLE
+                    add_goal_text.visibility = View.VISIBLE
+                    add_task_text.visibility = View.VISIBLE
+                }
+                isAllVisible = true
+            }else{
+                homeBinding.apply {
+                    btnAddGoal.visibility = View.GONE
+                    btnAddEvent.visibility = View.GONE
+                    btnAddTask.visibility = View.GONE
+
+                    add_event_text.visibility = View.GONE
+                    add_goal_text.visibility = View.GONE
+                    add_task_text.visibility = View.GONE
+                }
+                isAllVisible = false
+            }
+
+        }
+
+        homeBinding.btnAddGoal.setOnClickListener {
+            val intent = Intent(this,GoalHomeActivity::class.java)
+            startActivity(intent)
+        }
+
+        homeBinding.btnAddTask.setOnClickListener {
+            val intent = Intent(this,TaskHomeActivity::class.java)
+            startActivity(intent)
+        }
+
+        homeBinding.btnAddEvent.setOnClickListener {
+            val intent = Intent(this,EventHomeActivity::class.java)
+            startActivity(intent)
+        }
 
         drawerLayout = findViewById(R.id.drawerLayout)
         val navView: NavigationView = findViewById(R.id.navView)
@@ -76,7 +132,7 @@ class HomeActivity : AppCompatActivity() {
                     Toast.makeText(applicationContext, "Calendar", Toast.LENGTH_SHORT).show()
                 }
                 R.id.completedFragment -> {
-                     replaceFragment(CompletedTasks(),"Completed")
+                     replaceFragment(CompletedFragment(),"Completed")
                     Toast.makeText(applicationContext, "Completed", Toast.LENGTH_SHORT).show()
                 }
                 R.id.profileFragment -> {
@@ -110,12 +166,11 @@ class HomeActivity : AppCompatActivity() {
                 }
 
 
-                // to open a new fragment which is health files
                 R.id.nav_completed -> {
-//                    supportFragmentManager.beginTransaction().apply {
-//                        replace(R.id.fragmentContainer, CompletedFragment())
-//                            .commit()
-//                    }
+                    supportFragmentManager.beginTransaction().apply {
+                        replace(R.id.fragmentContainer, CompletedFragment())
+                            .commit()
+                    }
                     Toast.makeText(this, "Completed", Toast.LENGTH_SHORT).show()
 
                 }
@@ -158,21 +213,7 @@ class HomeActivity : AppCompatActivity() {
         })
 
 
-        homeBinding.fbAddNotify.setOnClickListener {
-            // to show the three things -> events, task and goal
 
-
-            //event
-            val intent = Intent(this@HomeActivity, EventActivity::class.java)
-            startActivity(intent)
-
-            /*
-            //goal
-            val intent = Intent(this@HomeActivity, GoalHomeActivity::class.java)
-            startActivity(intent)
-             */
-
-        }
     }
 
 
