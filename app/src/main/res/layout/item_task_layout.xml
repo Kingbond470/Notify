@@ -11,34 +11,31 @@
     <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginVertical="10dp"
-        android:elevation="10dp"
-        app:cardCornerRadius="12dp">
+        android:layout_marginVertical="5dp"
+        app:cardCornerRadius="10dp">
 
         <RelativeLayout
             android:id="@+id/taskItemLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/task_background_color"
+            android:background="@color/app_background"
             android:padding="10dp">
 
             <TextView
                 android:id="@+id/itemTaskName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto_medium"
                 android:text="@{task.name}"
                 android:textColor="@color/white"
-                android:textSize="18sp" />
+                android:textSize="20sp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentEnd="true"
                 android:layout_marginHorizontal="10dp"
-                android:fontFamily="@font/roboto"
                 android:text="@{task.category}"
-                android:textColor="@color/yellow"
+                android:textColor="@color/red"
                 android:textSize="16sp" />
 
             <TextView
@@ -46,76 +43,55 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/itemTaskName"
-                android:fontFamily="@font/roboto"
                 android:maxLines="2"
                 android:text="@{task.desc}"
                 android:textColor="@color/white"
-                android:textSize="16sp" />
+                android:textSize="15sp" />
 
-            <!--            <TextView-->
-            <!--                android:id="@+id/itemTaskDate"-->
-            <!--                android:layout_width="wrap_content"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:layout_below="@+id/itemTaskDescription"-->
-            <!--                android:text="@{task.date}"-->
-            <!--                android:fontFamily="@font/roboto_light"-->
-            <!--                android:textColor="@color/white"-->
-            <!--                android:textSize="14sp" />-->
+            <TextView
+                android:id="@+id/itemTaskDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/itemTaskDescription"
+                android:text="@{task.date}"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
 
             <TextView
                 android:id="@+id/itemTaskTime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/itemTaskDescription"
-                android:fontFamily="@font/roboto"
+                android:layout_marginLeft="10dp"
+                android:layout_toEndOf="@+id/itemTaskDate"
                 android:text="@{task.time}"
                 android:textColor="@color/white"
-                android:textSize="14sp" />
-
-            <TextView
-                android:id="@+id/itemTaskDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/itemTaskDescription"
-                android:layout_toRightOf="@id/itemTaskTime"
-                android:fontFamily="@font/roboto"
-                android:text="@{task.date}"
-                android:textColor="@color/white"
-                android:textSize="14sp" />
-
+                android:textSize="16sp" />
 
             <LinearLayout
                 android:id="@+id/checkStatus"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/itemTaskDate"
-                android:layout_alignParentEnd="true"
-                android:layout_marginHorizontal="5dp">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="50dp"
-                    android:src="@drawable/ic_task_check_thin" />
+                android:layout_alignParentEnd="true">
 
                 <ImageView
                     android:id="@+id/ivTaskCompleted"
-                    android:src="@drawable/ic_task_tick"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_marginRight="5dp"
                     android:backgroundTint="@color/app_background_navy_blue"
                     android:padding="10dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp" />
+                    android:src="@drawable/ic_task_tick" />
 
                 <ImageView
                     android:id="@+id/ivTaskNotCompleted"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
                     android:padding="5dp"
                     android:src="@drawable/ic_task_cancel"
-                    android:textColor="@color/white"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_task_cross_thin" />
+                    android:textColor="@color/white" />
             </LinearLayout>
         </RelativeLayout>
 
