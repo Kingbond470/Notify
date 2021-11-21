@@ -209,7 +209,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:fontFamily="@font/roboto_light"
-                    android:text="Time Left : "
+                    android:text="Leave Time : "
                     android:textColor="@color/white"
                     android:textSize="16sp" />
 

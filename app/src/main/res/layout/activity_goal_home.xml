@@ -41,7 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:layout_below="@+id/relativeLayoutGoal"
-            android:src="@drawable/ic_edit_email" />
+            android:src="@drawable/goals_image_preview" />
 
 
         <androidx.recyclerview.widget.RecyclerView

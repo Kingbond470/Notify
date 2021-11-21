@@ -7,17 +7,17 @@
 
         <item
             android:id="@+id/nav_task"
-            android:icon="@drawable/tasks"
+            android:icon="@drawable/tasks_image_preview_1"
             android:title="Task" />
 
         <item
             android:id="@+id/nav_goal"
-            android:icon="@drawable/ic_home_calender"
+            android:icon="@drawable/goals_image_preview"
             android:title="Goal" />
 
         <item
             android:id="@+id/nav_event"
-            android:icon="@drawable/ic_home_calender"
+            android:icon="@drawable/events_image_preview"
             android:title="Event" />
 
         <item
