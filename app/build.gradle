@@ -41,8 +41,8 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_7
-        targetCompatibility JavaVersion.VERSION_1_7
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
         jvmTarget = '1.8'
@@ -149,5 +149,6 @@ dependencies {
 //    implementation 'com.github.PhilJay:MPAndroidChart:v3.0.3'
     implementation 'com.github.lecho:hellocharts-library:1.5.8@aar'
 
+    //implementation 'com.github.AnyChart:AnyChart-Android:1.1.2'
 
 }
