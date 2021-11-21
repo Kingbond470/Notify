@@ -13,18 +13,19 @@ import dev.kingbond.notify.databinding.ActivityTaskHomeBinding
 import dev.kingbond.notify.databinding.TaskDialogueLayoutBinding
 import dev.kingbond.notify.repository.RepositoryClass
 import dev.kingbond.notify.ui.goal.model.GoalModel
+import dev.kingbond.notify.ui.home.HomeActivity
 import dev.kingbond.notify.ui.task.model.TaskModel
 import dev.kingbond.notify.ui.task.recyclerView.TaskAdapter
 import dev.kingbond.notify.ui.task.recyclerView.TaskClickListener
 import dev.kingbond.notify.viewmodel.ViewModelClass
 import dev.kingbond.notify.viewmodel.ViewModelFactory
 
-class TaskHomeActivity : AppCompatActivity(),TaskClickListener {
+class TaskHomeActivity : AppCompatActivity(), TaskClickListener {
 
-    private lateinit var binding:ActivityTaskHomeBinding
-    private lateinit var itemViewModel:ViewModelClass
+    private lateinit var binding: ActivityTaskHomeBinding
+    private lateinit var itemViewModel: ViewModelClass
 
-    private lateinit var adapter:TaskAdapter
+    private lateinit var adapter: TaskAdapter
 
     private var list = arrayListOf<TaskModel>()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,7 +37,8 @@ class TaskHomeActivity : AppCompatActivity(),TaskClickListener {
         val dao = roomDatabase.getDao()
         val repo = RepositoryClass(dao)
         val viewModelFactory = ViewModelFactory(repo)
-        itemViewModel = ViewModelProviders.of(this,viewModelFactory).get(ViewModelClass::class.java)
+        itemViewModel =
+            ViewModelProviders.of(this, viewModelFactory).get(ViewModelClass::class.java)
 
         itemViewModel.getDataFromTask().observe(this, Observer {
             list.clear()
@@ -49,10 +51,16 @@ class TaskHomeActivity : AppCompatActivity(),TaskClickListener {
             val intent = Intent(this, TaskActivity::class.java)
             startActivity(intent)
         }
+
+        binding.ibBackTask.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
     }
 
     private fun setRecyclerView() {
-        adapter = TaskAdapter(list,this, itemViewModel, this)
+        adapter = TaskAdapter(list, this, itemViewModel, this)
         val linearLayoutManager = LinearLayoutManager(this)
         binding.apply {
             taskRecyclerView.adapter = adapter
@@ -62,7 +70,7 @@ class TaskHomeActivity : AppCompatActivity(),TaskClickListener {
 
     override fun taskItemClicked(taskModel: TaskModel) {
         val bottomSheetDialog = BottomSheetDialog(this)
-        val view = layoutInflater.inflate(R.layout.task_dialogue_layout,null)
+        val view = layoutInflater.inflate(R.layout.task_dialogue_layout, null)
         val taskDialogLayoutBinding = TaskDialogueLayoutBinding.bind(view)
         bottomSheetDialog.setContentView(taskDialogLayoutBinding.root)
         bottomSheetDialog.setCancelable(false)

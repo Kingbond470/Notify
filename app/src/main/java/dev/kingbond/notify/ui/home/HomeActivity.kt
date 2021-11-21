@@ -42,6 +42,7 @@ class HomeActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
+        replaceFragment(HomeFragment(),"HomeFragment")
         homeBinding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(homeBinding.root)
 
@@ -124,20 +125,21 @@ class HomeActivity : AppCompatActivity() {
             when (it.itemId) {
                 R.id.homeFragment -> {
                     // replaceFragment()
-                    Toast.makeText(applicationContext, "Home", Toast.LENGTH_SHORT).show()
+                    replaceFragment(HomeFragment(),"Home")
+                   // Toast.makeText(applicationContext, "Home", Toast.LENGTH_SHORT).show()
                 }
                 R.id.calendarFragment -> {
                     // replaceFragment()
                     replaceFragment(CalendarFragment(), "Calendar")
-                    Toast.makeText(applicationContext, "Calendar", Toast.LENGTH_SHORT).show()
+                  //  Toast.makeText(applicationContext, "Calendar", Toast.LENGTH_SHORT).show()
                 }
                 R.id.completedFragment -> {
                      replaceFragment(CompletedFragment(),"Completed")
-                    Toast.makeText(applicationContext, "Completed", Toast.LENGTH_SHORT).show()
+                  //  Toast.makeText(applicationContext, "Completed", Toast.LENGTH_SHORT).show()
                 }
                 R.id.profileFragment -> {
                     replaceFragment(SettingFragment(), "Settings")
-                    Toast.makeText(applicationContext, "Profile", Toast.LENGTH_SHORT).show()
+                   // Toast.makeText(applicationContext, "Profile", Toast.LENGTH_SHORT).show()
                     // startActivity(Intent(this,SettingsActivity::class.java))
                 }
 

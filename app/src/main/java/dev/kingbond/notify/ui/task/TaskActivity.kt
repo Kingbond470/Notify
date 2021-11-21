@@ -13,6 +13,7 @@ import dev.kingbond.notify.alarmAndReminder.AlarmBrodcast
 import dev.kingbond.notify.data.database.RoomDataBaseClass
 import dev.kingbond.notify.databinding.ActivityTaskBinding
 import dev.kingbond.notify.repository.RepositoryClass
+import dev.kingbond.notify.ui.home.HomeActivity
 import dev.kingbond.notify.ui.task.model.TaskModel
 import dev.kingbond.notify.viewmodel.ViewModelClass
 import dev.kingbond.notify.viewmodel.ViewModelFactory
@@ -39,6 +40,11 @@ class TaskActivity : AppCompatActivity() {
         val viewModelFactory = ViewModelFactory(repo)
         itemViewModel = ViewModelProviders.of(this,viewModelFactory).get(ViewModelClass::class.java)
 
+        binding.ibProfileBackNewTask.setOnClickListener {
+            val intent = Intent(this, HomeActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
         setDate()
         setTime()
