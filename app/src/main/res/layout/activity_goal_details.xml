@@ -37,15 +37,89 @@
 
         </RelativeLayout>
 
-        <ImageView
+        <LinearLayout
+            android:gravity="center"
+            android:orientation="vertical"
             android:id="@+id/ivNewGoalImage"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
             android:layout_below="@id/relativeLayoutGoalDetails"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:src="@drawable/tasks_imge_preview" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <org.eazegraph.lib.charts.PieChart
+                android:id="@+id/pieChartGoalDetails"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:padding="6dp" />
+            <RelativeLayout
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ivNewGoalImage"
+                android:layout_marginVertical="10dp"
+                android:padding="10dp">
+
+                <RelativeLayout
+                    android:id="@+id/rlCompleted"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="1">
+
+                    <View
+                        android:id="@+id/viewTasks"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="10dp"
+                        android:background="@color/colorTasks" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/viewTasks"
+                        android:text="Completed Task"
+                        android:textColor="@color/light_grey"
+                        android:textSize="13sp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rlInProgress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="1">
+
+                    <View
+                        android:id="@+id/viewEvents"
+                        android:layout_width="15dp"
+                        android:layout_height="15dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="10dp"
+                        android:background="@color/colorEvents" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_toEndOf="@id/viewEvents"
+                        android:text="Remaining Tasks"
+                        android:textColor="@color/light_grey"
+                        android:textSize="13sp" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+
 
         <TextView
             android:id="@+id/goalDetailsTitle"
@@ -157,13 +231,24 @@
             android:textColor="@color/white"
             android:textSize="20sp" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/goalDetailsRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        <androidx.core.widget.NestedScrollView
             android:layout_below="@+id/tvTaskGoalDetails"
-            android:layout_marginVertical="5dp"
-            android:padding="15dp" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:paddingBottom="80dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/goalDetailsRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="5dp"
+                    android:padding="15dp" />
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
 
 
 

@@ -13,47 +13,6 @@ import kotlinx.android.synthetic.main.calendar_cell.view.*
 import java.time.LocalDate
 import java.util.*
 
-//@RequiresApi(Build.VERSION_CODES.O)
-//class CalendarAdapter(
-//    private val daysOfMonth: ArrayList<String>,
-//    private val onItemListener: OnItemListener
-//) :
-//    RecyclerView.Adapter<CalendarViewHolder>() {
-//
-//
-//    private var selectedDate: LocalDate? = null
-//
-//    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CalendarViewHolder {
-//        val inflater = LayoutInflater.from(parent.context)
-//        val view: View = inflater.inflate(R.layout.calendar_cell, parent, false)
-////        val layoutParams = view.layoutParams
-////        layoutParams.height = (parent.height * 0.166666666).toInt()
-//        return CalendarViewHolder(view, onItemListener)
-//    }
-//
-//    override fun onBindViewHolder(holder: CalendarViewHolder, position: Int) {
-//        holder.dayOfMonth.text = daysOfMonth[position]
-//
-//        selectedDate = LocalDate.now()
-//        val date = selectedDate.toString().split("-")
-//        if (date[2] == daysOfMonth[position]) {
-////            holder.itemView.setBackgroundColor(Color.parseColor("#000000"))
-//            holder.itemView.rlDate.setBackgroundResource(R.drawable.current_day_bg)
-//            holder.itemView.cellDayText.setTextColor(Color.parseColor("#FFFFFFFF"))
-//        }
-//
-//    }
-//
-//    override fun getItemCount(): Int {
-//        return daysOfMonth.size
-//    }
-//
-//    interface OnItemListener {
-//        fun onItemClick(position: Int, dayText: String?)
-//    }
-//}
-
-
 @RequiresApi(Build.VERSION_CODES.O)
 class CalendarAdapter(
     private var dateList: ArrayList<String>,
@@ -110,7 +69,7 @@ class CalendarAdapter(
 
                 if (view.cellDayText.text.toString() != "") {
 
-                    eventsCardView.visibility = View.VISIBLE
+//                    eventsCardView.visibility = View.VISIBLE
 
                     rlDate.setOnClickListener {
                         if (bool[adapterPosition]) {

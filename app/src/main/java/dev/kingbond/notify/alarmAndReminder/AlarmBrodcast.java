@@ -15,6 +15,7 @@ import androidx.core.app.NotificationCompat;
 
 import dev.kingbond.notify.MainActivity;
 import dev.kingbond.notify.R;
+import dev.kingbond.notify.ui.home.HomeActivity;
 
 public class AlarmBrodcast extends BroadcastReceiver {
     @Override
@@ -25,7 +26,7 @@ public class AlarmBrodcast extends BroadcastReceiver {
 
         //Click on Notification
 
-        Intent intent1 = new Intent(context, MainActivity.class);
+        Intent intent1 = new Intent(context, HomeActivity.class);
         intent1.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         intent1.putExtra("message", text);
         //Notification Builder
