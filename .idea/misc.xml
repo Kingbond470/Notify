@@ -29,6 +29,7 @@
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_home_completed.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_home_icon.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_home_setting.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_home_sucess.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_instagram.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_linkedin_circle.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_menu_about.xml" value="0.2203125" />
@@ -53,17 +54,18 @@
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/rb_selector.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/selected_date_bg.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/splash_logo.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/splash_logo_help.xml" value="0.98125" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_edit_profile.xml" value="0.22" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_event.xml" value="0.18" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_event_home.xml" value="0.20416666666666666" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_goal.xml" value="0.2" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_goal_details.xml" value="0.25" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_goal_home.xml" value="0.20416666666666666" />
-        <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_help_and_support.xml" value="0.22" />
+        <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_help_and_support.xml" value="0.33" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_home.xml" value="0.2" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_login.xml" value="0.22" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
-        <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_settings.xml" value="0.22" />
+        <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_settings.xml" value="0.11435239206534423" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_settings_user_profile.xml" value="0.22" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_spalsh.xml" value="0.19010416666666666" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_task.xml" value="0.22" />

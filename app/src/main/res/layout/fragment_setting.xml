@@ -9,6 +9,7 @@
         android:background="@color/app_background"
         tools:context=".ui.settings.SettingFragment">
 
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -156,7 +157,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto"
-                        android:text="Data Saver"
+                        android:text="Event Lists"
                         android:textColor="@color/white"
                         android:textSize="18sp" />
 
@@ -175,7 +176,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_light"
-                                android:text="Audio Quality"
+                                android:text="Replace"
                                 android:textColor="@color/white"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -186,7 +187,7 @@
                                 android:layout_marginTop="5dp"
                                 android:fontFamily="@font/roboto_light"
                                 android:maxLines="2"
-                                android:text="Sets your audio quality to low (equivalent to 24kbit/s) and disables noises."
+                                android:text="Replace event description wiht location"
                                 android:textColor="@color/white"
                                 android:textSize="11sp" />
 
@@ -216,7 +217,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto"
-                        android:text="Movers data"
+                        android:text="Data"
                         android:textColor="@color/white"
                         android:textSize="18sp" />
 
@@ -246,7 +247,7 @@
                                 android:layout_marginTop="5dp"
                                 android:fontFamily="@font/roboto_light"
                                 android:maxLines="1"
-                                android:text="Save movers data only."
+                                android:text="Save event data only."
                                 android:textColor="@color/white"
                                 android:textSize="11sp" />
 
@@ -367,7 +368,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_light"
-                                android:text="RideCheck"
+                                android:text="Event"
                                 android:textColor="@color/white"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -378,7 +379,7 @@
                                 android:layout_marginTop="5dp"
                                 android:fontFamily="@font/roboto_light"
                                 android:maxLines="1"
-                                android:text="RideCheck Notifications"
+                                android:text="Event Notifications"
                                 android:textColor="@color/white"
                                 android:textSize="11sp" />
 
@@ -422,7 +423,7 @@
                                 android:layout_marginTop="5dp"
                                 android:fontFamily="@font/roboto_light"
                                 android:maxLines="1"
-                                android:text="Uses your device location service for more reliable rides."
+                                android:text="Uses your device location services."
                                 android:textColor="@color/white"
                                 android:textSize="11sp" />
 
@@ -455,7 +456,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_light"
-                                android:text="Ride Notifications"
+                                android:text="Notify Notification"
                                 android:textColor="@color/white"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -499,7 +500,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_light"
-                                android:text="Add ride"
+                                android:text="Add event"
                                 android:textColor="@color/white"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -510,7 +511,7 @@
                                 android:layout_marginTop="5dp"
                                 android:fontFamily="@font/roboto_light"
                                 android:maxLines="1"
-                                android:text="Add ride to your bookings"
+                                android:text="Add event to completed after completion"
                                 android:textColor="@color/white"
                                 android:textSize="11sp" />
 
@@ -543,7 +544,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_light"
-                                android:text="Add Home"
+                                android:text="Add Home Address"
                                 android:textColor="@color/white"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -587,7 +588,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_light"
-                                android:text="Add Work"
+                                android:text="Add Work Address"
                                 android:textColor="@color/white"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -686,7 +687,7 @@
                                 android:layout_marginTop="5dp"
                                 android:fontFamily="@font/roboto_light"
                                 android:maxLines="1"
-                                android:text="Keep on listening to music tracks during rides."
+                                android:text="Keep on listening to alarm."
                                 android:textColor="@color/white"
                                 android:textSize="11sp" />
 
@@ -719,7 +720,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_light"
-                                android:text="MoveOn canvas"
+                                android:text="Use 24-hour time format"
                                 android:textColor="@color/white"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -730,7 +731,7 @@
                                 android:layout_marginTop="5dp"
                                 android:fontFamily="@font/roboto_light"
                                 android:maxLines="1"
-                                android:text="Display short, looping visuals."
+                                android:text="Off"
                                 android:textColor="@color/white"
                                 android:textSize="11sp" />
 
@@ -776,7 +777,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_light"
-                            android:text="Languages for rides"
+                            android:text="Languages for events"
                             android:textColor="@color/white"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -897,7 +898,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_light"
-                                android:text="Move On Connect in background"
+                                android:text="Notify Connect in background"
                                 android:textColor="@color/white"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -908,7 +909,7 @@
                                 android:layout_marginTop="5dp"
                                 android:fontFamily="@font/roboto_light"
                                 android:maxLines="2"
-                                android:text="Allow Move On Connect to keep app running when the apps is in background."
+                                android:text="Allow Notify Connect to keep app running when the apps is in background."
                                 android:textColor="@color/white"
                                 android:textSize="11sp" />
 
@@ -965,7 +966,7 @@
                             android:layout_marginTop="5dp"
                             android:fontFamily="@font/roboto_light"
                             android:maxLines="2"
-                            android:text="Connect with navigation and other apps to enhance your\n riding experience."
+                            android:text="Connect with navigation and other apps to enhance data statistics."
                             android:textColor="@color/white"
                             android:textSize="11sp" />
 
@@ -1019,7 +1020,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_light"
-                                android:text="Switch to car mode"
+                                android:text="Migrating"
                                 android:textColor="@color/white"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -1030,7 +1031,7 @@
                                 android:layout_marginTop="5dp"
                                 android:fontFamily="@font/roboto_light"
                                 android:maxLines="2"
-                                android:text="when you're in a car you'll see car\nmode."
+                                android:text="Export Settings"
                                 android:textColor="@color/white"
                                 android:textSize="11sp" />
 
@@ -1077,7 +1078,7 @@
                                 android:layout_marginTop="5dp"
                                 android:fontFamily="@font/roboto_light"
                                 android:maxLines="2"
-                                android:text="Turn this on and the app will stay up on your screen while you're in car mode."
+                                android:text="Turn this on and the app will stay up on your screen while you're phone is off."
                                 android:textColor="@color/white"
                                 android:textSize="11sp" />
 
@@ -1107,7 +1108,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto"
-                        android:text="Social"
+                        android:text="Widgets"
                         android:textColor="@color/white"
                         android:textSize="18sp" />
 
@@ -1126,7 +1127,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_light"
-                                android:text="Private session"
+                                android:text="Customize widget colors"
                                 android:textColor="@color/white"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -1137,7 +1138,7 @@
                                 android:layout_marginTop="5dp"
                                 android:fontFamily="@font/roboto_light"
                                 android:maxLines="1"
-                                android:text="Start a private session with driver anonymously."
+                                android:text="choose a widgets color for event, task and goal."
                                 android:textColor="@color/white"
                                 android:textSize="11sp" />
 
@@ -1170,7 +1171,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_light"
-                                android:text="Movers and Packers activity"
+                                android:text="View"
                                 android:textColor="@color/white"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -1181,7 +1182,7 @@
                                 android:layout_marginTop="5dp"
                                 android:fontFamily="@font/roboto_light"
                                 android:maxLines="1"
-                                android:text="Share where I store goods and items."
+                                android:text="View to open from the event list widget daily/weekly view."
                                 android:textColor="@color/white"
                                 android:textSize="11sp" />
 
@@ -1211,7 +1212,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto"
-                        android:text="Audio Quality"
+                        android:text="New Events"
                         android:textColor="@color/white"
                         android:textSize="18sp" />
 
@@ -1231,7 +1232,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_light"
-                                android:text="WiFi streaming"
+                                android:text="Deafult start time"
                                 android:textColor="@color/white"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -1268,7 +1269,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:fontFamily="@font/roboto_light"
-                                android:text="Cellular streaming"
+                                android:text="Default duration"
                                 android:textColor="@color/white"
                                 android:textSize="16sp"
                                 android:textStyle="bold" />
@@ -1279,7 +1280,7 @@
                                 android:layout_marginTop="5dp"
                                 android:fontFamily="@font/roboto_light"
                                 android:maxLines="2"
-                                android:text="Streaming higher quality over a cellular connection uses more data."
+                                android:text="Minutes-Hours-Days"
                                 android:textColor="@color/white"
                                 android:textSize="11sp" />
 
@@ -1337,7 +1338,7 @@
                                 android:layout_marginTop="10dp"
                                 android:fontFamily="@font/roboto_light"
                                 android:maxLines="3"
-                                android:text="We adjust your audio quality when your internet bandwidth is poor. Turning this off may cause inerruptions to your listening."
+                                android:text="We adjust your theme quality when your internet bandwidth is poor. Turning this off may cause interruptions."
                                 android:textColor="@color/white"
                                 android:textSize="11sp" />
 
@@ -1382,7 +1383,7 @@
                                 android:layout_marginTop="5dp"
                                 android:fontFamily="@font/roboto_light"
                                 android:maxLines="2"
-                                android:text="Higher quality uses more disk space."
+                                android:text="Higher quality."
                                 android:textColor="@color/white"
                                 android:textSize="11sp" />
 
@@ -1459,7 +1460,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_light"
-                            android:text="Equalizer"
+                            android:text="Timezones"
                             android:textColor="@color/white"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -1470,7 +1471,7 @@
                             android:layout_marginTop="5dp"
                             android:fontFamily="@font/roboto_light"
                             android:maxLines="1"
-                            android:text="Open the equalizer control panel"
+                            android:text="Allow changing event time zones"
                             android:textColor="@color/white"
                             android:textSize="11sp" />
 
@@ -1670,7 +1671,7 @@
                             android:layout_marginTop="5dp"
                             android:fontFamily="@font/roboto_light"
                             android:maxLines="2"
-                            android:text="You can free up storage by deleting your cards. Your downloads won't be deleted."
+                            android:text="You can free up storage by deleting your events, task and gola. Your downloads won't be deleted."
                             android:textColor="@color/white"
                             android:textSize="11sp" />
 
@@ -1749,7 +1750,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:fontFamily="@font/roboto_light"
-                            android:text="Move On Ad Partner Preferences"
+                            android:text="Notify Ad Partner Preferences"
                             android:textColor="@color/white"
                             android:textSize="16sp"
                             android:textStyle="bold" />
@@ -1966,7 +1967,7 @@
                             android:layout_marginTop="5dp"
                             android:fontFamily="@font/roboto_light"
                             android:maxLines="1"
-                            android:text="Choose where to store your music data."
+                            android:text="Choose where to store your data."
                             android:textColor="@color/white"
                             android:textSize="11sp" />
 
@@ -1977,9 +1978,8 @@
                         style="@style/clickable_effect"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="5dp"
+                        android:layout_marginVertical="5dp"
                         android:orientation="vertical"
-                        android:layout_marginBottom="40dp"
                         android:paddingVertical="10dp">
 
                         <TextView
@@ -1997,6 +1997,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="5dp"
+                            android:layout_marginBottom="30dp"
                             android:fontFamily="@font/roboto_light"
                             android:maxLines="1"
                             android:text="You are logged in as Mausam Singh"

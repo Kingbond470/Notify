@@ -63,7 +63,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:elevation="20dp"
-                            app:cardBackgroundColor="@color/app_background"
+                            app:cardBackgroundColor="@color/task_background_color"
                             app:cardCornerRadius="12dp">
 
                             <RelativeLayout
@@ -79,7 +79,7 @@
                                     android:layout_alignParentLeft="true"
                                     android:layout_alignParentTop="true"
                                     android:scaleType="centerCrop"
-                                    android:src="@drawable/ic_warning" />
+                                    android:src="@drawable/ic_task_complete" />
 
                                 <TextView
                                     android:id="@+id/tv_dear_customer"
@@ -91,7 +91,7 @@
                                     android:fontFamily="@font/roboto_light"
                                     android:lines="3"
                                     android:paddingLeft="10dp"
-                                    android:text="Dear Customer,\nDue to the unprecedented spike of COVID-19 cases across the country, our COntact Centre"
+                                    android:text="Dear Customer,\n Before you ask a question, please first read the \n FAQ - Frequently asked questions"
                                     android:textColor="@color/white" />
 
                                 <TextView
@@ -101,7 +101,7 @@
                                     android:layout_below="@id/tv_dear_customer"
                                     android:fontFamily="@font/roboto_light"
                                     android:lines="1"
-                                    android:text="operations have been impacted."
+                                    android:text=""
                                     android:textColor="@color/white" />
 
                                 <TextView
@@ -112,7 +112,7 @@
                                     android:layout_toRightOf="@id/operations"
                                     android:fontFamily="@font/roboto_light"
                                     android:lines="1"
-                                    android:text=" We are therefore"
+                                    android:text=""
                                     android:textColor="@color/white"
                                     android:textStyle="bold" />
 
@@ -124,7 +124,7 @@
                                     android:layout_below="@id/operations"
                                     android:fontFamily="@font/roboto_light"
                                     android:lines="1"
-                                    android:text="compelled to halt our operations till the situation"
+                                    android:text="Send you feedback or suggestions to"
                                     android:textColor="@color/white"
                                     android:textStyle="bold" />
 
@@ -135,7 +135,7 @@
                                     android:layout_below="@id/compelled"
                                     android:fontFamily="@font/roboto_light"
                                     android:lines="1"
-                                    android:text="normalizes."
+                                    android:text=""
                                     android:textColor="@color/white"
                                     android:textStyle="bold" />
 
@@ -147,7 +147,7 @@
                                     android:layout_toRightOf="@+id/normalizes"
                                     android:fontFamily="@font/roboto_light"
                                     android:lines="1"
-                                    android:text=" However, we would continue to provide"
+                                    android:text="hello@notify.com"
                                     android:textColor="@color/white" />
 
                                 <TextView
@@ -157,85 +157,29 @@
                                     android:layout_below="@id/normalizes"
                                     android:fontFamily="@font/roboto_light"
                                     android:lines="1"
-                                    android:text="support for your concerns over Emails."
+                                    android:text="notifymasai@school.com"
                                     android:textColor="@color/white" />
 
-                                <TextView
-                                    android:id="@+id/Though"
-                                    android:layout_width="match_parent"
-                                    android:layout_height="wrap_content"
-                                    android:layout_below="@id/support_for"
-                                    android:layout_marginVertical="20dp"
-                                    android:fontFamily="@font/roboto_light"
-                                    android:lines="4"
-                                    android:text="Though our endeavor would be to respond as quickly as\npossible, but please do allow us to revert in 24-48 hours.\nFor any further assistance please feel free to reach out to\nus via below mentioned options."
-                                    android:textColor="@color/white" />
 
                                 <TextView
                                     android:id="@+id/dipatch"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_below="@id/Though"
+                                    android:layout_below="@id/support_for"
+                                    android:layout_marginTop="5dp"
                                     android:fontFamily="@font/roboto_light"
                                     android:lines="1"
-                                    android:text="Dispatch of orders from our end as well as Deliveries"
+                                    android:text="Follow us"
                                     android:textColor="@color/white"
                                     android:textStyle="bold" />
 
-                                <TextView
+                                <ImageView
                                     android:id="@+id/have"
                                     android:layout_width="match_parent"
                                     android:layout_height="wrap_content"
                                     android:layout_below="@id/dipatch"
-                                    android:fontFamily="@font/roboto_light"
-                                    android:lines="3"
-                                    android:text="have also been severly hampered during the last few weeks and may continue for some more time. As such, we seek your cooperation in alowing us time extensions."
+                                    android:src="@drawable/ic_instagram"
                                     android:textColor="@color/white" />
-
-                            </RelativeLayout>
-
-                        </androidx.cardview.widget.CardView>
-
-                        <androidx.cardview.widget.CardView
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginVertical="20dp"
-                            android:backgroundTint="@color/light_grey"
-                            android:elevation="1dp"
-                            app:cardBackgroundColor="@color/navigation_color"
-                            app:cardCornerRadius="5dp">
-
-                            <RelativeLayout
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:layout_margin="2dp"
-                                android:background="@color/app_background"
-                                android:padding="8dp">
-
-
-                                <ImageView
-                                    android:id="@+id/iv_packers_help"
-                                    android:layout_width="40dp"
-                                    android:layout_height="40dp"
-                                    android:layout_margin="10dp"
-                                    android:src="@drawable/ic_warning" />
-
-                                <TextView
-                                    android:id="@+id/tv_packers_help"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_centerVertical="true"
-                                    android:layout_marginStart="5dp"
-                                    android:layout_marginTop="5dp"
-                                    android:layout_marginEnd="5dp"
-                                    android:layout_marginBottom="5dp"
-                                    android:layout_toRightOf="@id/iv_packers_help"
-                                    android:fontFamily="@font/roboto_light"
-                                    android:text="COVID Policy"
-                                    android:textColor="@color/white"
-                                    android:textSize="15sp"
-                                    android:textStyle="bold" />
-
 
                             </RelativeLayout>
 
@@ -262,8 +206,11 @@
                                     android:id="@+id/iv_manage_your_order"
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"
-                                    android:layout_margin="10dp"
-                                    android:src="@drawable/ic_home_icon" />
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:src="@drawable/subscription1" />
 
                                 <TextView
                                     android:id="@+id/tv_manage_order"
@@ -307,7 +254,10 @@
                                     android:id="@+id/iv_warehouses_help"
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"
-                                    android:layout_margin="10dp"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginBottom="10dp"
                                     android:src="@drawable/ic_home_completed" />
 
                                 <TextView
@@ -352,8 +302,11 @@
                                     android:id="@+id/iv_ride_help"
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"
-                                    android:layout_margin="10dp"
-                                    android:src="@drawable/ic_google_logo" />
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:src="@drawable/ic_home_sucess" />
 
                                 <TextView
                                     android:id="@+id/tv_ride_help"
@@ -398,8 +351,11 @@
                                     android:id="@+id/iv_appissue_help"
                                     android:layout_width="40dp"
                                     android:layout_height="40dp"
-                                    android:layout_margin="10dp"
-                                    android:src="@drawable/issue1" />
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:layout_marginEnd="10dp"
+                                    android:layout_marginBottom="10dp"
+                                    android:src="@drawable/ic_task_cross" />
 
                                 <TextView
                                     android:id="@+id/tv_appissue_help"

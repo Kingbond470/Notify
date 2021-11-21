@@ -70,7 +70,7 @@
     </style>
 
     <style name="BrandedSwitch">
-        <item name="colorAccent">@color/app_background_navy_blue</item>
+        <item name="colorAccent">@color/yellow</item>
     </style>
 
     <style name="MatchSpinnerStyle" parent="android:style/Widget.ListView.DropDown">

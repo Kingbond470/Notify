@@ -12,12 +12,12 @@
 
         <item
             android:id="@+id/nav_goal"
-            android:icon="@drawable/ic_home_completed"
+            android:icon="@drawable/ic_home_calender"
             android:title="Goal" />
 
         <item
             android:id="@+id/nav_event"
-            android:icon="@drawable/ic_home_completed"
+            android:icon="@drawable/ic_home_calender"
             android:title="Event" />
 
         <item

@@ -53,7 +53,7 @@ class SpalshActivity : AppCompatActivity() {
             setContentView(videoHolder)
 
             val video: Uri =
-                Uri.parse("android.resource://" + packageName + "/" + R.raw.notify_splash)
+                Uri.parse("android.resource://" + packageName + "/" + R.raw.notify_splash_page)
             videoHolder.scaleX
             videoHolder.setVideoURI(video)
             videoHolder.setOnCompletionListener { jump() }
