@@ -75,6 +75,7 @@
                     app:labelVisibilityMode="unlabeled"
                     app:menu="@menu/bottom_menu" />
 
+
             </androidx.cardview.widget.CardView>
 
             <!--
@@ -104,6 +105,88 @@
                 app:fabSize="normal"
                 app:maxImageSize="80sp"
                 app:srcCompat="@drawable/ic_home_add" />
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    tools:ignore="HardcodedText">
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/btnAddEvent"
+                        android:backgroundTint="@color/white"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginBottom="80dp"
+                        android:src="@drawable/ic_add_white"
+                        app:fabSize="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent" />
+
+                    <TextView
+                        android:id="@+id/add_event_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="Event"
+                        app:layout_constraintBottom_toBottomOf="@+id/btnAddEvent"
+                        app:layout_constraintEnd_toStartOf="@+id/btnAddEvent"
+                        app:layout_constraintTop_toTopOf="@+id/btnAddEvent" />
+
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/btnAddGoal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp"
+                        app:fabSize="normal"
+                        android:backgroundTint="@color/white"
+                        app:layout_constraintBottom_toTopOf="@+id/btnAddEvent"
+                        app:layout_constraintEnd_toEndOf="@+id/btnAddEvent"
+                        app:layout_constraintStart_toStartOf="@+id/btnAddEvent"
+                        app:srcCompat="@drawable/ic_add_white" />
+
+                    <TextView
+                        android:id="@+id/add_goal_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="Goal"
+                        app:layout_constraintBottom_toBottomOf="@+id/btnAddGoal"
+                        app:layout_constraintEnd_toStartOf="@+id/btnAddGoal"
+                        app:layout_constraintTop_toTopOf="@+id/btnAddGoal" />
+
+                    <com.google.android.material.floatingactionbutton.FloatingActionButton
+                        android:id="@+id/btnAddTask"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp"
+                        app:fabSize="normal"
+                        android:backgroundTint="@color/white"
+                        app:layout_constraintBottom_toTopOf="@+id/btnAddGoal"
+                        app:layout_constraintEnd_toEndOf="@+id/btnAddGoal"
+                        app:layout_constraintStart_toStartOf="@+id/btnAddGoal"
+                        app:srcCompat="@drawable/ic_add_white" />
+
+                    <TextView
+                        android:id="@+id/add_task_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="8dp"
+                        android:text="Task"
+                        app:layout_constraintBottom_toBottomOf="@+id/btnAddTask"
+                        app:layout_constraintEnd_toStartOf="@+id/btnAddTask"
+                        app:layout_constraintTop_toTopOf="@+id/btnAddTask" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </FrameLayout>
 
         </RelativeLayout>
 

@@ -4,18 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#00000000"
     android:orientation="vertical"
     tools:context=".ui.calendar.CalendarFragment">
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:id="@+id/coordinator"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="#00000000">
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/app_background"
+            android:background="#00000000"
             android:fitsSystemWindows="true"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:title="Name">
@@ -24,57 +26,63 @@
                 android:id="@+id/collapsing_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/app_background"
+                android:background="#00000000"
                 android:fitsSystemWindows="true"
                 android:minHeight="50dp"
-                app:contentScrim="@color/app_background"
+                app:contentScrim="@color/navigation_color"
                 app:layout_scrollFlags="scroll|exitUntilCollapsed">
+                <!--                android:background="@color/app_background"-->
+                <!--                app:contentScrim="@color/app_background"-->
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@color/transparent"
                     android:orientation="vertical">
 
-                    <LinearLayout
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"
                         android:layout_marginBottom="20dp"
                         android:orientation="horizontal">
 
-                        <Button
+                        <ImageView
                             android:id="@+id/previousMonth"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@null"
-                            android:text="back"
+                            android:layout_alignParentStart="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginStart="10dp"
+                            android:src="@drawable/ic_arrow_left"
                             android:textColor="@color/blue"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
                         <TextView
                             android:id="@+id/monthYearTV"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="2"
+                            android:layout_centerInParent="true"
+                            android:layout_centerHorizontal="true"
                             android:text="Feb 2021"
                             android:textAlignment="center"
                             android:textColor="@color/black"
                             android:textSize="20sp" />
 
-                        <Button
+                        <ImageView
                             android:id="@+id/nextMonth"
-                            android:layout_width="0dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@null"
-                            android:text="forward"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginEnd="10dp"
+                            android:src="@drawable/ic_arrow_right"
                             android:textColor="@color/blue"
                             android:textSize="20sp"
                             android:textStyle="bold" />
 
-                    </LinearLayout>
+                    </RelativeLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
@@ -156,157 +164,125 @@
 
             </com.google.android.material.appbar.CollapsingToolbarLayout>
 
-            <!--            <RelativeLayout-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="match_parent"-->
-            <!--                android:layout_below="@id/rlParallax"-->
-            <!--                android:background="@color/app_background">-->
-
-            <!--                <LinearLayout-->
-            <!--                    android:id="@+id/llProfileFollowers"-->
-            <!--                    android:layout_width="match_parent"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:layout_marginVertical="10dp"-->
-            <!--                    android:orientation="horizontal"-->
-            <!--                    android:weightSum="3">-->
-
-            <!--                    <RelativeLayout-->
-            <!--                        android:layout_width="0dp"-->
-            <!--                        android:layout_height="match_parent"-->
-            <!--                        android:layout_weight="1">-->
-
-            <!--                        <TextView-->
-            <!--                            android:id="@+id/tvEditProfilePlaylist"-->
-            <!--                            android:layout_width="wrap_content"-->
-            <!--                            android:layout_height="wrap_content"-->
-            <!--                            android:layout_centerHorizontal="true"-->
-            <!--                            android:layout_marginVertical="5dp"-->
-            <!--                            android:text="0"-->
-            <!--                            android:textColor="@color/white"-->
-            <!--                            android:textSize="13sp"-->
-            <!--                            android:textStyle="bold" />-->
-
-            <!--                        <TextView-->
-            <!--                            android:layout_width="wrap_content"-->
-            <!--                            android:layout_height="wrap_content"-->
-            <!--                            android:layout_below="@id/tvEditProfilePlaylist"-->
-            <!--                            android:layout_centerHorizontal="true"-->
-            <!--                            android:text="PLAYLISTS"-->
-            <!--                            android:textColor="@color/white"-->
-            <!--                            android:textSize="12sp" />-->
-
-            <!--                    </RelativeLayout>-->
-
-            <!--                    <RelativeLayout-->
-            <!--                        android:layout_width="0dp"-->
-            <!--                        android:layout_height="match_parent"-->
-            <!--                        android:layout_weight="1">-->
-
-            <!--                        <TextView-->
-            <!--                            android:id="@+id/tvEditProfileFollowers"-->
-            <!--                            android:layout_width="wrap_content"-->
-            <!--                            android:layout_height="wrap_content"-->
-            <!--                            android:layout_centerHorizontal="true"-->
-            <!--                            android:layout_marginVertical="5dp"-->
-            <!--                            android:text="0"-->
-            <!--                            android:textColor="@color/white"-->
-            <!--                            android:textSize="13sp"-->
-            <!--                            android:textStyle="bold" />-->
-
-            <!--                        <TextView-->
-            <!--                            android:layout_width="wrap_content"-->
-            <!--                            android:layout_height="wrap_content"-->
-            <!--                            android:layout_below="@id/tvEditProfileFollowers"-->
-            <!--                            android:layout_centerHorizontal="true"-->
-            <!--                            android:text="FOLLOWERS"-->
-            <!--                            android:textColor="@color/white"-->
-            <!--                            android:textSize="12sp" />-->
-
-            <!--                    </RelativeLayout>-->
-
-            <!--                    <RelativeLayout-->
-            <!--                        android:layout_width="0dp"-->
-            <!--                        android:layout_height="match_parent"-->
-            <!--                        android:layout_weight="1">-->
-
-            <!--                        <TextView-->
-            <!--                            android:id="@+id/tvEditProfileFollowing"-->
-            <!--                            android:layout_width="wrap_content"-->
-            <!--                            android:layout_height="wrap_content"-->
-            <!--                            android:layout_centerHorizontal="true"-->
-            <!--                            android:layout_marginVertical="5dp"-->
-            <!--                            android:text="0"-->
-            <!--                            android:textColor="@color/white"-->
-            <!--                            android:textSize="13sp"-->
-            <!--                            android:textStyle="bold" />-->
-
-            <!--                        <TextView-->
-            <!--                            android:layout_width="wrap_content"-->
-            <!--                            android:layout_height="wrap_content"-->
-            <!--                            android:layout_below="@id/tvEditProfileFollowing"-->
-            <!--                            android:layout_centerHorizontal="true"-->
-            <!--                            android:text="FOLLOWING"-->
-            <!--                            android:textColor="@color/white"-->
-            <!--                            android:textSize="12sp" />-->
-
-            <!--                    </RelativeLayout>-->
-
-            <!--                </LinearLayout>-->
-
-            <!--                <TextView-->
-            <!--                    android:id="@+id/textView"-->
-            <!--                    android:layout_width="wrap_content"-->
-            <!--                    android:layout_height="wrap_content"-->
-            <!--                    android:layout_below="@id/llProfileFollowers"-->
-            <!--                    android:layout_centerHorizontal="true"-->
-            <!--                    android:layout_marginTop="10dp"-->
-            <!--                    android:text="No recent activity"-->
-            <!--                    android:textColor="@color/white"-->
-            <!--                    android:textSize="17sp"-->
-            <!--                    android:textStyle="bold" />-->
-
-
-            <!--            </RelativeLayout>-->
-
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:paddingBottom="60dp"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                app:layout_behavior="@string/appbar_scrolling_view_behavior"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="160dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+                <LinearLayout
+                    android:id="@+id/nothingToShow"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginBottom="200dp"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:id="@+id/ivNothingToShow"
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_below="@+id/llProfileFollowers"
+                        android:src="@drawable/ic_edit_email" />
+
+                    <TextView
+                        android:id="@+id/tvNothingToShow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:text="No Recent Tasks"
+                        android:textColor="@color/black"
+                        android:textSize="17sp"
+                        android:textStyle="bold"
+                        android:visibility="visible" />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone">
+                    <!--                    android:background="@color/app_background"-->
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginTop="10dp"
+                        android:text="No recent activity"
+                        android:textColor="@color/white"
+                        android:textSize="17sp"
+                        android:textStyle="bold" />
+
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tvEventsCalendar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:text="Events"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:visibility="gone" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rcvEventsCalendar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingVertical="10dp"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+                <TextView
+                    android:id="@+id/tvGoalsCalendar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Goals"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:visibility="gone" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rcvGoalsCalendar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="80dp"
+                    android:paddingVertical="10dp"
                     app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
+                <TextView
+                    android:id="@+id/tvTasksCalendar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="Tasks"
+                    android:textAlignment="center"
+                    android:textColor="@color/black"
+                    android:textSize="20sp"
+                    android:visibility="gone" />
+
                 <androidx.recyclerview.widget.RecyclerView
-                    android:layout_below="@id/rcvGoalsCalendar"
-                    android:id="@+id/rcvTaskCalendar"
+                    android:id="@+id/rcvTasksCalendar"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
                     android:paddingBottom="80dp"
                     app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_below="@id/rcvTaskCalendar"
-                    android:id="@+id/rcvEventsCalendar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:paddingTop="10dp"
-                    android:paddingBottom="80dp"
-                    app:layout_behavior="@string/appbar_scrolling_view_behavior" />
-
-            </RelativeLayout>
+            </LinearLayout>
 
         </androidx.core.widget.NestedScrollView>
 

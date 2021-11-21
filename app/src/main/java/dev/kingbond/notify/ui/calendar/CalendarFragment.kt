@@ -73,23 +73,44 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar), DateClickListener
 
     private fun rcvGoals() {
         itemViewModel.getDataFromGoal().observe(viewLifecycleOwner, Observer {
-//            listGoal.clear()
+            listGoal.clear()
             listGoal.addAll(it)
-            listGoal.addAll(it)
+            if(listGoal.isNotEmpty()) {
+                tvGoalsCalendar.visibility = View.VISIBLE
+            }
+            if(listEvent.isEmpty() && listTask.isEmpty() && listGoal.isEmpty()) {
+                nothingToShow.visibility = View.VISIBLE
+            } else {
+                nothingToShow.visibility = View.GONE
+            }
             goalAdapter.notifyDataSetChanged()
         })
 
         itemViewModel.getDataFromTask().observe(viewLifecycleOwner, Observer {
-//            listTask.clear()
+            listTask.clear()
             listTask.addAll(it)
-            listTask.addAll(it)
+            if(listTask.isNotEmpty()) {
+                tvTasksCalendar.visibility = View.VISIBLE
+            }
+            if(listEvent.isEmpty() && listTask.isEmpty() && listGoal.isEmpty()) {
+                nothingToShow.visibility = View.VISIBLE
+            } else {
+                nothingToShow.visibility = View.GONE
+            }
             taskAdapter.notifyDataSetChanged()
         })
 
         itemViewModel.getDataFromEventTable().observe(viewLifecycleOwner, Observer {
-//            listEvent.clear()
+            listEvent.clear()
             listEvent.addAll(it)
-            listEvent.addAll(it)
+            if(listEvent.isNotEmpty()) {
+                tvEventsCalendar.visibility = View.VISIBLE
+            }
+            if(listEvent.isEmpty() && listTask.isEmpty() && listGoal.isEmpty()) {
+                nothingToShow.visibility = View.VISIBLE
+            } else {
+                nothingToShow.visibility = View.GONE
+            }
             eventAdapter.notifyDataSetChanged()
         })
 
@@ -107,9 +128,9 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar), DateClickListener
             rcvGoalsCalendar.isNestedScrollingEnabled = false
 
             //Task
-            rcvTaskCalendar.adapter = taskAdapter
-            rcvTaskCalendar.layoutManager = linearLayoutManagerTask
-            rcvTaskCalendar.isNestedScrollingEnabled = false
+            rcvTasksCalendar.adapter = taskAdapter
+            rcvTasksCalendar.layoutManager = linearLayoutManagerTask
+            rcvTasksCalendar.isNestedScrollingEnabled = false
 
             //Event
             rcvEventsCalendar.adapter = eventAdapter
@@ -205,11 +226,13 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar), DateClickListener
     }
 
     override fun taskCompletedClicked(taskModel: TaskModel) {
-
+        taskModel.status = 1
+        itemViewModel.updateDataInTaskTable(taskModel)
     }
 
     override fun taskNotCompletedClicked(taskModel: TaskModel) {
-
+        taskModel.status = 0
+        itemViewModel.updateDataInTaskTable(taskModel)
     }
 
     override fun eventItemClicked(eventModel: EventModel) {
