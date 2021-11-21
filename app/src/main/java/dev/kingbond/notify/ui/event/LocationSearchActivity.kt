@@ -203,12 +203,54 @@ class LocationSearchActivity : AppCompatActivity(), OnMapReadyCallback, Location
                 var aaa: String = mm[1].toString()
 
 
-
-
                 //implement for different vehicle
-                var time: Double = dis / 60.0
+                var time: Double = 0.0
+
+                var ett = eventTime.toCharArray()
+                var et: String = ett[0] + "" + ett[1]
+                var ap: String = ett[6] + "" + ett[7]
 
 
+                //morning
+                if ((et.toInt() >= 9 && et.toInt() < 12 && ap == "AM") || (et.toInt() == 12 && ap == "PM")) {
+                    if (eventTransport == "Bike")
+                        time = dis / 18.0
+                    else if (eventTransport == "Car")
+                        time = dis / 30.0
+                    else if (eventTransport == "Cab")
+                        time = dis / 22.0
+                    else if (eventTransport == "Walk")
+                        time = dis / 3.0
+                    else if (eventTransport == "Bus")
+                        time = dis / 25.0
+                }
+                //evening
+                else if (et.toInt() >= 5 && et.toInt() <= 9 && ap == "PM") {
+                    if (eventTransport == "Bike")
+                        time = dis / 16.0
+                    else if (eventTransport == "Car")
+                        time = dis / 27.0
+                    else if (eventTransport == "Cab")
+                        time = dis / 20.0
+                    else if (eventTransport == "Walk")
+                        time = dis / 2.0
+                    else if (eventTransport == "Bus")
+                        time = dis / 24.0
+                }
+                //normal
+                else {
+                    if (eventTransport == "Bike")
+                        time = dis / 23.0
+                    else if (eventTransport == "Car")
+                        time = dis / 35.0
+                    else if (eventTransport == "Cab")
+                        time = dis / 27.0
+                    else if (eventTransport == "Walk")
+                        time = dis / 5.0
+                    else if (eventTransport == "Bus")
+                        time = dis / 47.0
+
+                }
 
                 //hour
                 var hour: Double = 0.0
