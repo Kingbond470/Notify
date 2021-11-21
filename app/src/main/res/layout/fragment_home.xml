@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/app_background_navy_blue"
+        tools:context=".ui.home.HomeFragment">
+
+        <ImageView
+            android:id="@+id/ivImageHomeFragment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/goals_image_preview" />
+
+
+    </RelativeLayout>
+</layout>

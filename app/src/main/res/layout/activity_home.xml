@@ -135,6 +135,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
                         android:text="Event"
+                        android:textColor="@color/white"
                         app:layout_constraintBottom_toBottomOf="@+id/btnAddEvent"
                         app:layout_constraintEnd_toStartOf="@+id/btnAddEvent"
                         app:layout_constraintTop_toTopOf="@+id/btnAddEvent" />
@@ -158,6 +159,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
                         android:text="Goal"
+                        android:textColor="@color/white"
                         app:layout_constraintBottom_toBottomOf="@+id/btnAddGoal"
                         app:layout_constraintEnd_toStartOf="@+id/btnAddGoal"
                         app:layout_constraintTop_toTopOf="@+id/btnAddGoal" />
@@ -180,6 +182,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
                         android:text="Task"
+                        android:textColor="@color/white"
                         app:layout_constraintBottom_toBottomOf="@+id/btnAddTask"
                         app:layout_constraintEnd_toStartOf="@+id/btnAddTask"
                         app:layout_constraintTop_toTopOf="@+id/btnAddTask" />
