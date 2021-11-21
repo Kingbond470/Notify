@@ -1,5 +1,7 @@
 # Notify
 
+[Playstore Link](https://play.google.com/store/apps/details?id=dev.kingbond.notify)
+
 ## Events
 ### Problem Statement  :
 Whenever we try to attend events like interviews, exams, marriage, trips, catching a flight, train. The most issue which people face is "not able to reach on time and missing out"
