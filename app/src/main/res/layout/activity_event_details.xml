@@ -1,194 +1,709 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-<layout>
-
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/app_background_navy_blue"
         android:orientation="vertical"
-        android:padding="20dp"
         tools:context=".ui.event.EventDetailsActivity">
 
-        <LinearLayout
+
+        <RelativeLayout
+            android:id="@+id/relativeLayoutEventDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/ivBackEventDetails"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@drawable/ic_back_arrow" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="Event Details"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+        </RelativeLayout>
+
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/eventDetailsTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Title"
-                android:textColor="@color/white"
-                android:textSize="30sp" />
-
-            <TextView
-                android:id="@+id/eventDetailsDesc"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Description"
-                android:textColor="@color/white"
-                android:textSize="30sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Date : "
-                android:textColor="@color/white"
-                android:textSize="30sp" />
-
-            <TextView
-                android:id="@+id/eventDetailsEventDate"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="2021-11-21"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Event Time : "
-                android:textColor="@color/white"
-                android:textSize="30sp" />
-
-            <TextView
-                android:id="@+id/eventDetailsEventTime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="09:00 AM"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Vehicle : "
-                android:textColor="@color/white"
-                android:textSize="30sp" />
-
-            <TextView
-                android:id="@+id/eventDetailsEventVehicle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Bike"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+            android:layout_below="@+id/relativeLayoutEventDetails"
+            android:background="@drawable/edit_profile_bg"
+            android:padding="10dp"
+            android:scrollbars="none">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginHorizontal="5dp"
-                android:layout_marginTop="15dp">
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="10dp">
+
+                    <FrameLayout
+                        android:id="@+id/flProfileImageEventDetails"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentLeft="true">
+
+                        <de.hdodenhof.circleimageview.CircleImageView
+                            android:id="@+id/ivProfileImage"
+                            android:layout_width="60dp"
+                            android:layout_height="60dp"
+                            android:src="@drawable/man" />
+
+                        <androidx.cardview.widget.CardView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end|bottom"
+                            app:cardCornerRadius="50dp">
+
+                        </androidx.cardview.widget.CardView>
+
+
+                    </FrameLayout>
+
+                    <TextView
+                        android:id="@+id/tvProfileName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginBottom="5dp"
+                        android:layout_toRightOf="@id/flProfileImageEventDetails"
+                        android:fontFamily="@font/roboto"
+                        android:text="Event Name 📇 "
+                        android:textColor="@color/white"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/eventDetailsTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tvProfileName"
+                        android:layout_marginLeft="10dp"
+                        android:layout_toRightOf="@id/flProfileImageEventDetails"
+                        android:fontFamily="@font/roboto_light"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textSize="16sp" />
+
+                </RelativeLayout>
+
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:id="@+id/tvProfileAge"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="From : "
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="Event Description"
                     android:textColor="@color/white"
-                    android:textSize="30sp" />
+                    android:textSize="18sp" />
+
+
+                <LinearLayout
+                    android:id="@+id/llDescriptionEventDetails"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/etEmailSignUp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:background="@drawable/edit_profle_mobile_bg"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="15dp"
+                        android:paddingVertical="8dp">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:backgroundTint="@color/app_background_navy_blue"
+                            android:src="@drawable/ic_home_completed" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/eventDetailsDesc"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:fontFamily="@font/roboto_light"
+                        android:padding="5dp"
+                        android:maxLines="3"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:id="@+id/tvProfileRelation"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="To : "
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:drawablePadding="5dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="Event Date "
                     android:textColor="@color/white"
-                    android:textSize="30sp" />
+                    android:textSize="18sp" />
 
-            </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/goalDescription"
-                android:layout_marginHorizontal="5dp"
-                android:layout_marginTop="15dp">
+                <LinearLayout
+                    android:id="@+id/llDateofEventDetail"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/etEmailSignUp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:background="@drawable/edit_profle_mobile_bg"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="15dp"
+                        android:paddingVertical="8dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/app_background_navy_blue"
+                            android:src="@drawable/ic_baseline_calendar" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/eventDetailsEventDate"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:fontFamily="@font/roboto_light"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/tvMobileNumberEditProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="Event Time"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+                <LinearLayout
+                    android:id="@+id/etPhoneNumberLinearLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/etEmailSignUp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:background="@drawable/edit_profle_mobile_bg"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="15dp"
+                        android:paddingVertical="8dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/app_background_navy_blue"
+                            android:src="@drawable/ic_baseline_calendar" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/eventDetailsEventTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:fontFamily="@font/roboto_light"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/tvCountryEditProfile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="Mode of transport"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
+
+
+                <LinearLayout
+                    android:id="@+id/llModeOfTransportLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/etEmailSignUp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="8dp"
+                        android:background="@drawable/edit_profle_mobile_bg"
+                        android:orientation="horizontal"
+                        android:paddingHorizontal="15dp"
+                        android:paddingVertical="8dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@color/white"
+                            android:src="@drawable/ic_transport_mode_car" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/eventDetailsEventVehicle"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:fontFamily="@font/roboto_light"
+                        android:padding="5dp"
+                        android:singleLine="true"
+                        android:textColor="@color/white"
+                        android:textColorHint="@color/white"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+
+
+                <TextView
+                    android:id="@+id/tvFromEventDetailsHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="From"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/tvEventDetailFrom"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Raipur"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:fontFamily="@font/roboto"
+                    android:maxLines="2"
+                    android:background="@drawable/edit_profile_et_bg"
+                    android:maxLength="51"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text=""
                     android:textColor="@color/white"
-                    android:textSize="20sp" />
+                    android:textColorHint="@color/white"
+                    android:textSize="16sp" />
 
+                <TextView
+                    android:id="@+id/tvToEventDetailsHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="5dp"
+                    android:fontFamily="@font/roboto"
+                    android:text="To"
+                    android:textColor="@color/white"
+                    android:textSize="18sp" />
 
                 <TextView
                     android:id="@+id/tvEventDetailTo"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="Mumbai"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:fontFamily="@font/roboto"
+                    android:maxLines="2"
+                    android:padding="10dp"
+                    android:singleLine="true"
+                    android:text=""
+                    android:background="@drawable/edit_profile_et_bg"
+                    android:maxLength="51"
                     android:textColor="@color/white"
-                    android:textSize="20sp" />
+                    android:textColorHint="@color/white"
+                    android:textSize="16sp" />
+
+
+
+
+                <!--                <LinearLayout-->
+                <!--                    android:layout_width="match_parent"-->
+                <!--                    android:layout_height="wrap_content"-->
+                <!--                    android:layout_marginTop="20dp"-->
+                <!--                    android:orientation="horizontal"-->
+                <!--                    android:weightSum="2">-->
+
+                <!--                    <LinearLayout-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_marginRight="10dp"-->
+                <!--                        android:layout_weight="1"-->
+                <!--                        android:orientation="vertical">-->
+
+                <!--                        <TextView-->
+                <!--                            android:id="@+id/tvProfileHeight"-->
+                <!--                            android:layout_width="match_parent"-->
+                <!--                            android:layout_height="wrap_content"-->
+                <!--                            android:layout_marginBottom="5dp"-->
+                <!--                            android:fontFamily="@font/roboto"-->
+                <!--                            android:text="From"-->
+                <!--                            android:textColor="@color/white"-->
+                <!--                            android:textSize="13sp" />-->
+
+                <!--                        <TextView-->
+                <!--                            android:id="@+id/tvEventDetailFrom"-->
+                <!--                            android:layout_width="match_parent"-->
+                <!--                            android:layout_height="40dp"-->
+                <!--                            android:background="@drawable/edit_profile_et_bg"-->
+                <!--                            android:fontFamily="@font/roboto"-->
+                <!--                            android:maxLines="3"-->
+                <!--                            android:padding="5dp"-->
+                <!--                            android:singleLine="true"-->
+                <!--                            android:textColor="@color/white"-->
+                <!--                            android:textSize="15sp" />-->
+
+                <!--                    </LinearLayout>-->
+
+
+                <!--                    <LinearLayout-->
+                <!--                        android:layout_width="match_parent"-->
+                <!--                        android:layout_height="wrap_content"-->
+                <!--                        android:layout_marginLeft="10dp"-->
+                <!--                        android:layout_weight="1"-->
+                <!--                        android:orientation="vertical">-->
+
+                <!--                        <TextView-->
+                <!--                            android:id="@+id/tvProfileWeight"-->
+                <!--                            android:layout_width="match_parent"-->
+                <!--                            android:layout_height="wrap_content"-->
+                <!--                            android:layout_marginBottom="5dp"-->
+                <!--                            android:fontFamily="@font/roboto"-->
+                <!--                            android:text="To"-->
+                <!--                            android:textColor="@color/white"-->
+                <!--                            android:textSize="13sp" />-->
+
+                <!--                        <TextView-->
+                <!--                            android:id="@+id/tvEventDetailTo"-->
+                <!--                            android:layout_width="match_parent"-->
+                <!--                            android:layout_height="40dp"-->
+                <!--                            android:background="@drawable/edit_profile_et_bg"-->
+                <!--                            android:fontFamily="@font/roboto"-->
+                <!--                            android:maxLines="3"-->
+                <!--                            android:padding="5dp"-->
+                <!--                            android:singleLine="true"-->
+                <!--                            android:textColor="@color/white"-->
+                <!--                            android:textSize="15sp" />-->
+
+                <!--                    </LinearLayout>-->
+
+
+                <!--                </LinearLayout>-->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="horizontal"
+                    android:weightSum="2">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvDistanceEventDetails"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="Distance"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/eventDetailsEventDistance"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edit_profile_et_bg"
+                            android:fontFamily="@font/roboto"
+                            android:padding="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvTimeLeftEventDetails"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="5dp"
+                            android:fontFamily="@font/roboto"
+                            android:text="Leave Time"
+                            android:textColor="@color/white"
+                            android:textSize="18sp" />
+
+                        <TextView
+                            android:id="@+id/eventDetailsEventTimeLeft"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/edit_profile_et_bg"
+                            android:fontFamily="@font/roboto_light"
+                            android:padding="10dp"
+                            android:singleLine="true"
+                            android:textColor="@color/white"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="5dp"
+                    app:cardCornerRadius="10dp">
+
+                    <Button
+                        android:id="@+id/btnDoneEventDetails"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/app_background_navy_blue"
+                        android:fontFamily="@font/roboto"
+                        android:paddingHorizontal="80dp"
+                        android:paddingVertical="10dp"
+                        android:text="Done"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                </androidx.cardview.widget.CardView>
+
 
             </LinearLayout>
 
+        </ScrollView>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Distance : "
-                android:textColor="@color/white"
-                android:textSize="30sp" />
+        <!--        <LinearLayout-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="match_parent"-->
+        <!--            android:orientation="vertical">-->
 
-            <TextView
-                android:id="@+id/eventDetailsEventDistance"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="30 KM"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+        <!--            <TextView-->
+        <!--                android:id="@+id/eventDetailsTitle"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:text="Title"-->
+        <!--                android:textColor="@color/white"-->
+        <!--                android:textSize="30sp" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/eventDetailsDesc"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginTop="10dp"-->
+        <!--                android:text="Description"-->
+        <!--                android:textColor="@color/white"-->
+        <!--                android:textSize="30sp" />-->
+
+        <!--            <TextView-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginTop="10dp"-->
+        <!--                android:text="Date : "-->
+        <!--                android:textColor="@color/white"-->
+        <!--                android:textSize="30sp" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/eventDetailsEventDate"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginTop="10dp"-->
+        <!--                android:text="2021-11-21"-->
+        <!--                android:textColor="@color/white"-->
+        <!--                android:textSize="20sp" />-->
+
+        <!--            <TextView-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginTop="10dp"-->
+        <!--                android:text="Event Time : "-->
+        <!--                android:textColor="@color/white"-->
+        <!--                android:textSize="30sp" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/eventDetailsEventTime"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginTop="10dp"-->
+        <!--                android:text="09:00 AM"-->
+        <!--                android:textColor="@color/white"-->
+        <!--                android:textSize="20sp" />-->
+
+        <!--            <TextView-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginTop="10dp"-->
+        <!--                android:text="Vehicle : "-->
+        <!--                android:textColor="@color/white"-->
+        <!--                android:textSize="30sp" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/eventDetailsEventVehicle"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginTop="10dp"-->
+        <!--                android:text="Bike"-->
+        <!--                android:textColor="@color/white"-->
+        <!--                android:textSize="20sp" />-->
+
+        <!--            <LinearLayout-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginHorizontal="5dp"-->
+        <!--                android:layout_marginTop="15dp">-->
+
+        <!--                <TextView-->
+        <!--                    android:layout_width="0dp"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_weight="1"-->
+        <!--                    android:text="From : "-->
+        <!--                    android:textColor="@color/white"-->
+        <!--                    android:textSize="30sp" />-->
+
+        <!--                <TextView-->
+        <!--                    android:layout_width="0dp"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_weight="1"-->
+        <!--                    android:text="To : "-->
+        <!--                    android:textColor="@color/white"-->
+        <!--                    android:textSize="30sp" />-->
+
+        <!--            </LinearLayout>-->
+
+        <!--            <LinearLayout-->
+        <!--                android:layout_width="match_parent"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_below="@+id/goalDescription"-->
+        <!--                android:layout_marginHorizontal="5dp"-->
+        <!--                android:layout_marginTop="15dp">-->
+
+        <!--                <TextView-->
+        <!--                    android:id="@+id/tvEventDetailFrom"-->
+        <!--                    android:layout_width="0dp"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_weight="1"-->
+        <!--                    android:text="Raipur"-->
+        <!--                    android:textColor="@color/white"-->
+        <!--                    android:textSize="20sp" />-->
 
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="Time Left : "
-                android:textColor="@color/white"
-                android:textSize="30sp" />
+        <!--                <TextView-->
+        <!--                    android:id="@+id/tvEventDetailTo"-->
+        <!--                    android:layout_width="0dp"-->
+        <!--                    android:layout_height="wrap_content"-->
+        <!--                    android:layout_weight="1"-->
+        <!--                    android:text="Mumbai"-->
+        <!--                    android:textColor="@color/white"-->
+        <!--                    android:textSize="20sp" />-->
 
-            <TextView
-                android:id="@+id/eventDetailsEventTimeLeft"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
-                android:text="00:00:00"
-                android:textColor="@color/white"
-                android:textSize="40sp" />
+        <!--            </LinearLayout>-->
 
-        </LinearLayout>
 
-        <!--
-                <com.google.android.material.floatingactionbutton.FloatingActionButton
-                    android:id="@+id/addTaskToGoal"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="bottom|end"
-                    android:layout_margin="20dp"
-                    android:backgroundTint="#2671F6"
-                    android:src="@drawable/ic_add_white"
-                    app:cornerRadius="20dp"
-                    app:maxImageSize="45dp" />
+        <!--            <TextView-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginTop="10dp"-->
+        <!--                android:text="Distance : "-->
+        <!--                android:textColor="@color/white"-->
+        <!--                android:textSize="30sp" />-->
 
-        -->
+        <!--            <TextView-->
+        <!--                android:id="@+id/eventDetailsEventDistance"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginTop="10dp"-->
+        <!--                android:text="30 KM"-->
+        <!--                android:textColor="@color/white"-->
+        <!--                android:textSize="20sp" />-->
 
-    </FrameLayout>
+
+        <!--            <TextView-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginTop="10dp"-->
+        <!--                android:text="Time Left : "-->
+        <!--                android:textColor="@color/white"-->
+        <!--                android:textSize="30sp" />-->
+
+        <!--            <TextView-->
+        <!--                android:id="@+id/eventDetailsEventTimeLeft"-->
+        <!--                android:layout_width="wrap_content"-->
+        <!--                android:layout_height="wrap_content"-->
+        <!--                android:layout_marginTop="10dp"-->
+        <!--                android:text="00:00:00"-->
+        <!--                android:textColor="@color/white"-->
+        <!--                android:textSize="40sp" />-->
+
+        <!--        </LinearLayout>-->
+
+    </RelativeLayout>
 
 </layout>

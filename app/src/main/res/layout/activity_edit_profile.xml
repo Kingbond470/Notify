@@ -6,10 +6,9 @@
     <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/app_background"
+    android:background="@color/app_background_navy_blue"
     android:fitsSystemWindows="true"
     tools:context=".ui.profile.EditProfileActivity">
-
 
         <RelativeLayout
             android:id="@+id/relativeLayout"

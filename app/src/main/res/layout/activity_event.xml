@@ -266,6 +266,7 @@
         android:background="@color/app_background"
         android:fontFamily="@font/roboto_light"
         android:padding="15dp"
+        android:maxLines="1"
         android:paddingVertical="10dp"
         android:text="End Point"
         android:textColor="@color/white"

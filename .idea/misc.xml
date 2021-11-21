@@ -20,6 +20,8 @@
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_add_white.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_back_arrow.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_baseline_calendar.xml" value="0.2203125" />
+        <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_baseline_calendar_event.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_baseline_fact_check_24.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_bottom_arrow.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/ic_email_about.xml" value="0.2203125" />
@@ -55,8 +57,9 @@
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/selected_date_bg.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/splash_logo.xml" value="0.2203125" />
         <entry key="..\:/Android/Notify/app/src/main/res/drawable/splash_logo_help.xml" value="0.98125" />
-        <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_edit_profile.xml" value="0.22" />
-        <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_event.xml" value="0.18" />
+        <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_edit_profile.xml" value="0.25" />
+        <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_event.xml" value="0.25" />
+        <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_event_details.xml" value="0.33" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_event_home.xml" value="0.20416666666666666" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_goal.xml" value="0.2" />
         <entry key="..\:/Android/Notify/app/src/main/res/layout/activity_goal_details.xml" value="0.25" />

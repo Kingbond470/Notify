@@ -21,6 +21,7 @@
         android:theme="@style/Theme.Notify">
         <activity
             android:name=".ui.event.EventDetailsActivity"
+            android:theme="@style/Theme.EditProfile"
             android:exported="false" />
         <activity
             android:name=".ui.event.EventHomeActivity"
