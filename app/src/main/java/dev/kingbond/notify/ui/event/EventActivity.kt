@@ -1,26 +1,24 @@
 package dev.kingbond.notify.ui.event
 
-import android.app.AlarmManager
-import android.app.DatePickerDialog
-import android.app.PendingIntent
-import android.app.TimePickerDialog
+import android.app.*
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.*
+import androidx.annotation.RequiresApi
 import androidx.lifecycle.ViewModelProviders
 import dev.kingbond.notify.R
-import dev.kingbond.notify.alarmAndReminder.AlarmBrodcast
 import dev.kingbond.notify.data.database.RoomDataBaseClass
 import dev.kingbond.notify.databinding.ActivityEventBinding
 import dev.kingbond.notify.repository.RepositoryClass
 import dev.kingbond.notify.viewmodel.ViewModelClass
 import dev.kingbond.notify.viewmodel.ViewModelFactory
 import kotlinx.android.synthetic.main.activity_event.*
-import java.text.DateFormat
-import java.text.ParseException
 import java.text.SimpleDateFormat
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 import java.util.*
 
 class EventActivity : AppCompatActivity() {
@@ -28,9 +26,12 @@ class EventActivity : AppCompatActivity() {
     private lateinit var eventbinding: ActivityEventBinding
     var distance: String = "0.0"
 
-    //private lateinit var adapter: EventAdapter
+    private lateinit var alarmManager: AlarmManager
+    private lateinit var pendingIntent: PendingIntent
+
     private lateinit var itemViewModel: ViewModelClass
 
+    @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -234,16 +235,125 @@ class EventActivity : AppCompatActivity() {
             }
 
             //set alarm
-            setAlarm(
+            /*setAlarm(
                 (eventDescription + " " + eventType),
                 eventDate,
                 time.toString()
-            )
+            )*/
+
+            if (time != null) {
+                createNotificationChannel(eventType, eventDescription, time)
+            }
+
+            setAlarm(eventDate, time)
 
 
             val intent = Intent(this, EventHomeActivity::class.java)
             startActivity(intent)
         })
+    }
+
+    @RequiresApi(Build.VERSION_CODES.O)
+    private fun setAlarm(eventDate: String, time: String?) {
+
+        alarmManager = getSystemService(ALARM_SERVICE) as AlarmManager
+        val intent = Intent(this, AlarmReceiver::class.java)
+
+        pendingIntent = PendingIntent.getBroadcast(this, 0, intent, 0)
+
+
+        val current = LocalDateTime.now()
+
+        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd-HH-mm")
+
+        val currentDate = current.format(formatter)
+        val cd = currentDate.split("-").toTypedArray()
+
+        val cdy = cd[0].toInt()
+        val cdmon = cd[1].toInt()
+        val cdd = cd[2].toInt()
+        val cdh = cd[3].toInt()
+        val cdmin = cd[4].toInt()
+        //val cds = cd[5]
+
+        val ed = eventDate.split("-").toTypedArray()
+
+        var edy = ed[0].toInt()
+        val edmon = ed[1].toInt()
+        val edd = ed[2].toInt()
+
+        val t = time?.toCharArray()
+        val h: String = t!![0] + "" + t[1]
+        val m: String = t!![3] + "" + t[4]
+
+        val edh = h.toInt()
+        val edmin = m.toInt()
+        //val eds = cd[5]
+
+        var mon = 0
+        while (edy / cdy > 1) {
+            mon = mon + 12
+            edy = edy - 1
+        }
+        if (edmon > cdmon) {
+            mon = mon + (edmon % cdmon)
+        } else if (edmon < cdmon) {
+            mon = mon - (cdmon % edmon)
+        }
+
+        var day = mon * 30.4167
+
+        if (edd > cdd) {
+            day = day + (edd % cdd)
+        } else if (edmon < cdmon) {
+            day = day - (cdd % edd)
+        }
+
+        var hour = day * 24
+
+        if (edh > cdh) {
+            hour = hour + (edh % cdh)
+        } else if (edmon < cdmon) {
+            hour = hour - (cdh % edh)
+        }
+
+        var min = hour * 60
+
+        if (edmin > cdmin) {
+            min = min + (edmin % cdmin)
+        } else if (edmon < cdmon) {
+            min = min - (cdmin % edmin)
+        }
+
+        var millisec = min * 60 * 1000
+
+        alarmManager.set(
+            AlarmManager.RTC_WAKEUP, millisec.toLong(), pendingIntent
+        )
+
+        Toast.makeText(this, "Alarm Done $millisec", Toast.LENGTH_SHORT).show()
+
+    }
+
+
+    //create notififcation channel
+    private fun createNotificationChannel(
+        eventType: String,
+        eventDescription: String,
+        time: String
+    ) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val name: CharSequence = eventDescription + eventType
+            val description = "Yow need to leave by " + time
+            val importance = NotificationManager.IMPORTANCE_HIGH
+            val channel = NotificationChannel("notify", name, importance)
+            channel.description = description
+            val notificationManager = getSystemService(
+                NotificationManager::class.java
+            )
+
+            notificationManager.createNotificationChannel(channel)
+        }
     }
 
 
@@ -287,6 +397,9 @@ class EventActivity : AppCompatActivity() {
         ).show()
     }
 
+
+    /*
+    //alarm
     private fun setAlarm(text: String, date: String, time: String) {
         val am = getSystemService(ALARM_SERVICE) as AlarmManager
         val intent = Intent(applicationContext, AlarmBrodcast::class.java)
@@ -304,5 +417,7 @@ class EventActivity : AppCompatActivity() {
             e.printStackTrace()
         }
     }
+     */
+
 
 }
