@@ -13,15 +13,14 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.core.view.GravityCompat
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import com.google.android.material.navigation.NavigationView
-import de.hdodenhof.circleimageview.CircleImageView
+import com.google.firebase.auth.FirebaseAuth
 import dev.kingbond.notify.R
 import dev.kingbond.notify.databinding.ActivityHomeBinding
 import dev.kingbond.notify.ui.about.AboutActivity
 import dev.kingbond.notify.ui.calendar.CalendarFragment
 import dev.kingbond.notify.ui.completed.CompletedFragment
-import dev.kingbond.notify.ui.completed.CompletedTasks
-import dev.kingbond.notify.ui.event.EventActivity
 import dev.kingbond.notify.ui.event.EventHomeActivity
 import dev.kingbond.notify.ui.goal.GoalHomeActivity
 import dev.kingbond.notify.ui.helpandsupport.HelpAndSupportActivity
@@ -30,6 +29,8 @@ import dev.kingbond.notify.ui.settings.SettingFragment
 import dev.kingbond.notify.ui.settings.SettingsActivity
 import dev.kingbond.notify.ui.task.TaskHomeActivity
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.nav_header.*
+import kotlinx.android.synthetic.main.nav_header.view.*
 
 class HomeActivity : AppCompatActivity() {
 
@@ -38,12 +39,20 @@ class HomeActivity : AppCompatActivity() {
     lateinit var toggle: ActionBarDrawerToggle
     lateinit var drawerLayout: DrawerLayout
 
+    //profile
+    private lateinit var mAuth: FirebaseAuth
+
+
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         homeBinding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(homeBinding.root)
+
+
+
+
 
         homeBinding.apply {
             btnAddGoal.visibility = View.GONE
@@ -58,7 +67,7 @@ class HomeActivity : AppCompatActivity() {
         var isAllVisible = false
 
         homeBinding.fbAddNotify.setOnClickListener {
-            if(!isAllVisible){
+            if (!isAllVisible) {
                 homeBinding.apply {
                     btnAddGoal.visibility = View.VISIBLE
                     btnAddEvent.visibility = View.VISIBLE
@@ -69,7 +78,7 @@ class HomeActivity : AppCompatActivity() {
                     add_task_text.visibility = View.VISIBLE
                 }
                 isAllVisible = true
-            }else{
+            } else {
                 homeBinding.apply {
                     btnAddGoal.visibility = View.GONE
                     btnAddEvent.visibility = View.GONE
@@ -85,17 +94,17 @@ class HomeActivity : AppCompatActivity() {
         }
 
         homeBinding.btnAddGoal.setOnClickListener {
-            val intent = Intent(this,GoalHomeActivity::class.java)
+            val intent = Intent(this, GoalHomeActivity::class.java)
             startActivity(intent)
         }
 
         homeBinding.btnAddTask.setOnClickListener {
-            val intent = Intent(this,TaskHomeActivity::class.java)
+            val intent = Intent(this, TaskHomeActivity::class.java)
             startActivity(intent)
         }
 
         homeBinding.btnAddEvent.setOnClickListener {
-            val intent = Intent(this,EventHomeActivity::class.java)
+            val intent = Intent(this, EventHomeActivity::class.java)
             startActivity(intent)
         }
 
@@ -109,9 +118,23 @@ class HomeActivity : AppCompatActivity() {
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
+
+        //profile
         // to access the view from header in Navigation View
         val header: View = navView.getHeaderView(0)
+
         val ibEdit: ImageButton = header.findViewById(R.id.ibEditProfile)
+
+        mAuth = FirebaseAuth.getInstance()
+        val user = mAuth.currentUser
+        if (user != null) {
+            Glide.with(header.ivProfileImageHeaderLayout).load(user.photoUrl)
+                .into(header.ivProfileImageHeaderLayout)
+            header.tvUsernameProfileHeader.text = user.displayName
+            header.tvEditProfileMail.text = user.email
+        }
+
+
         //val ivImage:CircleImageView=header.findViewById(R.id.ivProfileImageHeaderLayout)
         ibEdit.setOnClickListener {
             val intent = Intent(this, EditProfileActivity::class.java)
@@ -132,7 +155,7 @@ class HomeActivity : AppCompatActivity() {
                     Toast.makeText(applicationContext, "Calendar", Toast.LENGTH_SHORT).show()
                 }
                 R.id.completedFragment -> {
-                     replaceFragment(CompletedFragment(),"Completed")
+                    replaceFragment(CompletedFragment(), "Completed")
                     Toast.makeText(applicationContext, "Completed", Toast.LENGTH_SHORT).show()
                 }
                 R.id.profileFragment -> {
@@ -211,7 +234,6 @@ class HomeActivity : AppCompatActivity() {
             }
             true
         })
-
 
 
     }
