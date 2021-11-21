@@ -17,6 +17,7 @@ class AlarmReceiver : BroadcastReceiver() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onReceive(context: Context?, intent: Intent?) {
 
+        //music
         var mp: MediaPlayer = MediaPlayer.create(context, R.raw.alarm_tone)
         mp.start()
 
@@ -25,6 +26,8 @@ class AlarmReceiver : BroadcastReceiver() {
         /*Handler().postDelayed({
 
         }, 15000)*/
+
+
         val pendingIntent = PendingIntent.getActivity(context, 0, i, 0)
 
         val notificationManager = NotificationManagerCompat.from(context!!)
