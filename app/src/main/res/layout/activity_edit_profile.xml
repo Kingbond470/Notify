@@ -348,30 +348,6 @@
                 android:textColorHint="@color/white"
                 android:textSize="15sp" />
 
-            <TextView
-                android:id="@+id/tvStateEditProfile"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="5dp"
-                android:fontFamily="@font/roboto"
-                android:text="Address"
-                android:textColor="@color/white"
-                android:textSize="13sp" />
-
-            <EditText
-                android:id="@+id/etStateEditProfile"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:background="@drawable/edit_profile_et_bg"
-                android:fontFamily="@font/roboto"
-                android:hint="Email Address"
-                android:padding="5dp"
-                android:singleLine="true"
-                android:textColor="@color/white"
-                android:textColorHint="@color/white"
-                android:textSize="15sp" />
-
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -393,7 +369,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="5dp"
                         android:fontFamily="@font/roboto"
-                        android:text="Height (in cm)"
+                        android:text="State"
                         android:textColor="@color/white"
                         android:textSize="13sp" />
 
@@ -403,8 +379,6 @@
                         android:layout_height="40dp"
                         android:background="@drawable/edit_profile_et_bg"
                         android:fontFamily="@font/roboto"
-                        android:inputType="number"
-                        android:maxLength="3"
                         android:padding="5dp"
                         android:singleLine="true"
                         android:textColor="@color/white"
@@ -426,7 +400,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginBottom="5dp"
                         android:fontFamily="@font/roboto"
-                        android:text="Weight (in kg)"
+                        android:text="City"
                         android:textColor="@color/white"
                         android:textSize="13sp" />
 
@@ -436,8 +410,6 @@
                         android:layout_height="40dp"
                         android:background="@drawable/edit_profile_et_bg"
                         android:fontFamily="@font/roboto"
-                        android:inputType="number"
-                        android:maxLength="3"
                         android:padding="5dp"
                         android:singleLine="true"
                         android:textColor="@color/white"
@@ -587,7 +559,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginVertical="20dp"
-                android:buttonTint="#2C72C1"
+                android:buttonTint="#57D6C0"
                 android:fontFamily="@font/roboto"
                 android:text="@string/check_box_string"
                 android:textColor="@color/white"
