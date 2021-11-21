@@ -3,7 +3,9 @@ package dev.kingbond.notify.ui.calendar
 import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
+import android.view.LayoutInflater
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.Observer
@@ -13,23 +15,28 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import dev.kingbond.notify.R
 import dev.kingbond.notify.data.database.RoomDataBaseClass
+import dev.kingbond.notify.databinding.ActivityGoalDetailsBinding
 import dev.kingbond.notify.databinding.FragmentCalendarBinding
 import dev.kingbond.notify.repository.RepositoryClass
 import dev.kingbond.notify.ui.event.EventAdapter
+import dev.kingbond.notify.ui.event.EventClickListener
 import dev.kingbond.notify.ui.event.EventModel
 import dev.kingbond.notify.ui.goal.model.GoalModel
 import dev.kingbond.notify.ui.goal.recyclerView.GoalAdapter
 import dev.kingbond.notify.ui.goal.recyclerView.GoalClickListener
 import dev.kingbond.notify.ui.task.model.TaskModel
 import dev.kingbond.notify.ui.task.recyclerView.TaskAdapter
+import dev.kingbond.notify.ui.task.recyclerView.TaskClickListener
 import dev.kingbond.notify.viewmodel.ViewModelClass
 import dev.kingbond.notify.viewmodel.ViewModelFactory
+import kotlinx.android.synthetic.main.fragment_calendar.*
 import java.time.LocalDate
 import java.time.YearMonth
 import java.time.format.DateTimeFormatter
 
 @RequiresApi(Build.VERSION_CODES.O)
-class CalendarFragment : Fragment(R.layout.fragment_calendar), DateClickListener, GoalClickListener{
+class CalendarFragment : Fragment(R.layout.fragment_calendar), DateClickListener, GoalClickListener,
+    TaskClickListener, EventClickListener {
 
     private var selectedDate: LocalDate? = null
     private lateinit var calendarAdapter: CalendarAdapter
@@ -87,7 +94,9 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar), DateClickListener
         })
 
 
-        goalAdapter = GoalAdapter(listGoal, this)
+        goalAdapter = GoalAdapter(listGoal, this, itemViewModel,this)
+        taskAdapter = TaskAdapter(listTask, this,itemViewModel,this)
+        eventAdapter = EventAdapter(listEvent, this)
         val linearLayoutManagerGoal = LinearLayoutManager(requireContext())
         val linearLayoutManagerTask = LinearLayoutManager(requireContext())
         val linearLayoutManagerEvent = LinearLayoutManager(requireContext())
@@ -188,15 +197,23 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar), DateClickListener
     }
 
     override fun goalItemClicked(goalModel: GoalModel) {
-        TODO("Not yet implemented")
+        Toast.makeText(context, "Goal Clicked", Toast.LENGTH_SHORT).show()
     }
 
     override fun taskItemClicked(taskModel: TaskModel) {
-        TODO("Not yet implemented")
+        Toast.makeText(context, "Task Clicked", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun taskCompletedClicked(taskModel: TaskModel) {
+
+    }
+
+    override fun taskNotCompletedClicked(taskModel: TaskModel) {
+
     }
 
     override fun eventItemClicked(eventModel: EventModel) {
-        TODO("Not yet implemented")
+        Toast.makeText(context, "Item Clicked", Toast.LENGTH_SHORT).show()
     }
 
 }

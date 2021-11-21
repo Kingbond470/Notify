@@ -15,10 +15,6 @@ class ViewModelClass(val repo: RepositoryClass) : ViewModel() {
         repo.addDataToGoal(goalModel)
     }
 
-    fun updateDataIntoGoalTable(goalModel: GoalModel){
-        repo.updateDataToGoal(goalModel)
-    }
-
     fun getDataFromGoal(): LiveData<List<GoalModel>> {
         return repo.getAllGoals()
     }
@@ -31,7 +27,7 @@ class ViewModelClass(val repo: RepositoryClass) : ViewModel() {
         repo.updateToTask(taskModel)
     }
 
-    fun getCompletedCountOfTask(goalName: String):LiveData<Int>{
+    fun getCompletedCountOfTask(goalName: String):LiveData<List<TaskModel>>{
         return repo.getCompletedTaskGoal(goalName)
     }
 

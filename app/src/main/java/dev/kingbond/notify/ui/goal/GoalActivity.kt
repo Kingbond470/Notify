@@ -1,6 +1,7 @@
 package dev.kingbond.notify.ui.goal
 
 import android.app.DatePickerDialog
+import android.app.TimePickerDialog
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -20,6 +21,8 @@ class GoalActivity : AppCompatActivity() {
     private lateinit var binding: ActivityGoalBinding
     private lateinit var itemViewModel: ViewModelClass
 
+    private  var timeNotify = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -36,6 +39,8 @@ class GoalActivity : AppCompatActivity() {
 
         addDateTo()
         addDateFrom()
+        setTimeTo()
+        setTimeFrom()
         submitTheGoal()
 
     }
@@ -113,6 +118,66 @@ class GoalActivity : AppCompatActivity() {
                 cal.get(Calendar.MONTH),
                 cal.get(Calendar.DAY_OF_MONTH)
             ).show()
+        }
+    }
+
+    private fun setTimeTo() {
+        val sdf = SimpleDateFormat("hh-mm aaa")
+        val currentDate = sdf.format(Date())
+        binding.addToTimeGoal.text = currentDate
+
+        binding.addToTimeGoal.setOnClickListener {
+            val cal = Calendar.getInstance()
+
+            val dateSetListener =
+                TimePickerDialog.OnTimeSetListener { timePicker, i, i2 ->
+                    cal.set(Calendar.HOUR_OF_DAY, i)
+                    cal.set(Calendar.MINUTE, i2)
+
+                    timeNotify = "$i:$i2"
+                    val myFormat = "hh-mm aaa" // mention the format you need
+                    val sdf = SimpleDateFormat(myFormat)
+                    binding.addToTimeGoal.text = sdf.format(cal.time)
+                }
+
+            TimePickerDialog(
+                this,
+                dateSetListener,
+                cal.get(Calendar.HOUR),
+                cal.get(Calendar.MINUTE),
+                false
+            ).show()
+
+        }
+    }
+
+    private fun setTimeFrom() {
+        val sdf = SimpleDateFormat("hh-mm aaa")
+        val currentDate = sdf.format(Date())
+        binding.addTimeFromGoal.text = currentDate
+
+        binding.addTimeFromGoal.setOnClickListener {
+            val cal = Calendar.getInstance()
+
+            val dateSetListener =
+                TimePickerDialog.OnTimeSetListener { timePicker, i, i2 ->
+                    cal.set(Calendar.HOUR_OF_DAY, i)
+                    cal.set(Calendar.MINUTE, i2)
+
+                    timeNotify = "$i:$i2"
+                    val myFormat = "hh-mm aaa" // mention the format you need
+                    val sdf = SimpleDateFormat(myFormat)
+                    binding.addTimeFromGoal.text = sdf.format(cal.time)
+                }
+
+            TimePickerDialog(
+                this,
+                dateSetListener,
+                cal.get(Calendar.HOUR),
+                cal.get(Calendar.MINUTE),
+                false
+            ).show()
+
         }
     }
 }
