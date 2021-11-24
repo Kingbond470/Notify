@@ -201,14 +201,10 @@ Open Android Studio. Go to File > New > Project From Version Control. Copy the l
     //chart library
     implementation 'com.github.lecho:hellocharts-library:1.5.8@aar'
 
-    //implementation 'com.github.AnyChart:AnyChart-Android:1.1.2'
 
     // For Card view
     implementation 'androidx.cardview:cardview:1.0.0'
 
-    // Chart and graph library
-    implementation 'com.github.blackfizz:eazegraph:1.2.5l@aar'
-    implementation 'com.nineoldandroids:library:2.4.0'
     
 ## [Contributors 🌸💯👏](#Contributors)
 
