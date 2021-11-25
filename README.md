@@ -294,3 +294,4 @@ We built the project in two days during Masai Hackathon. #3 Rank
 
 ### PS
 Hard work beats the talent, when talent doesn't do the hardwork.
+I am new person in open source of Android Development, so please feel free to correct and make changes. #LookingForward 
