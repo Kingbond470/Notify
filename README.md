@@ -2,7 +2,7 @@
 ### Available on Playstore<img height="50" width="80" src="https://emojipedia-us.s3.amazonaws.com/source/skype/289/backhand-index-pointing-down_1f447.png">
 
 
-<a href="https://play.google.com/store/apps/details?id=dev.kingbond.notify" title="Playstore"><img height="150" width="300" src="https://data.ibtimes.sg/en/full/12247/google-play-store-8-1-73-apk.png"></a>
+<a href="https://play.google.com/store/apps/details?id=dev.kingbond.notify" title="Playstore" target="_blank"><img height="150" width="300" src="https://data.ibtimes.sg/en/full/12247/google-play-store-8-1-73-apk.png"></a>
 
 ## Events
 ### Problem Statement  :
