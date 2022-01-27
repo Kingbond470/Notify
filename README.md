@@ -296,6 +296,7 @@ Copyright (c) 2021 Mausam Singh
 - [Abhimanyu Mishra](https://github.com/abhimanyumishra130)
 - [Murali Krishna Sundara](https://github.com/MuraliKrishnaSundara)
 - [Mausam Singh](https://github.com/Kingbond470)
+- [Rohit Sharma](https://github.com/acuon)
 
     
 # Lessons Learnt📚
