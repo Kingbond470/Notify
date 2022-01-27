@@ -67,4 +67,10 @@ class RepositoryClass(val classDao: ClassDao) {
         return classDao.getTaskByDate(date)
     }
 
+    fun deleteFomTask(task: TaskModel) {
+        CoroutineScope(Dispatchers.IO).launch {
+            classDao.deleteFromTask(task)
+        }
+    }
+
 }

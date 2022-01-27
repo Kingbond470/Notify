@@ -72,19 +72,41 @@
             android:textColor="@color/app_background"
             android:textSize="16dp" />
 
-        <com.google.android.material.button.MaterialButton
-            android:id="@+id/ok_dialog_task"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+        <LinearLayout
+            android:weightSum="2"
             android:layout_below="@id/dialog_task_date"
             android:layout_marginTop="15dp"
-            android:backgroundTint="@color/app_background"
-            android:fontFamily="@font/roboto"
-            android:gravity="center"
-            android:text="Done"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            app:cornerRadius="8dp" />
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/ok_dialog_task"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/app_background"
+                android:fontFamily="@font/roboto"
+                android:gravity="center"
+                android:text="Cancel"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:cornerRadius="8dp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/delete_dialog_task"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/app_background"
+                android:fontFamily="@font/roboto"
+                android:gravity="center"
+                android:text="Delete"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                app:cornerRadius="8dp" />
+
+        </LinearLayout>
+
     </RelativeLayout>
 </layout>

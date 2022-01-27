@@ -98,6 +98,7 @@ class TaskViewHolder(
             taskClickListener.taskNotCompletedClicked(taskModel)
             itemTaskLayoutBinding.ivTaskCompleted.visibility = View.VISIBLE
         }
+
     }
 }
 

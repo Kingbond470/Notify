@@ -45,5 +45,7 @@ interface ClassDao {
     @Query("select * from task_table where date = :date")
     fun getTaskByDate(date:String):LiveData<List<TaskModel>>
 
+    @Delete
+    fun deleteFromTask(task: TaskModel)
 
 }

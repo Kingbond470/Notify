@@ -60,4 +60,8 @@ class CompletedTasks : Fragment(R.layout.fragment_completed_tasks),TaskClickList
 
     }
 
+    override fun onTaskDeleteClicked(task: TaskModel) {
+
+    }
+
 }

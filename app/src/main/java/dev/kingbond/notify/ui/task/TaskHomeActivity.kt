@@ -85,6 +85,11 @@ class TaskHomeActivity : AppCompatActivity(), TaskClickListener {
         taskDialogLayoutBinding.okDialogTask.setOnClickListener {
             bottomSheetDialog.dismiss()
         }
+        taskDialogLayoutBinding.deleteDialogTask.setOnClickListener {
+            bottomSheetDialog.dismiss()
+            itemViewModel.deleteFromTask(taskModel)
+            adapter.notifyDataSetChanged()
+        }
 
     }
 
@@ -98,5 +103,9 @@ class TaskHomeActivity : AppCompatActivity(), TaskClickListener {
     override fun taskNotCompletedClicked(taskModel: TaskModel) {
         taskModel.status = 0
         itemViewModel.updateDataInTaskTable(taskModel)
+    }
+
+    override fun onTaskDeleteClicked(task: TaskModel) {
+
     }
 }
