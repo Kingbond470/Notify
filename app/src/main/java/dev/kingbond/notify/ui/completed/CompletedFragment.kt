@@ -118,4 +118,8 @@ class CompletedFragment : Fragment(R.layout.fragment_completed), TaskClickListen
     override fun taskNotCompletedClicked(taskModel: TaskModel) {
     }
 
+    override fun onTaskDeleteClicked(task: TaskModel) {
+
+    }
+
 }

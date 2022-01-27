@@ -242,6 +242,10 @@ class CalendarFragment : Fragment(R.layout.fragment_calendar), DateClickListener
         itemViewModel.updateDataInTaskTable(taskModel)
     }
 
+    override fun onTaskDeleteClicked(task: TaskModel) {
+
+    }
+
     override fun eventItemClicked(eventModel: EventModel) {
 //        Toast.makeText(context, "Item Clicked", Toast.LENGTH_SHORT).show()
     }

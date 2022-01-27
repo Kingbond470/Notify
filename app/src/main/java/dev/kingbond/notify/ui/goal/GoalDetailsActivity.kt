@@ -159,4 +159,8 @@ class GoalDetailsActivity : AppCompatActivity(), TaskClickListener {
         taskModel.status = 0
         itemViewModel.updateDataInTaskTable(taskModel)
     }
+
+    override fun onTaskDeleteClicked(task: TaskModel) {
+
+    }
 }

@@ -10,7 +10,6 @@ import dev.kingbond.notify.ui.task.model.TaskModel
 
 class ViewModelClass(val repo: RepositoryClass) : ViewModel() {
 
-
     fun insertDataIntoGoalTable(goalModel: GoalModel) {
         repo.addDataToGoal(goalModel)
     }
@@ -57,5 +56,9 @@ class ViewModelClass(val repo: RepositoryClass) : ViewModel() {
 
     fun getTasksByDate(date:String):LiveData<List<TaskModel>>{
         return repo.getTasksByDate(date)
+    }
+
+    fun deleteFromTask(task: TaskModel) {
+        repo.deleteFomTask(task)
     }
 }

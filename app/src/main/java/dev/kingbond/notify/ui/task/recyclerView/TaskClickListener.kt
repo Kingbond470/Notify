@@ -9,4 +9,7 @@ interface TaskClickListener {
     fun taskCompletedClicked(taskModel: TaskModel)
 
     fun taskNotCompletedClicked(taskModel: TaskModel)
+
+    fun onTaskDeleteClicked(task: TaskModel)
+
 }
